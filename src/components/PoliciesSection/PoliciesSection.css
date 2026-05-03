@@ -1,0 +1,203 @@
+/* PoliciesSection.css */
+
+.policies-section {
+  background: var(--bg);
+  padding: 3rem 1.5rem;
+}
+
+.policies-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ── Section Heading ── */
+.policies-top-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.policies-top-label span {
+  font-size: 1.4rem;
+}
+
+/* ── Two Panel Grid ── */
+.policies-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 8px 32px var(--shadow-strong);
+  margin-top: 2rem;
+}
+
+/* ── Each Policy Panel ── */
+.policy-panel {
+  background: linear-gradient(160deg, #1a3a6e 0%, #1e4fa0 50%, #1a3a6e 100%);
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.4rem;
+  position: relative;
+  overflow: hidden;
+  transition: background var(--transition-mid);
+}
+
+/* Subtle divider between panels */
+.policy-panel:first-child {
+  border-right: 2px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Decorative bg circle */
+.policy-panel::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  top: -80px;
+  right: -80px;
+  pointer-events: none;
+}
+
+.policy-panel::after {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  bottom: -60px;
+  left: -60px;
+  pointer-events: none;
+}
+
+.policy-panel:hover {
+  background: linear-gradient(160deg, #163066 0%, #1a47a0 50%, #163066 100%);
+}
+
+/* ── Icon Box ── */
+.policy-icon-box {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  transition: transform var(--transition-mid), border-color var(--transition-mid);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.policy-panel:hover .policy-icon-box {
+  transform: scale(1.06);
+  border-color: var(--accent-light);
+}
+
+.policy-icon-box img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+/* SVG icon fallback */
+.policy-icon-svg {
+  width: 72px;
+  height: 72px;
+}
+
+/* Safe From Harm — colorful grid logo */
+.sfh-logo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  width: 72px;
+  height: 72px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.sfh-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: white;
+  line-height: 1;
+}
+
+/* ── Title ── */
+.policy-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: var(--white);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  z-index: 1;
+  line-height: 1.2;
+}
+
+/* ── Description ── */
+.policy-desc {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.85;
+  text-align: justify;
+  z-index: 1;
+  max-width: 480px;
+}
+
+/* ── Read More ── */
+.policy-readmore {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--accent-light);
+  font-weight: 700;
+  font-size: 0.92rem;
+  text-decoration: none;
+  z-index: 1;
+  transition: gap var(--transition-fast), color var(--transition-fast);
+  letter-spacing: 0.04em;
+}
+
+.policy-readmore:hover {
+  gap: 0.7rem;
+  color: #ffd700;
+}
+
+.policy-readmore-arrow {
+  font-size: 1rem;
+  transition: transform var(--transition-fast);
+}
+
+.policy-readmore:hover .policy-readmore-arrow {
+  transform: translateX(4px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .policies-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .policy-panel:first-child {
+    border-right: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .policy-panel {
+    padding: 2.5rem 1.5rem;
+  }
+}

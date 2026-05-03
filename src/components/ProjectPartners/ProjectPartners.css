@@ -1,0 +1,220 @@
+/* ProjectPartners.css */
+
+.partners-section {
+  background: var(--bg-card);
+  border-top: 3px solid var(--accent);
+  border-bottom: 3px solid var(--accent);
+  padding: 3rem 1.5rem;
+  overflow: hidden;
+}
+
+.partners-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ── Heading ── */
+.partners-heading-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
+  justify-content: center;
+}
+
+.partners-heading-row h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 3vw, 1.9rem);
+  color: var(--primary);
+  letter-spacing: 0.06em;
+}
+
+.partners-heading-icon {
+  font-size: 1.8rem;
+}
+
+.partners-subtitle {
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--text-light);
+  margin-bottom: 2.5rem;
+}
+
+/* ── Infinite Logo Ticker ── */
+.partners-ticker-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fade edges */
+.partners-ticker-wrapper::before,
+.partners-ticker-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.partners-ticker-wrapper::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--bg-card), transparent);
+}
+
+.partners-ticker-wrapper::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--bg-card), transparent);
+}
+
+.partners-ticker {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  animation: tickerScroll 30s linear infinite;
+}
+
+.partners-ticker:hover {
+  animation-play-state: paused;
+}
+
+@keyframes tickerScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ── Partner Card ── */
+.partner-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  width: 180px;
+  padding: 1.4rem 1rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 10px var(--shadow);
+  transition: transform var(--transition-mid), box-shadow var(--transition-mid), border-color var(--transition-mid);
+  cursor: pointer;
+  flex-shrink: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.partner-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px var(--shadow-strong);
+  border-color: var(--accent);
+}
+
+.partner-logo-box {
+  width: 80px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.partner-logo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Emoji/icon fallback logo */
+.partner-logo-fallback {
+  width: 80px;
+  height: 70px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 2rem;
+}
+
+.partner-name {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--text-mid);
+  text-align: center;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+}
+
+.partner-type {
+  font-size: 0.64rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ── Divider between rows ── */
+.partners-ticker-row2 {
+  margin-top: 1.2rem;
+  animation-direction: reverse;
+  animation-duration: 35s;
+}
+
+/* ── Bottom CTA ── */
+.partners-cta {
+  text-align: center;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.partners-cta p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.partners-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 2rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  color: var(--white);
+  border-radius: 30px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  box-shadow: 0 4px 14px var(--shadow-strong);
+}
+
+.partners-cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px var(--shadow-strong);
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .partner-card {
+    width: 140px;
+    padding: 1rem 0.7rem;
+  }
+
+  .partner-logo-fallback,
+  .partner-logo-box {
+    width: 60px;
+    height: 54px;
+    font-size: 1.6rem;
+  }
+
+  .partners-ticker-wrapper::before,
+  .partners-ticker-wrapper::after {
+    width: 50px;
+  }
+}
