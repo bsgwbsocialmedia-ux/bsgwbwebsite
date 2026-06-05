@@ -1,354 +1,370 @@
-// components/InfoPages/InfoPages.jsx
-import { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './InfoPages.css';
 
-// ─── Dummy Data ───────────────────────────────────────────────
+import About from '../../pages/About/About';
+import Gallery from '../../pages/Gallery/Gallery';
+import District from '../../pages/District/District';
+import News from '../../pages/News/News';
+import Awards from '../../pages/Awards/Awards';
+import Shop from '../../pages/Shop/Shop';
+import Contact from '../../pages/Contact/Contact';
 
-const DUMMY_NEWS = [
-  {
-    id: 1, day: '28', month: 'Jul',
-    tag: 'Event',
-    title: 'State Jamboree 2025 Registration Now Open',
-    excerpt: 'All district commissioners are requested to submit troop registrations before 15 August 2025. Limited seats available.',
-    link: '#',
-  },
-  {
-    id: 2, day: '15', month: 'Jul',
-    tag: 'Award',
-    title: 'Rajya Puraskar Ceremony Scheduled for Independence Day',
-    excerpt: 'The prestigious Rajya Puraskar award ceremony will be held on 15 August 2025 at State HQ, Kolkata.',
-    link: '#',
-  },
-  {
-    id: 3, day: '01', month: 'Jul',
-    tag: 'Training',
-    title: 'Advanced Scout Master Training Camp — August Batch',
-    excerpt: 'Applications invited for the 5-day residential training camp at BSG Training Centre, Bankura.',
-    link: '#',
-  },
-  {
-    id: 4, day: '20', month: 'Jun',
-    tag: 'Notice',
-    title: 'District Commissioner Annual Meeting — Minutes Released',
-    excerpt: 'Key decisions from the June DC meeting regarding district-level camp schedules are now available for download.',
-    link: '#',
-  },
-  {
-    id: 5, day: '05', month: 'Jun',
-    tag: 'Environment',
-    title: 'Green Scout Initiative — State-wide Tree Plantation Drive',
-    excerpt: 'Over 50,000 saplings planted across 23 districts in partnership with the West Bengal Forest Department.',
-    link: '#',
-  },
-];
+import PresentLeadership from '../../pages/Organization/PresentLeadership/PresentLeadership';
+import OurTeam from '../../pages/Organization/OurTeam/OurTeam';
+import Patron from '../../pages/Organization/Patron/Patron';
+import DistrictAssociation from '../../pages/Organization/DistrictAssociation/DistrictAssociation';
+import ByeLaws from '../../pages/Organization/ByeLaws/ByeLaws';
+import FinancialPolicy from '../../pages/Organization/FinancialPolicy/FinancialPolicy';
+import TypeOfMembership from '../../pages/Organization/Membership/TypeOfMembership';
 
-const DUMMY_GALLERY = [
-  { id: 1, label: 'State Jamboree 2024', bg: 'linear-gradient(135deg,#1a3a5c,#2d7a3a)', icon: '🏕️', category: 'Events' },
-  { id: 2, label: 'Rajya Puraskar 2024', bg: 'linear-gradient(135deg,#0d2440,#a07008)', icon: '🏅', category: 'Awards' },
-  { id: 3, label: 'Training Camp 2024', bg: 'linear-gradient(135deg,#2d3561,#1a3a5c)', icon: '🎓', category: 'Training' },
-  { id: 4, label: 'Environment Drive', bg: 'linear-gradient(135deg,#1a4a2e,#2d7a3a)', icon: '🌿', category: 'Events' },
-  { id: 5, label: 'Scout Rally 2024', bg: 'linear-gradient(135deg,#3a1a5c,#1a3a5c)', icon: '🚩', category: 'Events' },
-  { id: 6, label: "Founder's Day 2024", bg: 'linear-gradient(135deg,#5c3a1a,#8c6010)', icon: '⭐', category: 'Events' },
-  { id: 7, label: 'Cub Scout Day', bg: 'linear-gradient(135deg,#1a5c3a,#0d4020)', icon: '🐯', category: 'Training' },
-  { id: 8, label: 'Rover Scout Meet', bg: 'linear-gradient(135deg,#1a2a5c,#0d2040)', icon: '⛺', category: 'Events' },
-];
+import Cub from '../../pages/Programme/YouthProgramme/Cub/Cub';
+import Bulbul from '../../pages/Programme/YouthProgramme/Bulbul/Bulbul';
+import Scout from '../../pages/Programme/YouthProgramme/Scout/Scout';
+import Guide from '../../pages/Programme/YouthProgramme/Guide/Guide';
+import Rover from '../../pages/Programme/YouthProgramme/Rover/Rover';
+import Ranger from '../../pages/Programme/YouthProgramme/Ranger/Ranger';
 
-const DUMMY_AWARDS = [
-  {
-    id: 1, medal: '🥇',
-    name: 'Rajya Puraskar',
-    desc: 'The highest state-level Scout award in West Bengal, recognising exceptional service, character, and leadership.',
-    eligibility: 'Eligibility: Scouts above Dwitiya Sopan with at least 2 years of service',
-  },
-  {
-    id: 2, medal: '🏅',
-    name: 'Tritiya Sopan',
-    desc: 'Awarded upon successful completion of the third stage of the Scout training programme with all required proficiency badges.',
-    eligibility: 'Eligibility: Scouts who completed Dwitiya Sopan',
-  },
-  {
-    id: 3, medal: '🎖️',
-    name: 'Chief Scout Award',
-    desc: 'Presented by the Chief Scout for India to individuals for distinguished and outstanding service to Scouting at national level.',
-    eligibility: 'Eligibility: District-level nomination required',
-  },
-  {
-    id: 4, medal: '🏆',
-    name: 'Best Troop Award',
-    desc: 'Awarded to the best-performing Scout troop in the state based on activities, attendance, and community service.',
-    eligibility: 'Eligibility: All registered troops with minimum 2 years standing',
-  },
-  {
-    id: 5, medal: '🌟',
-    name: 'Pravesh Award',
-    desc: 'First milestone award in the Scout journey, recognising successful completion of basic Scout training and Promise.',
-    eligibility: 'Eligibility: All newly enrolled Scouts',
-  },
-  {
-    id: 6, medal: '🦅',
-    name: 'Eagle Scout Certificate',
-    desc: 'Awarded to Rovers who demonstrate exceptional leadership, community service, and commitment over 3+ years.',
-    eligibility: 'Eligibility: Rover Scouts with 3+ years of active service',
-  },
-];
+import UnitLeaders from '../../pages/Programme/AdultProgramme/UnitLeaders/UnitLeaders';
+import AdultLeaders from '../../pages/Programme/AdultProgramme/AdultLeaders/AdultLeaders';
+import LeadersOfAdult from '../../pages/Programme/AdultProgramme/LeadersAdult/LeadersAdult';
 
-const GALLERY_CATEGORIES = ['All', 'Events', 'Training', 'Awards'];
+import YouthAnnualPlan from '../../pages/Programme/AnnualPlan/YouthAnnualPlan/YouthAnnualPlan';
+import AdultAnnualPlan from '../../pages/Programme/AnnualPlan/AdultAnnualPlan/AdultAnnualPlan';
 
+// ---- Tab configuration (same as before) ----
 const TABS = [
-  { id: 'about',   label: 'About Us', icon: '🏛️' },
-  { id: 'gallery', label: 'Gallery',  icon: '🖼️' },
-  { id: 'news',    label: 'News',     icon: '📰' },
-  { id: 'awards',  label: 'Awards',   icon: '🏆' },
+  { id: 'about', label: 'About Us', icon: '🏛️' },
+  { id: 'gallery', label: 'Gallery', icon: '🖼️' },
+  { id: 'district', label: 'District', icon: '📍' },
+  { id: 'news', label: 'News', icon: '📰' },
+  { id: 'awards', label: 'Awards', icon: '🏆' },
+  { id: 'shop', label: 'Shop', icon: '🛍️' },
+  {
+    id: 'programme',
+    label: 'Programme & Annual Plan',
+    icon: '📋',
+    children: [
+      {
+        label: 'Youth Programme',
+        items: [
+          { id: 'cub', label: 'Cub' },
+          { id: 'bulbul', label: 'Bulbul' },
+          { id: 'scout', label: 'Scout' },
+          { id: 'guide', label: 'Guide' },
+          { id: 'rover', label: 'Rover' },
+          { id: 'ranger', label: 'Ranger' },
+        ],
+      },
+      {
+        label: 'Adult Programme',
+        items: [
+          { id: 'unitleaders', label: 'Unit Leaders' },
+          { id: 'adultleaders', label: 'Adult Leaders' },
+          { id: 'leadersofadult', label: 'Leaders Of Adult' },
+        ],
+      },
+      {
+        label: 'Annual Plan',
+        items: [
+          { id: 'youthannualplan', label: 'Youth Annual Plan' },
+          { id: 'adultannualplan', label: 'Adult Annual Plan' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'organization',
+    label: 'Organization',
+    icon: '🏢',
+    children: [
+      {
+        label: 'Organgram',
+        children: [
+          {
+            label: 'State Association',
+            items: [
+              { id: 'presentleadership', label: 'Present Leadership' },
+              { id: 'ourteam', label: 'Our Team' },
+              { id: 'patron', label: 'Patron' },
+            ],
+          },
+          { id: 'districtassociation', label: 'District Association' },
+        ],
+      },
+      {
+        label: 'UP Rules',
+        children: [
+          { id: 'byelaws', label: 'Bye Laws' },
+          { id: 'financialpolicy', label: 'Financial Policy' },
+        ],
+      },
+      {
+        label: 'Membership',
+        children: [{ id: 'typeofmembership', label: 'Type Of Membership' }],
+      },
+    ],
+  },
+  { id: 'contact', label: 'Contact Us', icon: '☎️' },
 ];
 
-// ─── Sub-components ────────────────────────────────────────────
-
-function AboutPanel() {
-  return (
-    <div className="infopages-panel">
-      {/* Hero Banner */}
-      <div className="about-hero">
-        <div className="about-hero-icon">⚜️</div>
-        <div className="about-hero-text">
-          <h2>Bharat Scouts &amp; Guides — West Bengal</h2>
-          <p>
-            West Bengal State Council of Bharat Scouts &amp; Guides is one of the largest
-            and most active state councils in India, empowering youth since 1909 through
-            values of duty, integrity, and community service.
-          </p>
-        </div>
-      </div>
-
-      {/* Stats */}
-      <div className="about-stats-row">
-        {[
-          { icon: '👥', number: '5', suffix: 'L+', label: 'Registered Members' },
-          { icon: '🏕️', number: '23', suffix: '', label: 'Districts Covered' },
-          { icon: '📅', number: '115', suffix: '+', label: 'Years of Service' },
-          { icon: '🎖️', number: '1200', suffix: '+', label: 'Awards Conferred' },
-        ].map((s, i) => (
-          <div className="stat-card" key={i}>
-            <div className="stat-icon">{s.icon}</div>
-            <div className="stat-number">{s.number}<span>{s.suffix}</span></div>
-            <div className="stat-label">{s.label}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* Content Cards */}
-      <div className="about-content-grid">
-        <div className="about-card">
-          <div className="about-card-header">
-            <span className="about-card-header-icon">🎯</span>
-            <h3>Our Mission</h3>
-          </div>
-          <p>
-            To contribute to the development of young people in achieving their full
-            physical, intellectual, social and spiritual potentials as individuals,
-            as responsible citizens and as members of their local, national and
-            international communities.
-          </p>
-          <p>
-            We follow the Scout Method — learning by doing, working in small groups,
-            and living by the Scout Law and Promise.
-          </p>
-        </div>
-
-        <div className="about-card">
-          <div className="about-card-header">
-            <span className="about-card-header-icon">📖</span>
-            <h3>Scout Law &amp; Promise</h3>
-          </div>
-          <ul>
-            <li>A Scout's honour is to be trusted</li>
-            <li>A Scout is loyal to the nation and serves others</li>
-            <li>A Scout is friendly and courteous</li>
-            <li>A Scout is kind to animals and the environment</li>
-            <li>A Scout obeys orders and never gives up</li>
-            <li>A Scout is thrifty and takes care of belongings</li>
-          </ul>
-        </div>
-
-        <div className="about-card">
-          <div className="about-card-header">
-            <span className="about-card-header-icon">🏗️</span>
-            <h3>Programme Sections</h3>
-          </div>
-          <ul>
-            <li>Cub Scout — Age 6 to 10 years</li>
-            <li>Scout — Age 10 to 17 years</li>
-            <li>Rover Scout — Age 17 to 25 years</li>
-            <li>Bulbul Guide — Age 6 to 10 years</li>
-            <li>Guide — Age 10 to 17 years</li>
-            <li>Ranger Guide — Age 17 to 25 years</li>
-          </ul>
-        </div>
-
-        <div className="about-card">
-          <div className="about-card-header">
-            <span className="about-card-header-icon">📍</span>
-            <h3>State Headquarters</h3>
-          </div>
-          <p>
-            BSG West Bengal State Council is headquartered in Kolkata and operates
-            through 23 district associations spread across the state.
-          </p>
-          <p>
-            Our training centres regularly conduct programmes for Scout Masters,
-            District Commissioners, and youth members at all levels.
-          </p>
-        </div>
-      </div>
-    </div>
-  );
+// ---- Helper: render content panel ----
+function renderPanel(activeTab, setActiveTab) {
+  switch (activeTab) {
+    case 'about': return <About />;
+    case 'gallery': return <Gallery />;
+    case 'district': return <District />;
+    case 'news': return <News />;
+    case 'awards': return <Awards />;
+    case 'shop': return <Shop setActiveTab={setActiveTab} />;
+    case 'contact': return <Contact />;
+    case 'presentleadership': return <PresentLeadership />;
+    case 'ourteam': return <OurTeam />;
+    case 'patron': return <Patron />;
+    case 'districtassociation': return <DistrictAssociation />;
+    case 'byelaws': return <ByeLaws />;
+    case 'financialpolicy': return <FinancialPolicy />;
+    case 'typeofmembership': return <TypeOfMembership />;
+    case 'cub': return <Cub />;
+    case 'bulbul': return <Bulbul />;
+    case 'scout': return <Scout />;
+    case 'guide': return <Guide />;
+    case 'rover': return <Rover />;
+    case 'ranger': return <Ranger />;
+    case 'unitleaders': return <UnitLeaders />;
+    case 'adultleaders': return <AdultLeaders />;
+    case 'leadersofadult': return <LeadersOfAdult />;
+    case 'youthannualplan': return <YouthAnnualPlan />;
+    case 'adultannualplan': return <AdultAnnualPlan />;
+    default: return <About />;
+  }
 }
 
-function GalleryPanel() {
-  const [activeFilter, setActiveFilter] = useState('All');
-
-  const filtered = activeFilter === 'All'
-    ? DUMMY_GALLERY
-    : DUMMY_GALLERY.filter(g => g.category === activeFilter);
+// ---- Desktop: horizontal hover dropdown ----
+function DesktopNav({ activeTab, setActiveTab }) {
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const [openSubmenu, setOpenSubmenu] = useState(null);
+  const [openThird, setOpenThird] = useState(null);
 
   return (
-    <div className="infopages-panel">
-      <h2 className="section-heading">Photo Gallery</h2>
-      <div className="section-divider" />
-
-      {/* Filter Buttons */}
-      <div className="gallery-filter-row">
-        {GALLERY_CATEGORIES.map(cat => (
+    <div className="desktop-nav">
+      {TABS.map((tab) => (
+        <div
+          key={tab.id}
+          className="desktop-tab-wrapper"
+          onMouseEnter={() => tab.children && setOpenDropdown(tab.id)}
+          onMouseLeave={() => {
+            setOpenDropdown(null);
+            setOpenSubmenu(null);
+            setOpenThird(null);
+          }}
+        >
           <button
-            key={cat}
-            className={`gallery-filter-btn ${activeFilter === cat ? 'active' : ''}`}
-            onClick={() => setActiveFilter(cat)}
+            className={`desktop-tab-btn ${activeTab === tab.id ? 'active' : ''}`}
+            onClick={() => !tab.children && setActiveTab(tab.id)}
           >
-            {cat}
+            <span className="tab-icon">{tab.icon}</span>
+            {tab.label}
+            {tab.children && <span className="dropdown-arrow">▼</span>}
           </button>
-        ))}
-      </div>
 
-      {/* Grid */}
-      <div className="gallery-grid">
-        {filtered.map(item => (
-          <div className="gallery-card" key={item.id}>
+          {tab.children && openDropdown === tab.id && (
+            <div className="desktop-dropdown">
+              {tab.children.map((group, idx) => (
+                <div
+                  key={idx}
+                  className="desktop-group"
+                  onMouseEnter={() => setOpenSubmenu(group.label)}
+                  onMouseLeave={() => {
+                    setOpenSubmenu(null);
+                    setOpenThird(null);
+                  }}
+                >
+                  <div className="desktop-group-title">{group.label}</div>
+                  {group.items ? (
+                    // flat list (e.g. Youth Programme items)
+                    <div className="desktop-items">
+                      {group.items.map((item) => (
+                        <button
+                          key={item.id}
+                          className={`desktop-item ${activeTab === item.id ? 'active' : ''}`}
+                          onClick={() => setActiveTab(item.id)}
+                        >
+                          {item.label}
+                        </button>
+                      ))}
+                    </div>
+                  ) : group.children ? (
+                    // second level (Organgram → State Association / District Association)
+                    <div className="desktop-submenu">
+                      {group.children.map((sub, sIdx) => (
+                        <div
+                          key={sIdx}
+                          className="desktop-subgroup"
+                          onMouseEnter={() => setOpenThird(sub.label)}
+                          onMouseLeave={() => setOpenThird(null)}
+                        >
+                          {sub.items ? (
+                            <>
+                              <div className="desktop-subgroup-title">
+                                {sub.label} ›
+                              </div>
+                              {openThird === sub.label && (
+                                <div className="desktop-thirdmenu">
+                                  {sub.items.map((item) => (
+                                    <button
+                                      key={item.id}
+                                      className={`desktop-item ${activeTab === item.id ? 'active' : ''}`}
+                                      onClick={() => setActiveTab(item.id)}
+                                    >
+                                      {item.label}
+                                    </button>
+                                  ))}
+                                </div>
+                              )}
+                            </>
+                          ) : (
+                            <button
+                              className={`desktop-item ${activeTab === sub.id ? 'active' : ''}`}
+                              onClick={() => setActiveTab(sub.id)}
+                            >
+                              {sub.label}
+                            </button>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  ) : null}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// ---- Mobile: accordion menu + drawer ----
+function MobileNav({ activeTab, setActiveTab }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [expandedTabs, setExpandedTabs] = useState({});
+
+  const toggleTab = (tabId) => {
+    setExpandedTabs((prev) => ({ ...prev, [tabId]: !prev[tabId] }));
+  };
+
+  const renderTree = (items, level = 0) => {
+    return items.map((item, idx) => {
+      const hasChildren = item.children || item.items;
+      const isExpanded = expandedTabs[item.label || item.id] || false;
+      const itemId = item.id || item.label;
+
+      if (hasChildren) {
+        const childrenArray = item.children || item.items;
+        return (
+          <div key={idx} className="mobile-accordion-item" style={{ paddingLeft: `${level * 1}rem` }}>
             <div
-              className="gallery-placeholder"
-              style={{ background: item.bg }}
+              className="mobile-accordion-header"
+              onClick={() => toggleTab(item.label || item.id)}
             >
-              <span className="gallery-placeholder-icon">{item.icon}</span>
               <span>{item.label}</span>
+              <span className="accordion-arrow">{isExpanded ? '▲' : '▼'}</span>
             </div>
-            <div className="gallery-overlay">
-              <span className="gallery-overlay-label">{item.label}</span>
-            </div>
+            {isExpanded && (
+              <div className="mobile-accordion-body">
+                {renderTree(childrenArray, level + 1)}
+              </div>
+            )}
           </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function NewsPanel() {
-  return (
-    <div className="infopages-panel">
-      <h2 className="section-heading">News &amp; Announcements</h2>
-      <div className="section-divider" />
-
-      <div className="news-list">
-        {DUMMY_NEWS.map(n => (
-          <a key={n.id} className="news-card" href={n.link}>
-            <div className="news-date-block">
-              <div className="news-date-day">{n.day}</div>
-              <div className="news-date-month">{n.month}</div>
-            </div>
-            <div className="news-body">
-              <span className="news-tag">{n.tag}</span>
-              <div className="news-title">{n.title}</div>
-              <div className="news-excerpt">{n.excerpt}</div>
-            </div>
-          </a>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function AwardsPanel() {
-  return (
-    <div className="infopages-panel">
-      <div className="awards-hero">
-        <h2>Scout Awards &amp; Recognitions</h2>
-        <p>Honoring dedication, service, and excellence in Scouting</p>
-      </div>
-
-      <div className="awards-grid">
-        {DUMMY_AWARDS.map(a => (
-          <div className="award-card" key={a.id}>
-            <div className="award-card-top">
-              <div className="award-medal">{a.medal}</div>
-              <div className="award-name">{a.name}</div>
-            </div>
-            <div className="award-card-body">
-              <p className="award-desc">{a.desc}</p>
-              <p className="award-eligibility">📌 {a.eligibility}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-// ─── Main Component ────────────────────────────────────────────
-
-export default function InfoPages() {
-  const [activeTab, setActiveTab] = useState('about');
-  const sectionRef = useRef(null);
-
-  // Scroll reveal
-  useEffect(() => {
-    const el = sectionRef.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) el.classList.add('visible'); },
-      { threshold: 0.05 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
-
-  const renderPanel = () => {
-    switch (activeTab) {
-      case 'about':   return <AboutPanel />;
-      case 'gallery': return <GalleryPanel />;
-      case 'news':    return <NewsPanel />;
-      case 'awards':  return <AwardsPanel />;
-      default:        return null;
-    }
+        );
+      } else {
+        return (
+          <button
+            key={itemId}
+            className={`mobile-item ${activeTab === itemId ? 'active' : ''}`}
+            onClick={() => {
+              setActiveTab(itemId);
+              setMenuOpen(false);
+            }}
+            style={{ paddingLeft: `${level * 1 + 0.5}rem` }}
+          >
+            {item.label}
+          </button>
+        );
+      }
+    });
   };
 
   return (
-    <section className="infopages-section reveal" ref={sectionRef}>
-      {/* ── Tab Navbar ── */}
-      <nav className="infopages-nav">
-        <div className="infopages-nav-inner">
-          {TABS.map(tab => (
-            <button
-              key={tab.id}
-              className={`infopages-tab-btn ${activeTab === tab.id ? 'active' : ''}`}
-              onClick={() => setActiveTab(tab.id)}
-            >
-              <span className="tab-icon">{tab.icon}</span>
-              {tab.label}
-            </button>
-          ))}
+    <div className="mobile-nav">
+      <button className="mobile-menu-btn" onClick={() => setMenuOpen(!menuOpen)}>
+        ☰ Menu
+      </button>
+      {menuOpen && (
+        <div className="mobile-drawer">
+          {TABS.map((tab) => {
+            if (tab.children) {
+              return (
+                <div key={tab.id} className="mobile-accordion-item">
+                  <div
+                    className="mobile-accordion-header"
+                    onClick={() => toggleTab(tab.id)}
+                  >
+                    <span>
+                      <span className="tab-icon">{tab.icon}</span> {tab.label}
+                    </span>
+                    <span className="accordion-arrow">
+                      {expandedTabs[tab.id] ? '▲' : '▼'}
+                    </span>
+                  </div>
+                  {expandedTabs[tab.id] && (
+                    <div className="mobile-accordion-body">
+                      {renderTree(tab.children, 1)}
+                    </div>
+                  )}
+                </div>
+              );
+            } else {
+              return (
+                <button
+                  key={tab.id}
+                  className={`mobile-direct-btn ${activeTab === tab.id ? 'active' : ''}`}
+                  onClick={() => {
+                    setActiveTab(tab.id);
+                    setMenuOpen(false);
+                  }}
+                >
+                  <span className="tab-icon">{tab.icon}</span> {tab.label}
+                </button>
+              );
+            }
+          })}
         </div>
-      </nav>
+      )}
+    </div>
+  );
+}
 
-      {/* ── Page Content ── */}
+// ---- Main Component ----
+export default function InfoPages() {
+  const [activeTab, setActiveTab] = useState('about');
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return (
+    <section className="infopages-section">
+      {isMobile ? (
+        <MobileNav activeTab={activeTab} setActiveTab={setActiveTab} />
+      ) : (
+        <DesktopNav activeTab={activeTab} setActiveTab={setActiveTab} />
+      )}
       <div className="infopages-content" key={activeTab}>
-        {renderPanel()}
+        {renderPanel(activeTab, setActiveTab)}
       </div>
     </section>
   );

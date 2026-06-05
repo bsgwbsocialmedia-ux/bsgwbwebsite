@@ -1,9 +1,7 @@
-// components/HeroSection/HeroSection.jsx
 import { useState, useEffect } from 'react';
 import './HeroSection.css';
-import { BANNERS_URL, CHIEF_SCOUT_URL, apiFetch } from '../../services/api';
 
-// ── Dummy data (replace when backend is ready) ──
+// ── Dummy banner slides ──
 const DUMMY_SLIDES = [
   {
     id: 1,
@@ -31,11 +29,23 @@ const DUMMY_SLIDES = [
   },
 ];
 
-const DUMMY_CHIEF = {
-  name: 'Smt. Droupadi Murmu',
-  designation: 'Chief Scout for India\nPresident of India',
-  imageUrl: null,
-};
+// ── Dummy leaders ──
+const DUMMY_LEADERS = [
+  {
+    id: 1,
+    role: 'Chief Scout for India',
+    name: 'Smt. Droupadi Murmu',
+    designation: 'President of India',
+    imageUrl: null,
+  },
+  {
+    id: 2,
+    role: 'State Chief Commissioner',
+    name: 'Dr. Prabhat Kumar',
+    designation: 'I.A.S. (Rtd.)\nState Chief Commissioner, WB',
+    imageUrl: null,
+  },
+];
 
 const ScoutFleurSVG = () => (
   <svg viewBox="0 0 64 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -57,41 +67,44 @@ const PersonIcon = () => (
 
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);
-  const [slides, setSlides] = useState(DUMMY_SLIDES);
-  const [chief, setChief] = useState(DUMMY_CHIEF);
+  const [leaderIdx, setLeaderIdx] = useState(0);
 
-  // Auto-slide every 4 seconds
+  // Auto-slide banners
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent(prev => (prev + 1) % slides.length);
+    const t = setInterval(() => {
+      setCurrent(prev => (prev + 1) % DUMMY_SLIDES.length);
     }, 4000);
-    return () => clearInterval(timer);
-  }, [slides.length]);
+    return () => clearInterval(t);
+  }, []);
 
-  // Fetch from backend when ready
+  // Auto-slide leaders (if more than one)
   useEffect(() => {
-    apiFetch(BANNERS_URL).then(data => { if (data?.length) setSlides(data); });
-    apiFetch(CHIEF_SCOUT_URL).then(data => { if (data) setChief(data); });
+    if (DUMMY_LEADERS.length <= 1) return;
+    const t = setInterval(() => {
+      setLeaderIdx(prev => (prev + 1) % DUMMY_LEADERS.length);
+    }, 5000);
+    return () => clearInterval(t);
   }, []);
 
   return (
     <section className="hero-section">
-      {/* ── Auto Slider ── */}
+
+      {/* LEFT: Banner Slider */}
       <div className="slider-wrapper">
         <div
           className="slider-track"
           style={{ transform: `translateX(-${current * 100}%)` }}
         >
-          {slides.map((slide, i) => (
-            <div className="slide" key={slide.id ?? i}>
+          {DUMMY_SLIDES.map((slide, i) => (
+            <div className="slide" key={slide.id}>
               {slide.imageUrl ? (
                 <img className="slide-image" src={slide.imageUrl} alt={slide.altText} />
               ) : (
                 <div
                   className="slide-placeholder"
-                  style={{ background: slide.bg || 'var(--primary-dark)' }}
+                  style={{ background: slide.bg }}
                 >
-                  <div className="slide-placeholder-icon" style={{ color: 'white' }}>
+                  <div className="slide-placeholder-icon">
                     <ScoutFleurSVG />
                   </div>
                   <h3>{slide.caption}</h3>
@@ -106,9 +119,8 @@ export default function HeroSection() {
           ))}
         </div>
 
-        {/* Dots */}
         <div className="slider-dots">
-          {slides.map((_, i) => (
+          {DUMMY_SLIDES.map((_, i) => (
             <button
               key={i}
               className={`slider-dot ${i === current ? 'active' : ''}`}
@@ -119,27 +131,47 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* ── Chief Scout Panel ── */}
+      {/* RIGHT: Leader Panel Slider */}
       <div className="chief-scout-panel">
-        <div className="chief-scout-label">Chief Scout for India</div>
+        <div
+          className="leader-slider-track"
+          style={{ transform: `translateX(-${leaderIdx * 100}%)` }}
+        >
+          {DUMMY_LEADERS.map((leader, i) => (
+            <div className="leader-slide" key={leader.id}>
+              <div className="chief-scout-label">{leader.role}</div>
+              {leader.imageUrl ? (
+                <img
+                  className="chief-scout-photo"
+                  src={leader.imageUrl}
+                  alt={leader.name}
+                />
+              ) : (
+                <div className="chief-scout-photo-placeholder">
+                  <PersonIcon />
+                  <span>Photo</span>
+                </div>
+              )}
+              <div className="chief-scout-info">
+                <h3>{leader.name}</h3>
+                <p style={{ whiteSpace: 'pre-line' }}>{leader.designation}</p>
+              </div>
+            </div>
+          ))}
+        </div>
 
-        {chief.imageUrl ? (
-          <img
-            className="chief-scout-photo"
-            src={chief.imageUrl}
-            alt={chief.name}
-          />
-        ) : (
-          <div className="chief-scout-photo-placeholder">
-            <div style={{ color: 'white' }}><PersonIcon /></div>
-            <span>Photo</span>
+        {DUMMY_LEADERS.length > 1 && (
+          <div className="leader-dots">
+            {DUMMY_LEADERS.map((_, i) => (
+              <button
+                key={i}
+                className={`leader-dot ${i === leaderIdx ? 'active' : ''}`}
+                onClick={() => setLeaderIdx(i)}
+                aria-label={`Leader ${i + 1}`}
+              />
+            ))}
           </div>
         )}
-
-        <div className="chief-scout-info">
-          <h3>{chief.name}</h3>
-          <p>{chief.designation}</p>
-        </div>
       </div>
     </section>
   );

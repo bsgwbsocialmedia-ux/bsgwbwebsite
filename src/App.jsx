@@ -5,10 +5,11 @@ import MarqueeBar from './components/Marquee/Marquee';
 import HeroSection from './components/HeroSection/HeroSection';
 import Circulars from './components/Circulars/Circulars';
 import Footer from './components/Footer/Footer';
-import InfoPages from './components/InfoPages/InfoPages'
-import ProjectPartners from './components/ProjectPartners/ProjectPartners'
-import VisionMission from './components/VisionMission/VisionMission'
-import PoliciesSection from './components/PoliciesSection/PoliciesSection'
+import InfoPages from './components/InfoPages/InfoPages';
+import ProjectPartners from './components/ProjectPartners/ProjectPartners';
+import VisionMission from './components/VisionMission/VisionMission';
+import PoliciesSection from './components/PoliciesSection/PoliciesSection';
+import Ourcampsite from './components/Ourcampsite/Ourcampsite';
 
 export default function App() {
   return (
@@ -16,12 +17,33 @@ export default function App() {
       <Navbar />
       <MarqueeBar />
       <main>
+
         <HeroSection />
-        <Circulars />
-        <InfoPages/>
-        <ProjectPartners/>
-        <PoliciesSection/>
-        <VisionMission/>
+
+        <div id="circulars">
+          <Circulars />
+        </div>
+
+        <div id="info-pages">
+          <InfoPages />
+        </div>
+
+        <div id="campsite">
+          <Ourcampsite />
+        </div>
+
+        <div id="policies">
+          <PoliciesSection />
+        </div>
+
+        <div id="vision">
+          <VisionMission />
+        </div>
+
+        <div id="partners">
+          <ProjectPartners />
+        </div>
+
       </main>
       <Footer />
     </div>

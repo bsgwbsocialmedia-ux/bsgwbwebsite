@@ -186,6 +186,44 @@
   transform: translateX(4px);
 }
 
+
+.policy-desc {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.85;
+  text-align: justify;
+  z-index: 1;
+  max-width: 480px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+.policy-desc.expanded {
+  display: block;
+  overflow: visible;
+}
+
+.policy-readmore {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--accent-light);
+  font-weight: 700;
+  font-size: 0.92rem;
+  transition: 0.3s;
+}
+
+.policy-readmore:hover {
+  color: #ffd700;
+  gap: 0.7rem;
+}
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .policies-grid {

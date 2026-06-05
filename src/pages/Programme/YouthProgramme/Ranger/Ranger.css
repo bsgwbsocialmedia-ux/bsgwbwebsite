@@ -1,0 +1,18 @@
+.ranger-page{
+ padding:40px;
+}
+
+.ranger-banner{
+ background:#b71c1c;
+ color:white;
+ text-align:center;
+ padding:40px;
+ border-radius:12px;
+}
+
+.ranger-content{
+ background:white;
+ padding:25px;
+ margin-top:30px;
+ border-radius:12px;
+}

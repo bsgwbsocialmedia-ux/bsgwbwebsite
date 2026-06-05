@@ -1,0 +1,39 @@
+.financial-page {
+  padding: 3rem;
+}
+
+.financial-page h1 {
+  color: red;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.financial-page ul {
+  padding-left: 2rem;
+}
+
+.financial-page li {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: #21c5b6;
+}
+
+.blue {
+  color: #0023ff;
+}
+
+.purple {
+  color: #2020c9;
+}
+
+.brown {
+  color: brown;
+}

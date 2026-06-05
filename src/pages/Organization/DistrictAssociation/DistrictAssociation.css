@@ -1,0 +1,48 @@
+.district-page {
+  padding: 2rem;
+  background: #f4f4f4;
+}
+
+.district-banner img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.district-content {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+}
+
+.district-chart img {
+  width: 100%;
+}
+
+.district-pdf h2 {
+  color: #94a800;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.pdf-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.2rem;
+  background: #ececec;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+.pdf-row a {
+  color: #94a800;
+  font-weight: bold;
+}
+
+@media(max-width:900px){
+
+  .district-content{
+    grid-template-columns:1fr;
+  }
+
+}

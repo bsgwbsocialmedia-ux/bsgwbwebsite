@@ -1,0 +1,19 @@
+.bulbul-page{
+  padding:40px;
+}
+
+.bulbul-banner{
+  background:linear-gradient(135deg,#ff4da6,#ff80bf);
+  padding:50px;
+  color:white;
+  text-align:center;
+  border-radius:12px;
+}
+
+.bulbul-card{
+  background:white;
+  margin-top:30px;
+  padding:30px;
+  border-radius:12px;
+  border-left:8px solid #ff4da6;
+}

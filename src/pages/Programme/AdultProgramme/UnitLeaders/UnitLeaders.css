@@ -1,0 +1,55 @@
+.unitleaders-page{
+padding:40px;
+animation:fadeInUp .5s ease;
+}
+
+.unitleaders-banner{
+background:linear-gradient(135deg,#0d47a1,#42a5f5);
+color:white;
+padding:50px;
+text-align:center;
+border-radius:12px;
+margin-bottom:30px;
+}
+
+.unitleaders-grid{
+display:grid;
+grid-template-columns:1fr 450px;
+gap:40px;
+}
+
+.unitleaders-content{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.unitleaders-card{
+background:white;
+padding:30px;
+border-radius:12px;
+text-align:center;
+box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.step{
+background:#90caf9;
+padding:16px;
+margin:15px 0;
+border-radius:8px;
+font-weight:700;
+}
+
+.green{
+background:#81c784;
+}
+
+.yellow{
+background:#ffd54f;
+}
+
+.arrow{
+font-size:35px;
+color:#1a3a5c;
+}

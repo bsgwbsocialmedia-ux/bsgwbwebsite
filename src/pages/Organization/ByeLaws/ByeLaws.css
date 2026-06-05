@@ -1,0 +1,37 @@
+.bye-page {
+  padding: 3rem;
+}
+
+.bye-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.bye-row h2 {
+  color: #0017d6;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.bye-row a {
+  background: #f8eaea;
+  padding: 10px 20px;
+  font-size: 1.8rem;
+  color: black;
+  font-weight: 700;
+}
+
+@media(max-width:768px){
+
+  .bye-row{
+    gap:1rem;
+  }
+
+  .bye-row h2{
+    font-size:1.2rem;
+  }
+
+}

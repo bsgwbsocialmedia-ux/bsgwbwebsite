@@ -1,0 +1,50 @@
+.cub-page{
+  padding:40px;
+  animation:fadeInUp .5s ease;
+}
+
+.cub-banner{
+  background:linear-gradient(135deg,#1a3a5c,#2d7a3a);
+  color:white;
+  text-align:center;
+  padding:40px;
+  border-radius:12px;
+}
+
+.cub-banner h1{
+  font-size:3rem;
+}
+
+.cub-content{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  margin-top:40px;
+}
+
+.cub-image img{
+  width:100%;
+  border-radius:12px;
+}
+
+.cub-text{
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 4px 15px rgba(0,0,0,.1);
+}
+
+.cub-text h2{
+  color:#e53935;
+  margin-bottom:20px;
+}
+
+.cub-text li{
+  margin-bottom:12px;
+}
+
+@media(max-width:768px){
+  .cub-content{
+    grid-template-columns:1fr;
+  }
+}

@@ -1,0 +1,19 @@
+.scout-page{
+ padding:40px;
+}
+
+.scout-banner{
+ background:#2d7a3a;
+ color:white;
+ text-align:center;
+ padding:40px;
+ border-radius:12px;
+}
+
+.scout-box{
+ background:white;
+ margin-top:30px;
+ padding:25px;
+ border-radius:12px;
+ border-top:8px solid #2d7a3a;
+}
