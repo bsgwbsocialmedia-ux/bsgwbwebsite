@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import './OurCampsite.css';
+import './Ourcampsite.css';
 
 // ─── Campsite data (same, but with placeholder gradients) ───
 const GANGANAGAR = {
