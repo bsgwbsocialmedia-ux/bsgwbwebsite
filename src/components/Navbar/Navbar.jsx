@@ -1,24 +1,29 @@
-import './Navbar.css';
+import "./Navbar.css";
 
 export default function Navbar() {
   return (
-    <nav className="navbar">
+    <header className="navbar">
+      <div className="navbar-gold-line"></div>
+
       <div className="navbar-inner">
 
+        {/* Left Logo */}
         <div className="navbar-logo">
-          <img src="/left.jpeg" alt="WBJSC Logo" />
+          <img src="/left.png" alt="West Bengal Bharat Scouts & Guides" />
         </div>
 
+        {/* Title */}
         <div className="navbar-title">
-          <h1>BHARAT SCOUTS &amp; GUIDES</h1>
-          <p>West Bengal — Official Website</p>
+          <h1>BHARAT SCOUTS AND GUIDES</h1>
+          <h2>WEST BENGAL</h2>
         </div>
 
+        {/* Right Logo */}
         <div className="navbar-logo">
-          <img src="/right.png" alt="BSG India Logo" />
+          <img src="/right.png" alt="The Bharat Scouts & Guides India" />
         </div>
 
       </div>
-    </nav>
+    </header>
   );
 }

@@ -9,7 +9,7 @@ export default function About() {
         <div className="about-hero-icon">⚜️</div>
 
         <div className="about-hero-text">
-          <h2>Bharat Scouts & Guides — West Bengal</h2>
+          <h2>Bharat Scouts And Guides,West Bengal</h2>
 
           <p>
             Empowering youth through discipline, leadership,

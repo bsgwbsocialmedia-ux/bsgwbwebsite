@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import governorImage from "./rn-ravi.jpg";
 import './HeroSection.css';
 
 // ── Dummy banner slides ──
@@ -32,17 +33,17 @@ const DUMMY_SLIDES = [
 // ── Dummy leaders ──
 const DUMMY_LEADERS = [
   {
-    id: 1,
-    role: 'Chief Scout for India',
-    name: 'Smt. Droupadi Murmu',
-    designation: 'President of India',
-    imageUrl: null,
-  },
+  id: 1,
+  role: 'President & Chief Patron',
+  name: 'R.N. Ravi',
+  designation: 'Governor of West Bengal',
+  imageUrl: governorImage,
+},
   {
     id: 2,
     role: 'State Chief Commissioner',
-    name: 'Dr. Prabhat Kumar',
-    designation: 'I.A.S. (Rtd.)\nState Chief Commissioner, WB',
+    name: 'Debaditya Chakrabarti',
+    designation: 'I.A.S. (Retd.)\nState Chief Commissioner, WB',
     imageUrl: null,
   },
 ];
