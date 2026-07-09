@@ -182,7 +182,7 @@ export default function PoliciesSection() {
               }`}
             >
 
-              Bharat Scouts & Guides is committed
+              The Bharat Scouts & Guides is committed
               to the safety and well-being of every
               child in our movement. Our Child
               Protection Policy works towards the

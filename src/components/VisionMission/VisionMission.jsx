@@ -65,14 +65,12 @@ export default function VisionMission() {
             </div>
             <div className="vm-card-body">
               <p>
-                To be the most impactful youth movement in West Bengal — nurturing
-                responsible, skilled, and compassionate citizens who lead their
-                communities with honour and serve the nation with dedication.
+                To be the leading youth movement in West Bengal, empowering young people through the values of Scouting and Guiding to become responsible citizens, ethical leaders, and active contributors to society.
               </p>
               <p>
-                We envision a West Bengal where every young person has the opportunity
-                to grow through Scouting — regardless of gender, background, or
-                district — and carries the Scout values throughout their life.
+                We envision a future where every Cub, Bulbul, Scout, Guide, Rover and Ranger  is inspired to uphold the ideals of service, leadership, unity, environmental stewardship, and lifelong learning, creating a stronger West Bengal, a stronger India, and a better world.
+               <p>⚜️ "Creating Better Citizens for a Better Tomorrow." ⚜️</p>
+              
               </p>
             </div>
           </div>

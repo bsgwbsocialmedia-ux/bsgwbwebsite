@@ -34,7 +34,7 @@ const DUMMY_SLIDES = [
 const DUMMY_LEADERS = [
   {
   id: 1,
-  role: 'President & Chief Patron',
+  role: 'Chief Patron & President',
   name: 'R.N. Ravi',
   designation: 'Governor of West Bengal',
   imageUrl: governorImage,
