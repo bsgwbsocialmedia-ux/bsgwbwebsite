@@ -48,6 +48,7 @@
 }
 
 .plan-btn {
+  display: inline-block;
   background: linear-gradient(
     135deg,
     var(--green),
@@ -57,10 +58,17 @@
   padding: .9rem 1.8rem;
   border-radius: 8px;
   font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(45, 122, 58, 0.3);
 }
 
 .plan-btn:hover {
   transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(45, 122, 58, 0.4);
 }
 
 @media(max-width:768px){
@@ -72,5 +80,34 @@
 
   .plan-title{
     font-size:1rem;
+  }
+
+  .plan-btn {
+    width: 100%;
+    text-align: center;
+    padding: 0.8rem;
+  }
+}
+
+@media(max-width:480px){
+  .youth-plan-page {
+    padding: 2rem 1rem;
+  }
+
+  .youth-plan-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .plan-row {
+    padding: 1.2rem;
+  }
+
+  .plan-title {
+    font-size: 0.9rem;
+  }
+
+  .plan-btn {
+    font-size: 0.85rem;
+    padding: 0.6rem;
   }
 }

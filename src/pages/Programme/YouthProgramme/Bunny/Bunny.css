@@ -1,0 +1,263 @@
+.bunny-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* ========================================== */
+/* Hero */
+/* ========================================== */
+
+.bunny-hero {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  padding: 3rem 2rem;
+  border-radius: var(--radius);
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.bunny-hero h2 {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+}
+
+.bunny-hero p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.1rem;
+}
+
+/* ========================================== */
+/* Content Sections */
+/* ========================================== */
+
+.bunny-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Section with Image - Grid Layout */
+.bunny-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 2rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 5px 18px var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bunny-section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px var(--shadow-strong);
+}
+
+.bunny-section.reverse {
+  direction: rtl;
+}
+
+.bunny-section.reverse > * {
+  direction: ltr;
+}
+
+/* Section without Image - Full Width */
+.bunny-section.no-image {
+  display: block;
+  padding: 2rem;
+}
+
+.bunny-section-text.full-width {
+  width: 100%;
+}
+
+/* ========================================== */
+/* Text Side */
+/* ========================================== */
+
+.bunny-section-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.bunny-section-text h3 {
+  color: #e65100;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 0.8rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid #ff9800;
+  display: inline-block;
+}
+
+.bunny-section-text h3:first-child {
+  margin-top: 0;
+}
+
+.bunny-section-text p {
+  color: var(--text-mid);
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+.bunny-section-text ul {
+  padding-left: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.bunny-section-text ul li {
+  color: var(--text-mid);
+  line-height: 1.8;
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+
+.bunny-activity-list {
+  list-style-type: disc;
+}
+
+.bunny-activity-list li {
+  color: var(--text-mid);
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+/* ========================================== */
+/* Image Side - Full Image Show */
+/* ========================================== */
+
+.bunny-section-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.bunny-section-image img {
+  width: 100%;
+  height: auto;
+  max-height: 350px;
+  object-fit: contain; /* Changed from cover to contain - shows full image */
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  background: #f5f7fa;
+}
+
+.bunny-section-image img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* ========================================== */
+/* Responsive */
+/* ========================================== */
+
+@media (max-width: 1024px) {
+  .bunny-section {
+    padding: 1.5rem;
+    gap: 2rem;
+  }
+
+  .bunny-section-image img {
+    max-height: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bunny-page {
+    padding: 1.5rem 0.8rem;
+  }
+
+  .bunny-hero {
+    padding: 2rem 1.5rem;
+  }
+
+  .bunny-hero h2 {
+    font-size: 2rem;
+  }
+
+  .bunny-hero p {
+    font-size: 1rem;
+  }
+
+  .bunny-section {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.2rem;
+  }
+
+  .bunny-section.reverse {
+    direction: ltr;
+  }
+
+  .bunny-section.reverse > * {
+    direction: ltr;
+  }
+
+  .bunny-section.no-image {
+    padding: 1.2rem;
+  }
+
+  .bunny-section-text h3 {
+    font-size: 1.1rem;
+  }
+
+  .bunny-section-text p,
+  .bunny-section-text ul li {
+    font-size: 0.9rem;
+  }
+
+  .bunny-section-image img {
+    max-height: 250px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .bunny-page {
+    padding: 1rem 0.5rem;
+  }
+
+  .bunny-hero {
+    padding: 1.5rem 1rem;
+    border-radius: 12px;
+  }
+
+  .bunny-hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .bunny-hero p {
+    font-size: 0.9rem;
+  }
+
+  .bunny-section {
+    padding: 1rem;
+    border-radius: 12px;
+    gap: 1rem;
+  }
+
+  .bunny-section.no-image {
+    padding: 1rem;
+  }
+
+  .bunny-section-text h3 {
+    font-size: 0.95rem;
+  }
+
+  .bunny-section-text p,
+  .bunny-section-text ul li {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .bunny-section-image img {
+    max-height: 200px;
+  }
+}

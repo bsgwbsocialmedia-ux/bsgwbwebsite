@@ -1,10 +1,22 @@
 import "./YouthAnnualPlan.css";
 
 const plans = [
-  "BSGUP ANNUAL CALENDAR 2026-27",
-  "BSGUP ANNUAL CALENDAR 2025-26",
-  "BSGUP ANNUAL CALENDAR 2024-25",
-  "BSGUP ANNUAL CALENDAR 2023-24",
+  {
+    title: "BSGUP ANNUAL CALENDAR 2026-27",
+    pdf: "/youth-plans/bsgup-annual-calendar-2026-27.pdf"
+  },
+  {
+    title: "BSGUP ANNUAL CALENDAR 2025-26",
+    pdf: "/youth-plans/bsgup-annual-calendar-2025-26.pdf"
+  },
+  {
+    title: "BSGUP ANNUAL CALENDAR 2024-25",
+    pdf: "/youth-plans/bsgup-annual-calendar-2024-25.pdf"
+  },
+  {
+    title: "BSGUP ANNUAL CALENDAR 2023-24",
+    pdf: "/youth-plans/bsgup-annual-calendar-2023-24.pdf"
+  },
 ];
 
 const YouthAnnualPlan = () => {
@@ -17,8 +29,15 @@ const YouthAnnualPlan = () => {
       <div className="youth-plan-table">
         {plans.map((item, index) => (
           <div key={index} className="plan-row">
-            <div className="plan-title">{item}</div>
-            <button className="plan-btn">CLICK HERE</button>
+            <div className="plan-title">{item.title}</div>
+            <a 
+              href={item.pdf} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="plan-btn"
+            >
+              CLICK HERE
+            </a>
           </div>
         ))}
       </div>

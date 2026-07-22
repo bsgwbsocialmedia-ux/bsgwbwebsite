@@ -1,0 +1,168 @@
+.campsite-detail-page {
+  min-height: 100vh;
+  background: #f8f9fa;
+}
+
+/* Hero Section */
+.campsite-hero {
+  height: 65vh;
+  min-height: 500px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.campsite-hero-overlay {
+  background: rgba(0, 0, 0, 0.45);
+  padding: 40px 60px;
+  border-radius: 12px;
+  max-width: 800px;
+}
+
+.campsite-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 12px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.campsite-hero .subtitle {
+  font-size: 1.4rem;
+  opacity: 0.95;
+  margin: 0;
+}
+
+/* Sections */
+.campsite-sections {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.campsite-section {
+  margin-bottom: 100px;
+}
+
+.section-tag {
+  display: inline-block;
+  background: #1a6b5a;
+  color: white;
+  padding: 6px 18px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.section-content {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.section-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.section-text h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #0d3b4f;
+  line-height: 1.2;
+}
+
+.section-text p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333;
+}
+
+.section-icon-bg {
+  width: 280px;
+  height: 280px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 7rem;
+  flex-shrink: 0;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Gallery */
+.campsite-gallery {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+}
+
+.campsite-gallery h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #0d3b4f;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.gallery-card {
+  height: 220px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-icon {
+  font-size: 4rem;
+  margin-bottom: 12px;
+}
+
+.gallery-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .campsite-hero h1 {
+    font-size: 2.8rem;
+  }
+  
+  .campsite-hero .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .section-content {
+    gap: 30px;
+  }
+
+  .section-icon-bg {
+    width: 220px;
+    height: 220px;
+    font-size: 5.5rem;
+  }
+}

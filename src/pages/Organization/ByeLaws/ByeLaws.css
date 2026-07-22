@@ -1,37 +1,177 @@
 .bye-page {
-  padding: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.bye-hero {
+  background: linear-gradient(135deg, #1a3a5c, #2d7a3a);
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.bye-hero h1 {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.bye-hero p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+}
+
+.bye-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .bye-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
+  gap: 1.5rem;
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  border: 1px solid #e8ecf1;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.bye-row h2 {
-  color: #0017d6;
+.bye-row:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.bye-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.bye-icon {
   font-size: 2rem;
-  font-weight: 700;
+  flex-shrink: 0;
 }
 
-.bye-row a {
-  background: #f8eaea;
-  padding: 10px 20px;
-  font-size: 1.8rem;
-  color: black;
+.bye-title h2 {
+  color: #0017d6;
+  font-size: 1.4rem;
   font-weight: 700;
+  margin: 0;
+  line-height: 1.4;
 }
 
-@media(max-width:768px){
+.bye-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: linear-gradient(135deg, #dc3545, #c82333);
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+  white-space: nowrap;
+}
 
-  .bye-row{
-    gap:1rem;
+.bye-download-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(220, 53, 69, 0.4);
+}
+
+.bye-download-btn .download-icon {
+  font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bye-page {
+    padding: 1.5rem 1rem;
   }
 
-  .bye-row h2{
-    font-size:1.2rem;
+  .bye-hero {
+    padding: 2rem 1.5rem;
   }
 
+  .bye-hero h1 {
+    font-size: 2rem;
+  }
+
+  .bye-hero p {
+    font-size: 1rem;
+  }
+
+  .bye-row {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.2rem 1.5rem;
+    gap: 1rem;
+  }
+
+  .bye-title {
+    gap: 0.8rem;
+  }
+
+  .bye-icon {
+    font-size: 1.5rem;
+  }
+
+  .bye-title h2 {
+    font-size: 1.1rem;
+  }
+
+  .bye-download-btn {
+    justify-content: center;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .bye-page {
+    padding: 1rem 0.5rem;
+  }
+
+  .bye-hero {
+    padding: 1.5rem 1rem;
+    border-radius: 12px;
+  }
+
+  .bye-hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .bye-hero p {
+    font-size: 0.9rem;
+  }
+
+  .bye-row {
+    padding: 1rem;
+  }
+
+  .bye-title h2 {
+    font-size: 0.95rem;
+  }
+
+  .bye-icon {
+    font-size: 1.2rem;
+  }
+
+  .bye-download-btn {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
 }

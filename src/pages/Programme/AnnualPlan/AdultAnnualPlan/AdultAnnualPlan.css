@@ -48,6 +48,7 @@
 }
 
 .adult-btn {
+  display: inline-block;
   background: linear-gradient(
     135deg,
     var(--accent),
@@ -57,6 +58,17 @@
   padding: .9rem 1.8rem;
   border-radius: 8px;
   font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(212, 160, 23, 0.3);
+}
+
+.adult-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(212, 160, 23, 0.4);
 }
 
 @media(max-width:768px){
@@ -64,5 +76,38 @@
     flex-direction:column;
     gap:1rem;
     text-align:center;
+  }
+
+  .adult-title {
+    font-size: 1rem;
+  }
+
+  .adult-btn {
+    width: 100%;
+    text-align: center;
+    padding: 0.8rem;
+  }
+}
+
+@media(max-width:480px){
+  .adult-plan-page {
+    padding: 2rem 1rem;
+  }
+
+  .adult-plan-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .adult-row {
+    padding: 1.2rem;
+  }
+
+  .adult-title {
+    font-size: 0.9rem;
+  }
+
+  .adult-btn {
+    font-size: 0.85rem;
+    padding: 0.6rem;
   }
 }

@@ -4,42 +4,36 @@ export default function LeadersAdult() {
   return (
     <div className="leadersadult-page">
 
-      <div className="leadersadult-banner">
-        <h1>Leaders Of Adult</h1>
+      <div className="leadersadult-hero">
+        <h2>Leaders Of Adult</h2>
+        <p>
+          Training programmes for adult leaders in scouting.
+        </p>
       </div>
 
-      <div className="leadersadult-layout">
+      <div className="leadersadult-content">
 
-        <div className="leadersadult-content">
-
-          <h2>Training Of Adult Leaders</h2>
-
-          <ul>
-            <li>Basic Course For Commissioners – 5 Days</li>
-            <li>Advanced Course For Commissioners – 5 Days</li>
-            <li>Course For Secretaries – 5 Days</li>
-            <li>Course For Organisers – 5 Days</li>
-            <li>Course For Group Leaders – 5 Days</li>
-          </ul>
-
-        </div>
-
-        <div className="commissioner-training">
-
-          <div className="training-box">
-            Basic Course For Commissioner
+        {/* Section 1: Training Of Adult Leaders - With Image */}
+        <div className="leadersadult-section">
+          <div className="leadersadult-section-text">
+            <h3>TRAINING OF ADULT LEADERS</h3>
+            <ul>
+              <li>Basic Course for Commissioners – 5 days</li>
+              <li>Advanced Course for Commissioners – 5 days</li>
+              <li>Course for Secretaries – 5 days</li>
+              <li>Course for Organisers – 5 days</li>
+              <li>Course for Group Leaders - 5 Days</li>
+            </ul>
           </div>
-
-          <div className="arrow">⬆</div>
-
-          <div className="training-box green">
-            Advanced Course For Commissioner
+          <div className="leadersadult-section-image">
+            <img 
+              src="/leadersadult.jpg" 
+              alt="Leaders of Adult Training"
+            />
           </div>
-
         </div>
 
       </div>
-
     </div>
   );
 }

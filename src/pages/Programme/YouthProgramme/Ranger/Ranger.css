@@ -1,18 +1,447 @@
-.ranger-page{
- padding:40px;
+.ranger-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
 }
 
-.ranger-banner{
- background:#b71c1c;
- color:white;
- text-align:center;
- padding:40px;
- border-radius:12px;
+/* ========================================== */
+/* Hero */
+/* ========================================== */
+
+.ranger-hero {
+  background: linear-gradient(135deg, #b71c1c, #d32f2f);
+  padding: 3rem 2rem;
+  border-radius: var(--radius);
+  margin-bottom: 2.5rem;
+  text-align: center;
 }
 
-.ranger-content{
- background:white;
- padding:25px;
- margin-top:30px;
- border-radius:12px;
+.ranger-hero h2 {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+}
+
+.ranger-hero p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.1rem;
+}
+
+/* ========================================== */
+/* Content Sections */
+/* ========================================== */
+
+.ranger-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Section with Image - Grid Layout */
+.ranger-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 2rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 5px 18px var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ranger-section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px var(--shadow-strong);
+}
+
+/* Section without Image - Full Width */
+.ranger-section.no-image {
+  display: block;
+  padding: 2rem;
+}
+
+.ranger-section-text.full-width {
+  width: 100%;
+}
+
+/* ========================================== */
+/* Text Side */
+/* ========================================== */
+
+.ranger-section-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ranger-section-text h3 {
+  color: #b71c1c;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 0.8rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid #ff9800;
+  display: inline-block;
+}
+
+.ranger-section-text h3:first-child {
+  margin-top: 0;
+}
+
+.ranger-section-text h4 {
+  color: #b71c1c;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.ranger-section-text p {
+  color: var(--text-mid);
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+.ranger-section-text ol {
+  padding-left: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.ranger-section-text ol li {
+  color: var(--text-mid);
+  line-height: 1.8;
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+
+.ranger-section-text ol ol {
+  padding-left: 1.5rem;
+  margin: 0.2rem 0;
+}
+
+.ranger-section-text ol ol li {
+  font-size: 0.92rem;
+}
+
+/* ========================================== */
+/* Sub Sections */
+/* ========================================== */
+
+.ranger-sub-section {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.ranger-sub-section:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.ranger-sub-section h3 {
+  color: #b71c1c;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid #ff9800;
+  display: inline-block;
+}
+
+.ranger-sub-section h4 {
+  color: #b71c1c;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.ranger-sub-section p {
+  color: var(--text-mid);
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+.ranger-sub-section ol {
+  padding-left: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.ranger-sub-section ol li {
+  color: var(--text-mid);
+  line-height: 1.8;
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+
+.ranger-note {
+  background: #fff3e0;
+  border-left: 4px solid #ff9800;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  margin-top: 0.8rem;
+}
+
+.ranger-note strong {
+  color: #e65100;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.ranger-note p {
+  font-size: 0.9rem !important;
+  color: #555 !important;
+}
+
+/* ========================================== */
+/* Note Box */
+/* ========================================== */
+
+.ranger-note-box {
+  background: #f8fafc;
+  border-left: 4px solid #ff9800;
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.note-title {
+  color: #e65100;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.ranger-point {
+  margin-bottom: 1.2rem;
+}
+
+.ranger-point:last-child {
+  margin-bottom: 0;
+}
+
+.point-text {
+  color: var(--text-mid);
+  line-height: 1.8;
+  font-size: 0.95rem;
+  padding-left: 0.5rem;
+}
+
+/* ========================================== */
+/* Advancement Scheme */
+/* ========================================== */
+
+.ranger-advancement {
+  text-align: center;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+  border-radius: 12px;
+  border: 2px solid #b71c1c;
+}
+
+.ranger-advancement h3 {
+  color: #b71c1c;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.more-details-btn {
+  display: inline-block;
+  padding: 0.7rem 2rem;
+  background: linear-gradient(135deg, #b71c1c, #d32f2f);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(183, 28, 28, 0.4);
+}
+
+.more-details-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(183, 28, 28, 0.5);
+}
+
+/* ========================================== */
+/* Image Side - Full Image Show */
+/* ========================================== */
+
+.ranger-section-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.ranger-section-image img {
+  width: 100%;
+  height: auto;
+  max-height: 350px;
+  object-fit: contain;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  background: #f5f7fa;
+}
+
+.ranger-section-image img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* ========================================== */
+/* Responsive */
+/* ========================================== */
+
+@media (max-width: 1024px) {
+  .ranger-section {
+    padding: 1.5rem;
+    gap: 2rem;
+  }
+
+  .ranger-section-image img {
+    max-height: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ranger-page {
+    padding: 1.5rem 0.8rem;
+  }
+
+  .ranger-hero {
+    padding: 2rem 1.5rem;
+  }
+
+  .ranger-hero h2 {
+    font-size: 2rem;
+  }
+
+  .ranger-hero p {
+    font-size: 1rem;
+  }
+
+  .ranger-section {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.2rem;
+  }
+
+  .ranger-section.no-image {
+    padding: 1.2rem;
+  }
+
+  .ranger-section-text h3 {
+    font-size: 1.1rem;
+  }
+
+  .ranger-section-text p,
+  .ranger-section-text ol li {
+    font-size: 0.9rem;
+  }
+
+  .ranger-section-image img {
+    max-height: 250px;
+    width: 100%;
+  }
+
+  .ranger-note-box {
+    padding: 1rem;
+  }
+
+  .point-text {
+    font-size: 0.9rem;
+  }
+
+  .ranger-sub-section h3 {
+    font-size: 1rem;
+  }
+
+  .ranger-sub-section p,
+  .ranger-sub-section ol li {
+    font-size: 0.9rem;
+  }
+
+  .ranger-advancement h3 {
+    font-size: 1.1rem;
+  }
+
+  .more-details-btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ranger-page {
+    padding: 1rem 0.5rem;
+  }
+
+  .ranger-hero {
+    padding: 1.5rem 1rem;
+    border-radius: 12px;
+  }
+
+  .ranger-hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .ranger-hero p {
+    font-size: 0.9rem;
+  }
+
+  .ranger-section {
+    padding: 1rem;
+    border-radius: 12px;
+    gap: 1rem;
+  }
+
+  .ranger-section.no-image {
+    padding: 1rem;
+  }
+
+  .ranger-section-text h3 {
+    font-size: 0.95rem;
+  }
+
+  .ranger-section-text p,
+  .ranger-section-text ol li {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .ranger-section-image img {
+    max-height: 200px;
+  }
+
+  .ranger-note-box {
+    padding: 0.8rem;
+  }
+
+  .point-text {
+    font-size: 0.85rem;
+  }
+
+  .ranger-sub-section h3 {
+    font-size: 0.9rem;
+  }
+
+  .ranger-sub-section p,
+  .ranger-sub-section ol li {
+    font-size: 0.85rem;
+  }
+
+  .ranger-advancement h3 {
+    font-size: 0.95rem;
+  }
+
+  .more-details-btn {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.85rem;
+  }
 }

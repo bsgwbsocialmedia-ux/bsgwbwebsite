@@ -42,13 +42,23 @@ export default function Circulars() {
           CIRCULARS_URL
         );
 
+      // Fix: Ensure data is always an array
       if (data) {
-        setCirculars(data);
+        if (Array.isArray(data)) {
+          setCirculars(data);
+        } else if (data.data && Array.isArray(data.data)) {
+          setCirculars(data.data);
+        } else {
+          setCirculars([]);
+        }
+      } else {
+        setCirculars([]);
       }
 
     } catch (error) {
 
       console.log(error);
+      setCirculars([]);
 
     } finally {
 
@@ -68,12 +78,21 @@ export default function Circulars() {
         );
 
       if (data) {
-        setVideos(data);
+        if (Array.isArray(data)) {
+          setVideos(data);
+        } else if (data.data && Array.isArray(data.data)) {
+          setVideos(data.data);
+        } else {
+          setVideos([]);
+        }
+      } else {
+        setVideos([]);
       }
 
     } catch (error) {
 
       console.log(error);
+      setVideos([]);
 
     } finally {
 

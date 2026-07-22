@@ -12,9 +12,8 @@ export default function Contact() {
 
       <div className="contact-hero">
         <h2>Contact Us</h2>
-
         <p>
-          Bharat Scouts & Guides — West Bengal State Council
+          Bharat Scouts And Guides — West Bengal 
         </p>
       </div>
 
@@ -34,12 +33,12 @@ export default function Contact() {
 
             <div className="contact-item">
               <span>📞</span>
-              <p>+91 9876543210</p>
+              <p>+91 03322621599</p>
             </div>
 
             <div className="contact-item">
               <span>✉️</span>
-              <p>info@bsgwb.org</p>
+              <p>bsgwbsocialmedia@gmail.com</p>
             </div>
 
             <div className="contact-item">
@@ -49,12 +48,23 @@ export default function Contact() {
 
           </div>
 
+          {/* Become a Partner Text - Added Here */}
+          <div className="partner-text">
+            <p className="partner-text-title">🤝 Become a Partner</p>
+            <p className="partner-text-desc">
+              Interested in partnering with us? Reach out to us at{' '}
+              <a href="mailto:bsgwbsocialmedia@gmail.com">bsgwbsocialmedia@gmail.com</a> or call{' '}
+              <a href="tel:+919051238821">+91 9051238821</a>
+            </p>
+          </div>
+
           <div className="contact-map">
 
             <iframe
               title="map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.6201884793495!2d88.363895!3d22.572646"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.2716401447733!2d88.3473534!3d22.5689415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277a1667b0d5b%3A0x176318a1bec86b62!2sBharat%20Scouts%20Guides!5e0!3m2!1sen!2sin!4v1784648025407!5m2!1sen!2sin"
               loading="lazy"
+              allowFullScreen
             ></iframe>
 
           </div>
@@ -73,7 +83,6 @@ export default function Contact() {
 
             <div className="form-group">
               <label>Full Name</label>
-
               <input
                 type="text"
                 placeholder="Enter your name"
@@ -83,7 +92,6 @@ export default function Contact() {
 
             <div className="form-group">
               <label>Email Address</label>
-
               <input
                 type="email"
                 placeholder="Enter your email"
@@ -93,7 +101,6 @@ export default function Contact() {
 
             <div className="form-group">
               <label>Phone Number</label>
-
               <input
                 type="tel"
                 placeholder="Enter your number"
@@ -102,7 +109,6 @@ export default function Contact() {
 
             <div className="form-group">
               <label>Subject</label>
-
               <input
                 type="text"
                 placeholder="Enter subject"
@@ -112,7 +118,6 @@ export default function Contact() {
 
             <div className="form-group">
               <label>Message</label>
-
               <textarea
                 rows="6"
                 placeholder="Write your message..."

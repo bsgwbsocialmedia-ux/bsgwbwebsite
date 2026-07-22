@@ -3,301 +3,136 @@
 import { useEffect, useRef } from 'react';
 import './ProjectPartners.css';
 
-const ROW_1 = [
+const partnersData = [
   {
     id: 1,
-    name: 'World Scout Bureau',
-    type: 'Global Partner',
-    icon: '🌍',
-    color: '#003580',
-    bg: '#e8f0fb'
+    name: 'TICKET TO LIFE',
+    logo: '/projectpartners/0.jpeg',
+    website: 'https://www.scout.org'
   },
   {
     id: 2,
-    name: 'UNICEF India',
-    type: 'Development',
-    icon: '🤝',
-    color: '#00aeef',
-    bg: '#e5f7fd'
+    name: 'CLAP',
+    logo: '/projectpartners/1.jpeg',
+    website: 'https://www.scout.org'
   },
   {
     id: 3,
-    name: 'Ministry of Youth Affairs',
-    type: 'Government',
-    icon: '🏛️',
-    color: '#ff6600',
-    bg: '#fff0e5'
+    name: 'NAI KURSEONG',
+    logo: '/projectpartners/2.jpeg',
+    website: 'https://www.scout.org'
   },
   {
     id: 4,
-    name: 'WOSM',
-    type: 'Global Partner',
-    icon: '⚜️',
-    color: '#5c1a1a',
-    bg: '#fbeaea'
+    name: 'UNICEF',
+    logo: '/projectpartners/3.jpeg',
+    website: 'https://www.scout.org'
   },
   {
     id: 5,
-    name: 'Nehru Yuva Kendra',
-    type: 'Government',
-    icon: '🎗️',
-    color: '#138808',
-    bg: '#e8f5e9'
+    name: 'YLACC',
+    logo: '/projectpartners/4.jpeg',
+    website: 'https://www.scout.org'
   },
+
   {
     id: 6,
-    name: 'CBSE',
-    type: 'Education',
-    icon: '📚',
-    color: '#c0392b',
-    bg: '#fdecea'
+    name: 'MYBHARAT',
+    logo: '/projectpartners/mybharat.png',
+    website: 'https://www.scout.org'
   },
+
   {
     id: 7,
-    name: 'Red Cross Society',
-    type: 'Humanitarian',
-    icon: '🏥',
-    color: '#cc0000',
-    bg: '#fce8e8'
+    name: 'SKILL INDIA',
+    logo: '/projectpartners/skillindia.webp',
+    website: 'https://www.scout.org'
   },
+
   {
     id: 8,
-    name: 'National Service Scheme',
-    type: 'Government',
-    icon: '🌱',
-    color: '#006400',
-    bg: '#e8f5e9'
-  }
-];
+    name: 'V-GUARD',
+    logo: '/projectpartners/vguard.jpg',
+    website: 'https://www.scout.org'
+  },
 
-const ROW_2 = [
-  {
-    id: 9,
-    name: 'UNDP India',
-    type: 'Development',
-    icon: '🌐',
-    color: '#006eb5',
-    bg: '#e5f1fb'
-  },
-  {
-    id: 10,
-    name: 'Doordarshan',
-    type: 'Media Partner',
-    icon: '📺',
-    color: '#1a237e',
-    bg: '#e8eaf6'
-  },
-  {
-    id: 11,
-    name: 'Indian Oil Corporation',
-    type: 'Corporate',
-    icon: '⛽',
-    color: '#d62b2b',
-    bg: '#fdecea'
-  },
-  {
-    id: 12,
-    name: 'State Bank of India',
-    type: 'Banking',
-    icon: '🏦',
-    color: '#2e4fa3',
-    bg: '#eaeffc'
-  },
-  {
-    id: 13,
-    name: 'BSNL',
-    type: 'Telecom',
-    icon: '📡',
-    color: '#e65c00',
-    bg: '#fff0e5'
-  },
-  {
-    id: 14,
-    name: 'WB Govt. Forest Dept.',
-    type: 'Environment',
-    icon: '🌳',
-    color: '#2d7a3a',
-    bg: '#e8f5e9'
-  },
-  {
-    id: 15,
-    name: 'Tata Trusts',
-    type: 'Corporate CSR',
-    icon: '🏢',
-    color: '#003580',
-    bg: '#e8f0fb'
-  },
-  {
-    id: 16,
-    name: 'Air India',
-    type: 'Travel Partner',
-    icon: '✈️',
-    color: '#c0392b',
-    bg: '#fdecea'
-  }
+  // ... other partners (commented)
 ];
 
 function PartnerCard({ partner }) {
   return (
-    <a
+    <a 
+      href={partner.website} 
+      target="_blank" 
+      rel="noopener noreferrer"
       className="partner-card"
-      href="#"
       title={partner.name}
     >
-      <div
-        className="partner-logo-fallback"
-        style={{
-          background: partner.bg
-        }}
-      >
-        <span
-          style={{
-            fontSize: '2rem'
-          }}
-        >
-          {partner.icon}
-        </span>
+      <div className="partner-logo-wrapper">
+        {partner.logo ? (
+          <img 
+            src={partner.logo} 
+            alt={partner.name}
+            className="partner-logo"
+          />
+        ) : (
+          <div className="partner-logo-placeholder">
+            <span>🏢</span>
+          </div>
+        )}
       </div>
-
-      <div className="partner-name">
-        {partner.name}
-      </div>
-
-      <div className="partner-type">
-        {partner.type}
-      </div>
+      <p className="partner-name">{partner.name}</p>
     </a>
   );
 }
 
-function TickerRow({
-  partners,
-  className = ''
-}) {
-
-  const items = [
-    ...partners,
-    ...partners
-  ];
-
-  return (
-    <div className="partners-ticker-wrapper">
-
-      <div
-        className={`partners-ticker ${className}`}
-      >
-
-        {items.map((partner, index) => (
-
-          <PartnerCard
-            key={`${partner.id}-${index}`}
-            partner={partner}
-          />
-
-        ))}
-
-      </div>
-
-    </div>
-  );
-}
-
 export default function ProjectPartners() {
-
   const sectionRef = useRef(null);
 
   useEffect(() => {
-
-    const el = sectionRef.current;
-
-    if (!el) return;
-
-    const observer =
-      new IntersectionObserver(
-
-        ([entry]) => {
-
-          if (
-            entry.isIntersecting
-          ) {
-
-            el.classList.add(
-              'visible'
-            );
-
-          }
-
-        },
-
-        {
-          threshold: 0.1
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          sectionRef.current.classList.add('visible');
         }
+      },
+      { threshold: 0.1 }
+    );
 
-      );
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
 
-    observer.observe(el);
-
-    return () =>
-      observer.disconnect();
-
+    return () => observer.disconnect();
   }, []);
 
+  // FIX: Sirf ek baar duplicate karo (2 times for seamless scroll)
+  // Agar 1 partner hai toh usko 2 baar karo seamless scroll ke liye
+  const scrollingPartners = [...partnersData, ...partnersData];
+
   return (
-
-    <section
-      className="partners-section reveal"
-      ref={sectionRef}
-    >
-
-      <div className="partners-inner">
-
-        <div className="partners-heading-row">
-
-          <span className="partners-heading-icon">
-            🤝
-          </span>
-
-          <h2>
-            Our Project Partners
-          </h2>
-
+    <section className="partners-section" ref={sectionRef}>
+      <div className="partners-container">
+        
+        {/* Header */}
+        <div className="partners-header">
+          <span className="partners-icon">🤝</span>
+          <h2 className="partners-title">Our Project Partners</h2>
+          <p className="partners-subtitle">
+            Proud to collaborate with leading national & international organizations
+          </p>
         </div>
 
-        <p className="partners-subtitle">
-
-          Proud to collaborate with leading
-          national & international organisations
-
-        </p>
-
-        <TickerRow
-          partners={ROW_1}
-        />
-
-        <TickerRow
-          partners={ROW_2}
-          className="partners-ticker-row2"
-        />
-
-        <div className="partners-cta">
-
-          <p>
-            Interested in partnering with
-            Bharat Scouts & Guides,
-            West Bengal?
-          </p>
-
-          <button
-            className="partners-cta-btn"
-          >
-            🤝 Become a Partner
-          </button>
-
+        {/* Scrolling Ticker */}
+        <div className="partners-ticker-wrapper">
+          <div className="partners-ticker">
+            {scrollingPartners.map((partner, index) => (
+              <PartnerCard key={`${partner.id}-${index}`} partner={partner} />
+            ))}
+          </div>
         </div>
 
       </div>
-
     </section>
-
   );
 }

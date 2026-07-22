@@ -4,28 +4,44 @@ import './HeroSection.css';
 
 // ── Dummy banner slides ──
 const DUMMY_SLIDES = [
-  {
+    {
     id: 1,
-    imageUrl: null,
-    altText: 'State Jamboree 2025',
-    caption: 'State Jamboree 2025',
-    sub: 'Celebrating 100 years of Scouting in West Bengal',
-    bg: 'linear-gradient(135deg, #1a3a5c 0%, #2d7a3a 100%)',
-  },
-  {
-    id: 2,
-    imageUrl: null,
-    altText: 'Scouts in Action',
-    caption: 'Scouts in Action',
-    sub: 'Training & adventure across districts',
+    imageUrl: '/2.png',
+    altText: 'LOK BHAWAN 2026',
+    caption: 'LOK BHAWAN 2026',
+    sub: 'RAJYAPURASKAR AWARD CEREMONY GLIMPSES',
     bg: 'linear-gradient(135deg, #0d2440 0%, #a07008 100%)',
   },
   {
+    id: 2,
+    imageUrl: '/1.png', // Use absolute path from public folder
+    altText: 'Diamond Jubilee and Ganganagar centenary with a Mega Celebration Camp',
+    caption: 'Diamond Jubilee and Ganganagar centenary with a Mega Celebration Camp',
+    sub: 'Over 1000 Scouts and Guides gather at Ganganagar to celebrate BSG 75-year Diamond Jubilee and the historic centenary of the iconic campsite.',
+    bg: 'linear-gradient(135deg, #1a3a5c 0%, #2d7a3a 100%)',
+  },
+  {
     id: 3,
-    imageUrl: null,
-    altText: 'Award Ceremony',
-    caption: 'Rajya Puraskar 2024',
-    sub: 'Honoring our best scouts & guides',
+    imageUrl: '/3.png',
+    altText: 'SCOUTS AND GUIDES ACTIVITY',
+    caption: 'SCOUTS AND GUIDES ACTIVITY',
+    sub: 'Developing responsible citizens through outdoor skills, teamwork, and nation-building.',
+    bg: 'linear-gradient(135deg, #2d3561 0%, #1a3a5c 100%)',
+  },
+  {
+    id: 4,
+    imageUrl: '/backround1.jpeg',
+    altText: 'SCOUT SPIRIT',
+    caption: 'SCOUT SPIRIT',
+    sub: 'Where young hearts learn courage, kindness, and service to the nation.',
+    bg: 'linear-gradient(135deg, #2d3561 0%, #1a3a5c 100%)',
+  },
+  {
+    id: 5,
+    imageUrl: '/background2.png',
+    altText: 'YOUTH EMPOWERMENT',
+    caption: 'YOUTH EMPOWERMENT',
+    sub: 'Building character, one adventure at a time — Scouts & Guides lead the way.',
     bg: 'linear-gradient(135deg, #2d3561 0%, #1a3a5c 100%)',
   },
 ];

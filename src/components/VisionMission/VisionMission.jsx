@@ -1,4 +1,3 @@
-// components/VisionMission/VisionMission.jsx
 import { useEffect, useRef } from 'react';
 import './VisionMission.css';
 
@@ -10,16 +9,20 @@ const CORE_VALUES = [
   { icon: '🔦', name: 'Leadership',   desc: 'Inspiring others through example and vision' },
   { icon: '⚖️', name: 'Equity',       desc: 'Equal opportunity for every scout and guide' },
   { icon: '🌐', name: 'Brotherhood',  desc: 'Unity across communities, cultures and nations' },
-  { icon: '📖', name: 'Learning',     desc: 'Lifelong growth through experience and training' },
 ];
 
 const STRATEGIC_GOALS = [
-  'Increase youth membership by 25% across all districts of West Bengal by 2027.',
-  'Establish a BSG training centre in every district to improve leader quality.',
-  'Launch digital platforms for member registration, badges and circulars.',
-  'Strengthen community service programmes in rural and tribal areas.',
-  'Partner with schools and colleges for Scout integration in curriculum.',
-  'Promote gender equality — achieve 50% Guide enrolment in all districts.',
+  'Membership Growth and Retention',
+  'Educational Method',
+  'Governance',
+  'Financial Sustainability',
+  'Communication,Partnership Brand Building & Advocacy',
+  'Diversity & Inclusion',
+  'Digital Transformation',
+  'Risk Management',
+  'Environmental Sustainability',
+  'Research & Development',
+  
 ];
 
 export default function VisionMission() {
@@ -67,11 +70,10 @@ export default function VisionMission() {
               <p>
                 To be the leading youth movement in West Bengal, empowering young people through the values of Scouting and Guiding to become responsible citizens, ethical leaders, and active contributors to society.
               </p>
-              <p>
-                We envision a future where every Cub, Bulbul, Scout, Guide, Rover and Ranger  is inspired to uphold the ideals of service, leadership, unity, environmental stewardship, and lifelong learning, creating a stronger West Bengal, a stronger India, and a better world.
-               <p>⚜️ "Creating Better Citizens for a Better Tomorrow." ⚜️</p>
-              
-              </p>
+              {/* FIX: Changed from <p> to <div> to avoid <p> inside <p> */}
+              <div className="vm-quote">
+                ⚜️ "Creating Better Citizens for a Better Tomorrow." ⚜️
+              </div>
             </div>
           </div>
 
@@ -119,11 +121,11 @@ export default function VisionMission() {
 
         {/* ── Strategic Goals ── */}
         <div className="vm-goals-section">
-          <h3>Strategic Goals 2025 – 2027</h3>
+          <h3>WEST BENGAL STATE STRATEGIC PRIORITIES - 2034 </h3>
           <div className="vm-goals-list">
             {STRATEGIC_GOALS.map((goal, i) => (
               <div className="vm-goal-item" key={i}>
-                <span className="vm-goal-number">0{i + 1}</span>
+                <span className="vm-goal-number">{i + 1}</span>
                 <p className="vm-goal-text">{goal}</p>
               </div>
             ))}

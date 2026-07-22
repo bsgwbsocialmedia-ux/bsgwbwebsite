@@ -1,0 +1,71 @@
+export const CAMPSITES = {
+  ganganagar: {
+    id: 'ganganagar',
+    name: 'Ganganagar Campsite',
+    subtitle: 'Riverside Adventure Hub',
+    sections: [
+      {
+        id: 1,
+        tag: 'Welcome',
+        heading: 'Gateway to the Wild',
+        desc: 'Ganganagar Campsite, nestled along the banks of the river, offers a perfect blend of adventure and tranquility. With sprawling grounds and dense surrounding forests, it is a favourite for scout expeditions and nature immersion.',
+        imageUrl: null,
+        imageBg: 'linear-gradient(135deg,#0d3b4f,#1a6b5a)',
+        imageIcon: '🌊',
+      },
+      {
+        id: 2,
+        tag: 'Facilities',
+        heading: 'Riverside Camping & More',
+        desc: 'Equipped with modern tent pitches, bonfire zones, and a fully stocked first-aid centre, Ganganagar ensures safety and comfort. The campsite also features a dedicated rafting and water-safety training area.',
+        imageUrl: null,
+        imageBg: 'linear-gradient(135deg,#1a4a3a,#0d6b4a)',
+        imageIcon: '🛶',
+      },
+      {
+        id: 3,
+        tag: 'Activities',
+        heading: 'Water & Land Adventures',
+        desc: 'From river crossing and kayaking to orienteering and wildlife tracking, Ganganagar offers a wide range of activities that build teamwork, resilience, and environmental awareness among scouts.',
+        imageUrl: null,
+        imageBg: 'linear-gradient(135deg,#2d4a6a,#1a3a5c)',
+        imageIcon: '🧗',
+      },
+      {
+        id: 4,
+        tag: 'Nature',
+        heading: 'Rich Riparian Ecosystem',
+        desc: 'The campsite is surrounded by diverse flora and fauna. Scouts can explore birdwatching trails, study river ecology, and participate in conservation projects that protect the local habitat.',
+        imageUrl: null,
+        imageBg: 'linear-gradient(135deg,#1a5c3a,#2d7a4a)',
+        imageIcon: '🦅',
+      },
+    ],
+    gallery: [
+      { id: 1, bg: 'linear-gradient(135deg,#0d3b4f,#1a6b5a)', icon: '🏕️', label: 'Riverside Camp' },
+      { id: 2, bg: 'linear-gradient(135deg,#1a4a3a,#0d6b4a)', icon: '🔥', label: 'Bonfire Pit' },
+      { id: 3, bg: 'linear-gradient(135deg,#2d4a6a,#1a3a5c)', icon: '⛺', label: 'Tent Zone' },
+      { id: 4, bg: 'linear-gradient(135deg,#1a5c3a,#2d7a4a)', icon: '🌿', label: 'Nature Trail' },
+      { id: 5, bg: 'linear-gradient(135deg,#4a2d6a,#2d1a5c)', icon: '🏃', label: 'Activity Field' },
+      { id: 6, bg: 'linear-gradient(135deg,#6a4a1a,#8c6010)', icon: '🍽️', label: 'Dining Pavilion' },
+      { id: 7, bg: 'linear-gradient(135deg,#1a6b5a,#0d4a3a)', icon: '🧭', label: 'Training Ground' },
+      { id: 8, bg: 'linear-gradient(135deg,#1a2a5c,#0d2040)', icon: '🌙', label: 'Night Camp' },
+    ],
+  },
+
+  kurseong: {
+    id: 'kurseong',
+    name: 'Kurseong Campsite',
+    subtitle: 'Misty Highland Retreat',
+    sections: [ /* tumhara original kurseong data yahan paste kar do */ ],
+    gallery: [ /* original gallery data */ ],
+  },
+
+  jhargram: {
+    id: 'jhargram',
+    name: 'Jhargram Campsite',
+    subtitle: 'Forest & Tribal Heritage',
+    sections: [ /* original jhargram data */ ],
+    gallery: [ /* original gallery data */ ],
+  },
+};
