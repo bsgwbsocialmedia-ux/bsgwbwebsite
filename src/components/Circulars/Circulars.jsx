@@ -185,7 +185,7 @@ export default function Circulars() {
 
                           <a
                             key={item._id}
-                            href={`https://bsgwb-backend.onrender.com${item.pdfUrl}`}
+                            href={`https://bsgwb.onrender.com${item.pdfUrl}`}
                             target="_blank"
                             rel="noreferrer"
                             className="circular-card"
