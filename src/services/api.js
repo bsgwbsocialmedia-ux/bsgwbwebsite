@@ -1,10 +1,10 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'https://bsgwb-backend.onrender.com/api'
+  baseURL: 'https://bsgwb.onrender.com/api'
 });
 
-// https://bsgwb-backend.onrender.com/api
+// https://bsgwb.onrender.com/api
 API.interceptors.request.use((req) => {
 
   const token = localStorage.getItem('token');
@@ -18,7 +18,7 @@ API.interceptors.request.use((req) => {
 
 // =============================
 // URLs
-// =============================
+// =============================a
 
 export const BANNERS_URL = '/banners';
 export const CHIEF_SCOUT_URL = '/chief-scout';
