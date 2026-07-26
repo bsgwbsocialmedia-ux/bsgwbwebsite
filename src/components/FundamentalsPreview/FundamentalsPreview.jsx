@@ -6,14 +6,14 @@ const cards = [
   {
     id: 1,
     title: "Fundamentals",
-    image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=800",
+    image: "/fundamental.png",
     description: "Learn the fundamentals of Scouting & Guiding including its purpose, principles, method, promise and law that shape responsible citizens.",
     path: "/fundamentals",
   },
   {
     id: 2,
     title: "The Beginning",
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800",
+    image: "beginning.jpeg",
     description: "Discover the inspiring journey of the Scout & Guide Movement from its origin to the establishment of Bharat Scouts & Guides in India.",
     path: "/beginning",
   },
