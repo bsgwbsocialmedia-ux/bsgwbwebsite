@@ -185,7 +185,7 @@ export default function Circulars() {
 
                           <a
                             key={item._id}
-                           href={item.pdfUrl} 
+                            href={`${import.meta.env.VITE_API_BASE_URL.replace('/api', '')}${item.pdfUrl}`} 
                             target="_blank"
                             rel="noreferrer"
                             className="circular-card"

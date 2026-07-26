@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || 'https://bsgwb.onrender.com/api'
+  baseURL: import.meta.env.VITE_API_BASE_URL || 'https://bsgwb-backend.onrender.com/api'
 });
 
 API.interceptors.request.use((req) => {
