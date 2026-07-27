@@ -2,20 +2,20 @@ import "./AdultAnnualPlan.css";
 
 const plans = [
   {
-    title: "BSGUP ANNUAL CALENDAR 2026-27",
-    pdf: "/adult-plans/bsgup-annual-calendar-2026-27.pdf"
+    title: "BSGWB ANNUAL CALENDAR 2026-27",
+    pdf: "/adult-plans/bsgwb-annual-calendar-2026-27.pdf"
   },
   {
-    title: "BSGUP ANNUAL CALENDAR 2025-26",
-    pdf: "/adult-plans/bsgup-annual-calendar-2025-26.pdf"
+    title: "BSGWB ANNUAL CALENDAR 2025-26",
+    pdf: "/adult-plans/bsgWB-annual-calendar-2025-26.pdf"
   },
   {
-    title: "BSGUP ANNUAL CALENDAR 2024-25",
-    pdf: "/adult-plans/bsgup-annual-calendar-2024-25.pdf"
+    title: "BSGWB ANNUAL CALENDAR 2024-25",
+    pdf: "/adult-plans/bsgWB-annual-calendar-2024-25.pdf"
   },
   {
-    title: "BSGUP ANNUAL CALENDAR 2023-24",
-    pdf: "/adult-plans/bsgup-annual-calendar-2023-24.pdf"
+    title: "BSGWB ANNUAL CALENDAR 2023-24",
+    pdf: "/adult-plans/bsgWB-annual-calendar-2023-24.pdf"
   },
 ];
 

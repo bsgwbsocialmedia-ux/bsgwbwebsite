@@ -8,7 +8,7 @@ import HeroSection from "./components/HeroSection/HeroSection";
 import Circulars from "./components/Circulars/Circulars";
 import Footer from "./components/Footer/Footer";
 import FundamentalsPreview from "./components/FundamentalsPreview/FundamentalsPreview";
-import ProjectPartners from "./components/ProjectPartners/ProjectPartners";
+// import ProjectPartners from "./components/ProjectPartners/ProjectPartners";
 import VisionMission from "./components/VisionMission/VisionMission";
 import PoliciesSection from "./components/PoliciesSection/PoliciesSection";
 import Ourcampsite from "./components/Ourcampsite/Ourcampsite";
@@ -83,7 +83,7 @@ function App() {
               <FundamentalsPreview />
               <div id="campsite"><Ourcampsite /></div>
               <div id="vision"><VisionMission /></div>
-              <div id="partners"><ProjectPartners /></div>
+              {/* <div id="partners"><ProjectPartners /></div> */}
               <div id="policies"><PoliciesSection /></div>
             </>
           }

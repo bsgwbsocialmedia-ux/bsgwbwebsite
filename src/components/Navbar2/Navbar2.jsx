@@ -62,7 +62,7 @@ const TABS = [
         ],
       },
       {
-        label: 'UP Rules',
+        label: 'WB Rules',
         children: [
           { id: 'byelaws', label: 'Bye Laws', path: '/organization/byelaws' },
           { id: 'financialpolicy', label: 'Financial Policy', path: '/organization/financialpolicy' },
