@@ -42,7 +42,6 @@ export default function Circulars() {
           CIRCULARS_URL
         );
 
-      // Fix: Ensure data is always an array
       if (data) {
         if (Array.isArray(data)) {
           setCirculars(data);
@@ -151,8 +150,6 @@ export default function Circulars() {
 
       <div className="circulars-wrapper">
 
-        {/* Circulars */}
-
         <div className="circular-panel">
 
           <div className="panel-title">
@@ -241,8 +238,6 @@ export default function Circulars() {
           }
 
         </div>
-
-        {/* Videos */}
 
         <div className="video-panel">
 
