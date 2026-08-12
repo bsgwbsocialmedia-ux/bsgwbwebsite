@@ -34,8 +34,8 @@ import Fundamentals from "./pages/Fundamentals/Fundamentals";
 import Beginning from "./pages/Beginning/Beginning";
 
 import PresentLeadership from "./pages/Organization/PresentLeadership/PresentLeadership";
-import OurTeam from "./pages/Organization/OurTeam/OurTeam";
-import Patron from "./pages/Organization/Patron/Patron";
+// import OurTeam from "./pages/Organization/OurTeam/OurTeam";
+// import Patron from "./pages/Organization/Patron/Patron";
 import DistrictAssociation from "./pages/Organization/DistrictAssociation/DistrictAssociation";
 import ByeLaws from "./pages/Organization/ByeLaws/ByeLaws";
 import FinancialPolicy from "./pages/Organization/FinancialPolicy/FinancialPolicy";
@@ -118,8 +118,8 @@ function App() {
         <Route path="/programme/annual-plan/adult" element={<AdultAnnualPlan />} />
 
         <Route path="/organization/presentleadership" element={<PresentLeadership />} />
-        <Route path="/organization/ourteam" element={<OurTeam />} />
-        <Route path="/organization/patron" element={<Patron />} />
+        {/* <Route path="/organization/ourteam" element={<OurTeam />} /> */}
+        {/* <Route path="/organization/patron" element={<Patron />} /> */}
         <Route path="/organization/districtassociation" element={<DistrictAssociation />} />
         <Route path="/organization/byelaws" element={<ByeLaws />} />
         <Route path="/organization/financialpolicy" element={<FinancialPolicy />} />
