@@ -5,18 +5,9 @@ const plans = [
     title: "BSGWB ANNUAL CALENDAR 2026-27",
     pdf: "/youth-plans/bsgWB-annual-calendar-2026-27.pdf"
   },
-  {
-    title: "BSGWB ANNUAL CALENDAR 2025-26",
-    pdf: "/youth-plans/bsgWB-annual-calendar-2025-26.pdf"
-  },
-  {
-    title: "BSGWB ANNUAL CALENDAR 2024-25",
-    pdf: "/youth-plans/bsgWB-annual-calendar-2024-25.pdf"
-  },
-  {
-    title: "BSGWB ANNUAL CALENDAR 2023-24",
-    pdf: "/youth-plans/bsgWB-annual-calendar-2023-24.pdf"
-  },
+ 
+  
+  ,
 ];
 
 const YouthAnnualPlan = () => {

@@ -7,10 +7,6 @@ export default function ByeLaws() {
       title: 'BHARAT SCOUT AND GUIDE WESTBENGAL-STATE BYE LAWS',
       link: '/bye-laws/state-bye-laws.pdf'
     },
-    {
-      title: 'BHARAT SCOUT AND GUIDE WESTBENGAL-DISTRICT BYE LAWS',
-      link: '/bye-laws/district-bye-laws.pdf'
-    }
   ];
 
   return (
