@@ -56,8 +56,8 @@ const TABS = [
             label: 'State Association',
             items: [
               { id: 'presentleadership', label: 'Present Leadership', path: '/organization/presentleadership' },
-              { id: 'ShqOfficers', label: 'ShqOfficers', path: '/organization/ShqOfficers' },
-              { id: 'ShqStaff', label: 'ShqStaff', path: '/organization/ShqStaff' },
+              { id: 'shqofficers', label: 'ShqOfficers', path: '/organization/shqofficers' },
+              { id: 'shqstaff', label: 'ShqStaff', path: '/organization/shqstaff' },
             ],
           },
           { id: 'districtassociation', label: 'District Association', path: '/organization/districtassociation' },
