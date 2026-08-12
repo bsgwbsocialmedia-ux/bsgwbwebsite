@@ -1,14 +1,11 @@
-import './District.css';
+   import './District.css';
 
 const districts = [
   'Kolkata',
   'Howrah',
   'Darjeeling',
-  'Murshidabad',
   'Malda',
   'Hooghly',
-  'Bankura',
-  'Purulia',
   'Nadia',
   'Birbhum',
   'Cooch Behar',
