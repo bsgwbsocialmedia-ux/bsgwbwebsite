@@ -43,6 +43,8 @@ const TABS = [
       },
     ],
   },
+
+  //add new comments
   {
     id: 'organization',
     label: 'Organization',
