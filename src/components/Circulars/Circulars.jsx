@@ -16,129 +16,280 @@ import {
 import './Circulars.css';
 
 export default function Circulars() {
-
   const [circulars, setCirculars] = useState([]);
   const [videos, setVideos] = useState([]);
 
-  const [loadingCirculars, setLoadingCirculars] =
-    useState(true);
-
-  const [loadingVideos, setLoadingVideos] =
-    useState(true);
+  const [loadingCirculars, setLoadingCirculars] = useState(true);
+  const [loadingVideos, setLoadingVideos] = useState(true);
 
   useEffect(() => {
-
     fetchCirculars();
     fetchVideos();
-
   }, []);
 
   const fetchCirculars = async () => {
-
     try {
+      const data = await apiFetch(CIRCULARS_URL);
 
-      const data =
-        await apiFetch(
-          CIRCULARS_URL
-        );
-
-      if (data) {
-        if (Array.isArray(data)) {
-          setCirculars(data);
-        } else if (data.data && Array.isArray(data.data)) {
-          setCirculars(data.data);
-        } else {
-          setCirculars([]);
-        }
+      if (Array.isArray(data)) {
+        setCirculars(data);
+      } else if (
+        data?.data &&
+        Array.isArray(data.data)
+      ) {
+        setCirculars(data.data);
       } else {
         setCirculars([]);
       }
-
     } catch (error) {
-
-      console.log(error);
+      console.log('Circular fetch error:', error);
       setCirculars([]);
-
     } finally {
-
       setLoadingCirculars(false);
-
     }
-
   };
 
   const fetchVideos = async () => {
-
     try {
+      const data = await apiFetch(VIDEOS_URL);
 
-      const data =
-        await apiFetch(
-          VIDEOS_URL
-        );
-
-      if (data) {
-        if (Array.isArray(data)) {
-          setVideos(data);
-        } else if (data.data && Array.isArray(data.data)) {
-          setVideos(data.data);
-        } else {
-          setVideos([]);
-        }
+      if (Array.isArray(data)) {
+        setVideos(data);
+      } else if (
+        data?.data &&
+        Array.isArray(data.data)
+      ) {
+        setVideos(data.data);
       } else {
         setVideos([]);
       }
-
     } catch (error) {
-
-      console.log(error);
+      console.log('Video fetch error:', error);
       setVideos([]);
-
     } finally {
-
       setLoadingVideos(false);
-
     }
-
   };
+
+  /* ==========================================
+     DATE FORMAT
+  ========================================== */
 
   const formatDate = (date) => {
+    if (!date) return '';
 
-    return new Date(date)
-      .toLocaleDateString(
-        'en-IN',
-        {
-          day: '2-digit',
-          month: 'short',
-          year: 'numeric'
-        }
-      );
+    const parsedDate = new Date(date);
 
+    if (Number.isNaN(parsedDate.getTime())) {
+      return '';
+    }
+
+    return parsedDate.toLocaleDateString(
+      'en-IN',
+      {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric'
+      }
+    );
   };
 
-  const getPlatformIcon =
-    (platform) => {
+  /* ==========================================
+     NEW BADGE
+     Visible for 3 days after upload
+  ========================================== */
 
-      switch (platform) {
+  const isNewCircular = (createdAt) => {
+    if (!createdAt) return false;
 
-        case 'youtube':
-          return <FaYoutube />;
+    const createdDate = new Date(createdAt);
 
-        case 'facebook':
-          return <FaFacebook />;
+    if (Number.isNaN(createdDate.getTime())) {
+      return false;
+    }
 
-        case 'instagram':
-          return <FaInstagram />;
+    const now = new Date();
 
-        default:
-          return null;
+    const difference =
+      now.getTime() -
+      createdDate.getTime();
 
-      }
+    const threeDays =
+      3 * 24 * 60 * 60 * 1000;
 
-    };
+    return (
+      difference >= 0 &&
+      difference <= threeDays
+    );
+  };
+
+  /* ==========================================
+     CIRCULAR CATEGORY
+  ========================================== */
+
+  const getCategory = (item) => {
+    /*
+      Backend will later send:
+
+      category: "national"
+
+      OR
+
+      category: "state"
+
+      Existing circulars without a category
+      are temporarily treated as State.
+    */
+
+    if (
+      item?.category &&
+      item.category.toLowerCase() === 'national'
+    ) {
+      return 'national';
+    }
+
+    return 'state';
+  };
+
+  /* ==========================================
+     FILTER CIRCULARS
+  ========================================== */
+
+  const nationalCirculars =
+    circulars.filter(
+      (item) =>
+        getCategory(item) === 'national'
+    );
+
+  const stateCirculars =
+    circulars.filter(
+      (item) =>
+        getCategory(item) === 'state'
+    );
+
+  /* ==========================================
+     VIDEO PLATFORM ICON
+  ========================================== */
+
+  const getPlatformIcon = (platform) => {
+    switch (
+      platform?.toLowerCase()
+    ) {
+      case 'youtube':
+        return <FaYoutube />;
+
+      case 'facebook':
+        return <FaFacebook />;
+
+      case 'instagram':
+        return <FaInstagram />;
+
+      default:
+        return null;
+    }
+  };
+
+  /* ==========================================
+     CIRCULAR CARD
+  ========================================== */
+
+  const renderCircular = (item) => {
+    return (
+      <a
+        key={item._id}
+        href={item.pdfUrl}
+        target="_blank"
+        rel="noreferrer"
+        className="circular-card"
+      >
+
+        <div className="circular-icon">
+          <FaFilePdf />
+        </div>
+
+        <div className="circular-content">
+
+          <div className="circular-top">
+
+            <h3>
+              {item.title}
+            </h3>
+
+            {isNewCircular(
+              item.createdAt
+            ) && (
+              <span className="new-badge">
+                NEW
+              </span>
+            )}
+
+          </div>
+
+          <p>
+            {formatDate(
+              item.createdAt
+            )}
+          </p>
+
+        </div>
+
+      </a>
+    );
+  };
+
+  /* ==========================================
+     CATEGORY COMPONENT
+  ========================================== */
+
+  const renderCategory = (
+    title,
+    icon,
+    items,
+    className
+  ) => {
+    return (
+      <div
+        className={`circular-category ${className}`}
+      >
+
+        <div className="category-title">
+
+          <span className="category-icon">
+            {icon}
+          </span>
+
+          <span>
+            {title}
+          </span>
+
+        </div>
+
+        {items.length === 0 ? (
+
+          <div className="category-empty">
+            No {title.toLowerCase()} available
+          </div>
+
+        ) : (
+
+          <div className="category-list">
+            {items.map(
+              renderCircular
+            )}
+          </div>
+
+        )}
+
+      </div>
+    );
+  };
 
   return (
-
     <section className="circulars-section">
+
+      {/* ======================================
+          SECTION HEADER
+      ====================================== */}
 
       <div className="section-header">
 
@@ -148,7 +299,12 @@ export default function Circulars() {
 
       </div>
 
+
       <div className="circulars-wrapper">
+
+        {/* ====================================
+            CIRCULAR PANEL
+        ==================================== */}
 
         <div className="circular-panel">
 
@@ -156,88 +312,48 @@ export default function Circulars() {
             📄 Circulars & Notifications
           </div>
 
-          {
-            loadingCirculars
-              ? (
-                <div className="loading-box">
-                  Loading Circulars...
-                </div>
-              )
-              : circulars.length === 0
-                ? (
-                  <div className="empty-box">
-                    No Circular Available
-                  </div>
-                )
-                : (
+          {loadingCirculars ? (
 
-                  <div className="circular-list">
+            <div className="loading-box">
+              Loading Circulars...
+            </div>
 
-                    {
-                      circulars.map(
-                        (
-                          item,
-                          index
-                        ) => (
+          ) : (
 
-                          <a
-                            key={item._id}
-                            href={item.pdfUrl}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="circular-card"
-                          >
+            <div className="circular-categories">
 
-                            <div className="circular-icon">
+              {/* =================================
+                  STATE FIRST
+              ================================= */}
 
-                              <FaFilePdf />
+              {renderCategory(
+                'State Circulars',
+                '',
+                stateCirculars,
+                'state-category'
+              )}
 
-                            </div>
+              {/* =================================
+                  NATIONAL SECOND
+              ================================= */}
 
-                            <div className="circular-content">
+              {renderCategory(
+                'National Circulars',
+                '',
+                nationalCirculars,
+                'national-category'
+              )}
 
-                              <div className="circular-top">
+            </div>
 
-                                <h3>
-                                  {item.title}
-                                </h3>
-
-                                {
-                                  index < 5 && (
-
-                                    <span className="new-badge">
-
-                                      NEW
-
-                                    </span>
-
-                                  )
-                                }
-
-                              </div>
-
-                              <p>
-                                {
-                                  formatDate(
-                                    item.createdAt
-                                  )
-                                }
-                              </p>
-
-                            </div>
-
-                          </a>
-
-                        )
-                      )
-                    }
-
-                  </div>
-
-                )
-          }
+          )}
 
         </div>
+
+
+        {/* ====================================
+            VIDEO PANEL
+        ==================================== */}
 
         <div className="video-panel">
 
@@ -245,77 +361,70 @@ export default function Circulars() {
             🎬 Latest Videos
           </div>
 
-          {
-            loadingVideos
-              ? (
-                <div className="loading-box">
-                  Loading Videos...
-                </div>
-              )
-              : videos.length === 0
-                ? (
-                  <div className="empty-box">
-                    No Videos Available
-                  </div>
-                )
-                : (
+          {loadingVideos ? (
 
-                  <div className="video-list">
+            <div className="loading-box">
+              Loading Videos...
+            </div>
 
-                    {
-                      videos.map(
-                        (video) => (
+          ) : videos.length === 0 ? (
 
-                          <a
-                            key={video._id}
-                            href={video.link}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="video-card"
-                          >
+            <div className="empty-box">
+              No Videos Available
+            </div>
 
-                            <div
-                              className={`video-icon ${video.platform}`}
-                            >
+          ) : (
 
-                              {
-                                getPlatformIcon(
-                                  video.platform
-                                )
-                              }
+            <div className="video-list">
 
-                            </div>
+              {videos.map(
+                (video) => (
 
-                            <div className="video-content">
+                  <a
+                    key={video._id}
+                    href={video.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="video-card"
+                  >
 
-                              <h4>
-                                {video.title}
-                              </h4>
+                    <div
+                      className={`video-icon ${
+                        video.platform?.toLowerCase() || ''
+                      }`}
+                    >
 
-                              <span>
-                                {
-                                  video.platform
-                                }
-                              </span>
+                      {getPlatformIcon(
+                        video.platform
+                      )}
 
-                            </div>
+                    </div>
 
-                          </a>
+                    <div className="video-content">
 
-                        )
-                      )
-                    }
+                      <h4>
+                        {video.title}
+                      </h4>
 
-                  </div>
+                      <span>
+                        {video.platform}
+                      </span>
+
+                    </div>
+
+                  </a>
 
                 )
-          }
+              )}
+
+            </div>
+
+          )}
 
         </div>
 
       </div>
 
     </section>
-
   );
 }

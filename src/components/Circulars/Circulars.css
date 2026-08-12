@@ -4,7 +4,7 @@
   margin: 0 auto;
   padding: 2rem;
   box-sizing: border-box;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .section-header {
@@ -19,112 +19,404 @@
   line-height: 1.2;
 }
 
+/* ==========================================
+   MAIN LAYOUT
+========================================== */
+
 .circulars-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 25px;
   width: 100%;
+  align-items: stretch;
 }
+
+/* ==========================================
+   MAIN PANELS
+========================================== */
 
 .circular-panel,
 .video-panel {
-  background: #fff;
+  background: #ffffff;
   border-radius: 20px;
   padding: 20px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+
   min-width: 0;
+  height: 560px;
+
+  display: flex;
+  flex-direction: column;
+
+  box-sizing: border-box;
 }
 
+/* ==========================================
+   PANEL TITLE
+========================================== */
+
 .panel-title {
+  flex-shrink: 0;
+
   font-size: 1.2rem;
   font-weight: 700;
-  margin-bottom: 20px;
+
+  margin-bottom: 15px;
+
   color: var(--primary);
 }
 
-.circular-list,
-.video-list {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
+/* ==========================================
+   STATE + NATIONAL CONTAINER
+========================================== */
 
-.circular-card {
-  display: flex;
-  align-items: flex-start;
+.circular-categories {
+  flex: 1;
+
+  min-height: 0;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
   gap: 15px;
-  text-decoration: none;
-  color: inherit;
-  padding: 15px;
-  border-radius: 12px;
-  transition: 0.3s;
+
   overflow: hidden;
 }
 
-.circular-card:hover {
-  background: #f5f5f5;
+/* ==========================================
+   CATEGORY BOX
+========================================== */
+
+.circular-category {
+  min-width: 0;
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #fafcff;
+
+  border: 1px solid #e4eaf2;
+
+  border-radius: 14px;
+
+  overflow: hidden;
 }
 
-.circular-icon {
-  color: #e53935;
-  font-size: 2rem;
+/* ==========================================
+   CATEGORY HEADER
+========================================== */
+
+.category-title {
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 12px 8px;
+
+  background: #f4f7fb;
+
+  border-bottom: 1px solid #e4eaf2;
+
+  color: var(--primary);
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  text-align: center;
+}
+
+.category-icon {
+  font-size: 16px;
+
+  line-height: 1;
+}
+
+/* ==========================================
+   CATEGORY SCROLL AREA
+========================================== */
+
+.category-list {
+  flex: 1;
+
+  min-height: 0;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding: 6px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+.category-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.category-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.category-list::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 20px;
+}
+
+.category-list::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ==========================================
+   EMPTY CATEGORY
+========================================== */
+
+.category-empty {
+  flex: 1;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  color: #8a94a6;
+
+  font-size: 12px;
+
+  padding: 15px;
+}
+
+/* ==========================================
+   CIRCULAR CARD
+========================================== */
+
+.circular-card {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 10px;
+
+  text-decoration: none;
+
+  color: inherit;
+
+  padding: 11px 9px;
+
+  border-radius: 9px;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+
+  overflow: hidden;
+
   flex-shrink: 0;
 }
 
+.circular-card:hover {
+  background: #f1f5f9;
+
+  transform: translateX(3px);
+}
+
+/* ==========================================
+   PDF ICON
+========================================== */
+
+.circular-icon {
+  color: #e53935;
+
+  font-size: 1.6rem;
+
+  flex-shrink: 0;
+
+  width: 27px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* ==========================================
+   CIRCULAR CONTENT
+========================================== */
+
 .circular-content {
   flex: 1;
+
   min-width: 0;
 }
 
 .circular-top {
   display: flex;
+
   justify-content: space-between;
   align-items: flex-start;
-  gap: 10px;
+
+  gap: 5px;
 }
 
 .circular-top h3 {
   margin: 0;
-  font-size: 15px;
-  line-height: 1.5;
+
+  font-size: 13px;
+
+  line-height: 1.4;
+
   word-break: break-word;
+
+  color: #0f172a;
 }
 
 .circular-content p {
   color: #777;
-  margin-top: 6px;
-  margin-bottom: 0;
+
+  margin: 5px 0 0;
+
+  font-size: 11px;
 }
 
+/* ==========================================
+   NEW BADGE
+========================================== */
+
 .new-badge {
-  background: red;
-  color: white;
-  padding: 4px 10px;
+  background: #ff0000;
+
+  color: #ffffff;
+
+  padding: 3px 7px;
+
   border-radius: 20px;
-  font-size: 11px;
+
+  font-size: 8px;
+
   font-weight: 700;
+
   white-space: nowrap;
+
   flex-shrink: 0;
+
+  animation: newPulse 1.6s ease-in-out infinite;
 }
+
+@keyframes newPulse {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.45;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ==========================================
+   VIDEO LIST
+========================================== */
+
+.video-list {
+  flex: 1;
+
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding-right: 5px;
+
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+.video-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.video-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.video-list::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+
+  border-radius: 20px;
+}
+
+.video-list::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ==========================================
+   VIDEO CARD
+========================================== */
 
 .video-card {
   display: flex;
+
   align-items: center;
+
   gap: 15px;
+
   text-decoration: none;
+
   color: inherit;
+
   padding: 15px;
+
   border-radius: 12px;
-  transition: 0.3s;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+
+  flex-shrink: 0;
 }
 
 .video-card:hover {
   background: #f5f5f5;
+
+  transform: translateX(3px);
 }
+
+/* ==========================================
+   VIDEO ICON
+========================================== */
 
 .video-icon {
   font-size: 30px;
+
   flex-shrink: 0;
+
+  width: 38px;
+
+  display: flex;
+
+  justify-content: center;
 }
 
 .video-icon.youtube {
@@ -139,36 +431,74 @@
   color: #e1306c;
 }
 
+/* ==========================================
+   VIDEO CONTENT
+========================================== */
+
 .video-content {
   flex: 1;
+
   min-width: 0;
 }
 
 .video-content h4 {
   margin: 0;
+
   font-size: 15px;
+
   line-height: 1.4;
+
   word-break: break-word;
+
+  color: #0f172a;
 }
 
 .video-content span {
   color: #777;
+
   font-size: 13px;
+
   text-transform: capitalize;
 }
 
+/* ==========================================
+   LOADING / EMPTY
+========================================== */
+
 .loading-box,
 .empty-box {
+  flex: 1;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
   text-align: center;
+
   padding: 2rem;
+
   color: #666;
 }
+
+/* ==========================================
+   TABLET
+========================================== */
 
 @media (max-width: 992px) {
   .circulars-wrapper {
     grid-template-columns: 1fr;
   }
+
+  .circular-panel,
+  .video-panel {
+    height: 500px;
+  }
 }
+
+/* ==========================================
+   MOBILE
+========================================== */
 
 @media (max-width: 768px) {
   .circulars-section {
@@ -177,34 +507,157 @@
 
   .circular-panel,
   .video-panel {
+    height: 500px;
+
     padding: 15px;
+
+    border-radius: 16px;
+  }
+
+  .circulars-wrapper {
+    gap: 18px;
+  }
+
+  /* KEEP STATE + NATIONAL SIDE BY SIDE */
+
+  .circular-categories {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+  }
+
+  .category-title {
+    font-size: 12px;
+
+    padding: 10px 5px;
+
+    gap: 4px;
+  }
+
+  .category-icon {
+    font-size: 14px;
+  }
+
+  .circular-card {
+    padding: 9px 7px;
+
+    gap: 7px;
+  }
+
+  .circular-icon {
+    font-size: 1.4rem;
+
+    width: 23px;
   }
 
   .circular-top {
-    flex-direction: column;
-    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .circular-top h3 {
+    font-size: 11px;
+
+    line-height: 1.35;
+  }
+
+  .circular-content p {
+    font-size: 10px;
   }
 
   .new-badge {
-    margin-top: 5px;
+    font-size: 7px;
+
+    padding: 3px 5px;
   }
 }
 
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
 @media (max-width: 480px) {
+  .section-header {
+    margin-bottom: 1.2rem;
+  }
+
   .section-header h2 {
     font-size: 1.6rem;
   }
 
-  .circular-card,
-  .video-card {
+  .circular-panel,
+  .video-panel {
+    height: 460px;
+
     padding: 12px;
   }
 
-  .video-icon {
-    font-size: 26px;
+  .panel-title {
+    font-size: 1rem;
+
+    margin-bottom: 10px;
+  }
+
+  .circular-categories {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8px;
+  }
+
+  .category-title {
+    font-size: 11px;
+
+    padding: 8px 3px;
+  }
+
+  .category-icon {
+    font-size: 12px;
+  }
+
+  .circular-card {
+    padding: 8px 5px;
+
+    gap: 5px;
   }
 
   .circular-icon {
-    font-size: 1.7rem;
+    font-size: 1.25rem;
+
+    width: 20px;
+  }
+
+  .circular-top h3 {
+    font-size: 10px;
+
+    line-height: 1.3;
+  }
+
+  .circular-content p {
+    font-size: 9px;
+  }
+
+  .new-badge {
+    font-size: 6px;
+
+    padding: 2px 4px;
+  }
+
+  .video-card {
+    padding: 10px;
+
+    gap: 10px;
+  }
+
+  .video-icon {
+    font-size: 24px;
+
+    width: 30px;
+  }
+
+  .video-content h4 {
+    font-size: 13px;
+  }
+
+  .video-content span {
+    font-size: 11px;
   }
 }

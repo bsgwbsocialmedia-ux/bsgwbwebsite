@@ -3,81 +3,95 @@ import './PresentLeadership.css';
 const leadershipData = [
   {
     id: 1,
-    title: 'PRESIDENT',
-    name: 'DR. ANIL KUMAR JAIN',
-    designation: 'President',
+    title: 'CHIEF PATRON AND VICE PRESIDENT',
+    name: 'SHRI R.N.RAVI',
+    designation: 'GOVERNOR OF WEST BENGAL',
     imageUrl: '/images/president.jpg'
   },
   {
     id: 2,
-    title: 'SECRETARY GENERAL',
-    name: 'SHRI P. G. R. SINDHIA',
-    designation: 'Secretary General, President-in-Council',
+    title: 'ACTING PRESIDENT',
+    name: 'MRS. ARATI MITRA',
+    designation: 'ACTING PRESIDENT',
     imageUrl: '/images/secretary-general.jpg'
   },
   {
     id: 3,
     title: 'VICE-PRESIDENT',
-    name: 'SHRI KALI PRASAD MISHRA',
-    designation: 'Vice-President',
+    name: 'DR. ARCHANA MUKHERJEE',
+    designation: 'IPS(Retd.)',
     imageUrl: '/images/vice-president-1.jpg'
   },
   {
     id: 4,
     title: 'VICE-PRESIDENT',
-    name: 'SHRI SATYANARAYAN SHARMA',
+    name: 'MR. MUKUL ROY',
     designation: 'Vice-President',
     imageUrl: '/images/vice-president-2.jpg'
   },
   {
     id: 5,
     title: 'VICE-PRESIDENT',
-    name: 'SMT. GEETHA NATARAJ',
+    name: 'MR. ATINDRA NARAYAN CHOWDHURY',
     designation: 'Vice-President',
     imageUrl: '/images/vice-president-3.jpg'
   },
   {
     id: 6,
     title: 'VICE-PRESIDENT',
-    name: 'SMT. VIMLA MEGHWAL',
+    name: 'MR. JEEWAN PRAKESH GURUNG',
     designation: 'Vice-President',
     imageUrl: '/images/vice-president-4.jpg'
   },
   {
     id: 7,
     title: 'VICE-PRESIDENT',
-    name: 'SHRI CHANDRAJIT SAIKIA',
+    name: 'MR. AMAL CHATTERJEE',
     designation: 'Vice-President',
     imageUrl: '/images/vice-president-5.jpg'
   },
   {
     id: 8,
-    title: 'CHIEF NATIONAL COMMISSIONER',
-    name: 'DR. K. K. KHANDELWAL',
-    designation: 'Chief National Commissioner',
+    title: 'VICE-PRESIDENT',
+    name: 'MISS. GANGOTRI DUTTA',
+    designation: 'Vice-President',
     imageUrl: '/images/chief-national-commissioner.jpg'
   },
   {
     id: 9,
-    title: 'ADDL. CHIEF NATIONAL COMMISSIONER',
-    name: 'M. A. KHALID',
-    designation: 'Addl. Chief National Commissioner',
+    title: 'VICE-PRESIDENT',
+    name: 'MRS. SUNITA ARORA',
+    designation: 'Vice-President',
     imageUrl: '/images/addl-chief-national-commissioner.jpg'
   },
   {
     id: 10,
-    title: 'CHIEF COMMISSIONER OF SCOUTS',
-    name: 'SHRI S. K. BISWAS',
-    designation: 'Chief Commissioner of Scouts',
+    title: 'VICE-PRESIDENT',
+    name: 'MRS. MITRA SINGHA ROY',
+    designation: 'Vice-President',
     imageUrl: '/images/chief-commissioner-scouts.jpg'
   },
   {
     id: 11,
-    title: 'CHIEF COMMISSIONER OF GUIDES',
-    name: 'DR. (SMT.) PANKAJ MITTAL',
-    designation: 'Chief Commissioner of Guides',
+    title: 'STATE CHIEF COMMISSIONER',
+    name: 'MR. DEBADITYA CHAKRABARTI',
+    designation: 'IAS(Retd.)',
     imageUrl: '/images/chief-commissioner-guides.jpg'
-  }
+  },
+   {
+    id: 11,
+    title: 'STATE COMMISSIONER(S)',
+    name: 'MR. SHYAMAL KUMAR BISWAS',
+    designation: 'STATE COMMISSIONER(S)',
+    imageUrl: '/images/chief-commissioner-guides.jpg'
+  },
+  {
+    id: 11,
+    title: 'STATE COMMISSIONER(G)',
+    name: 'DR. SIKHA BANERJEE',
+    designation: 'STATE COMMISSIONER(G)',
+    imageUrl: '/images/chief-commissioner-guides.jpg'
+  },
 ];
 
 export default function PresentLeadership() {
@@ -85,7 +99,7 @@ export default function PresentLeadership() {
     <div className="leadership-page">
 
       <div className="leadership-hero">
-        <h1>Present Leadership</h1>
+        <h1>LEADERS(2021-2026)</h1>
         <p>
           Meet the dedicated leaders guiding the Bharat Scouts and Guides, West Bengal.
         </p>

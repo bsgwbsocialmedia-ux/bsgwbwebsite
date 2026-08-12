@@ -29,7 +29,7 @@ export default function About() {
 
         <div className="about-stat-card">
           <span>🏕️</span>
-          <h3>18</h3>
+          <h3>11</h3>
           <p>Districts</p>
         </div>
 
