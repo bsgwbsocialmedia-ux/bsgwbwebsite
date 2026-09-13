@@ -1,447 +1,755 @@
+/* =========================================================
+   RANGER PAGE
+========================================================= */
+
 .ranger-page {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
+  width: 100%;
+  min-height: 100vh;
+
+  margin: 0;
+  padding: 0 0 50px;
+
+  background: #f5f3ee;
+  color: #243b63;
+
+  box-sizing: border-box;
+
+  overflow-x: hidden;
 }
 
-/* ========================================== */
-/* Hero */
-/* ========================================== */
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .ranger-hero {
-  background: linear-gradient(135deg, #b71c1c, #d32f2f);
-  padding: 3rem 2rem;
-  border-radius: var(--radius);
-  margin-bottom: 2.5rem;
+  width: 100%;
+
+  padding: 55px 24px;
+
+  background: linear-gradient(
+    135deg,
+    #b71c1c,
+    #d32f2f
+  );
+
   text-align: center;
+
+  box-sizing: border-box;
 }
 
-.ranger-hero h2 {
-  color: white;
-  font-size: 2.5rem;
+.ranger-hero-inner {
+  width: 100%;
+  max-width: 1168px;
+
+  margin: 0 auto;
+}
+
+.ranger-hero h1 {
+  margin: 0 0 12px;
+
+  color: #ffffff;
+
+  font-size: 44px;
   font-weight: 700;
-  margin-bottom: 0.7rem;
+
+  line-height: 1.15;
 }
 
 .ranger-hero p {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 1.1rem;
+  width: 100%;
+  max-width: 760px;
+
+  margin: 0 auto;
+
+  color: rgba(255, 255, 255, 0.92);
+
+  font-size: 16px;
+  line-height: 1.7;
 }
 
-/* ========================================== */
-/* Content Sections */
-/* ========================================== */
+
+/* =========================================================
+   CONTENT
+========================================================= */
 
 .ranger-content {
+  width: 100%;
+
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+
+  gap: 28px;
+
+  padding-top: 28px;
+
+  box-sizing: border-box;
 }
 
-/* Section with Image - Grid Layout */
+
+/* =========================================================
+   COMMON TWO-COLUMN SECTION
+========================================================= */
+
 .ranger-section {
+  width: calc(100% - 48px);
+  max-width: 1168px;
+
+  margin: 0 auto;
+
+  padding: 28px;
+
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
-  align-items: start;
-  background: var(--bg-card);
-  border-radius: var(--radius);
-  padding: 2rem;
-  border: 1px solid var(--border);
-  box-shadow: 0 5px 18px var(--shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  grid-template-columns:
+    minmax(0, 1.15fr)
+    minmax(280px, 0.85fr);
+
+  gap: 40px;
+
+  align-items: center;
+
+  background: #ffffff;
+
+  border: 1px solid #dfcfaa;
+
+  border-radius: 14px;
+
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.06);
+
+  box-sizing: border-box;
 }
 
-.ranger-section:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px var(--shadow-strong);
-}
 
-/* Section without Image - Full Width */
-.ranger-section.no-image {
-  display: block;
-  padding: 2rem;
-}
-
-.ranger-section-text.full-width {
-  width: 100%;
-}
-
-/* ========================================== */
-/* Text Side */
-/* ========================================== */
+/* =========================================================
+   TEXT
+========================================================= */
 
 .ranger-section-text {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  width: 100%;
+  min-width: 0;
+
+  box-sizing: border-box;
 }
 
 .ranger-section-text h3 {
+  width: fit-content;
+
+  margin: 0 0 12px;
+
+  padding-bottom: 5px;
+
   color: #b71c1c;
-  font-size: 1.2rem;
+
+  font-size: 20px;
   font-weight: 700;
-  margin-top: 0.8rem;
-  padding-bottom: 0.3rem;
+
+  line-height: 1.4;
+
   border-bottom: 2px solid #ff9800;
-  display: inline-block;
 }
 
-.ranger-section-text h3:first-child {
-  margin-top: 0;
+.ranger-section-text h3:not(:first-child) {
+  margin-top: 22px;
 }
 
 .ranger-section-text h4 {
+  margin: 18px 0 8px;
+
   color: #b71c1c;
-  font-size: 1rem;
-  font-weight: 600;
-  margin-top: 0.5rem;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  line-height: 1.5;
 }
 
 .ranger-section-text p {
-  color: var(--text-mid);
+  margin: 0 0 14px;
+
+  color: var(--text-mid, #405579);
+
+  font-size: 15px;
+
   line-height: 1.8;
-  font-size: 0.95rem;
 }
 
 .ranger-section-text ol {
-  padding-left: 1.5rem;
-  margin: 0.5rem 0;
+  margin: 5px 0 14px;
+
+  padding-left: 25px;
 }
 
 .ranger-section-text ol li {
-  color: var(--text-mid);
-  line-height: 1.8;
-  font-size: 0.95rem;
-  margin-bottom: 0.3rem;
+  margin-bottom: 6px;
+
+  color: var(--text-mid, #405579);
+
+  font-size: 15px;
+
+  line-height: 1.75;
 }
 
 .ranger-section-text ol ol {
-  padding-left: 1.5rem;
-  margin: 0.2rem 0;
+  margin: 5px 0;
+
+  padding-left: 25px;
 }
 
 .ranger-section-text ol ol li {
-  font-size: 0.92rem;
+  font-size: 14px;
 }
 
-/* ========================================== */
-/* Sub Sections */
-/* ========================================== */
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.ranger-image {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  align-self: center;
+
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+.ranger-image img {
+  display: block;
+
+  width: 100%;
+  max-width: 440px;
+
+  height: auto;
+
+  margin: 0 auto;
+
+  object-fit: contain;
+
+  border-radius: 16px;
+
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SECOND IMAGE
+========================================================= */
+
+.ranger-second-image {
+  align-self: center;
+}
+
+
+/* =========================================================
+   SUB SECTIONS
+========================================================= */
 
 .ranger-sub-section {
-  margin-bottom: 1.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .ranger-sub-section:last-child {
   margin-bottom: 0;
+
   padding-bottom: 0;
+
   border-bottom: none;
 }
 
 .ranger-sub-section h3 {
-  color: #b71c1c;
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  padding-bottom: 0.3rem;
-  border-bottom: 2px solid #ff9800;
-  display: inline-block;
+  margin-bottom: 10px;
 }
 
 .ranger-sub-section h4 {
-  color: #b71c1c;
-  font-size: 0.95rem;
-  font-weight: 600;
-  margin-top: 0.5rem;
+  margin-top: 14px;
 }
 
-.ranger-sub-section p {
-  color: var(--text-mid);
-  line-height: 1.8;
-  font-size: 0.95rem;
+.ranger-placeholder {
+  color: #999 !important;
+  font-style: italic;
 }
 
-.ranger-sub-section ol {
-  padding-left: 1.5rem;
-  margin: 0.5rem 0;
-}
 
-.ranger-sub-section ol li {
-  color: var(--text-mid);
-  line-height: 1.8;
-  font-size: 0.95rem;
-  margin-bottom: 0.3rem;
-}
+/* =========================================================
+   RANGER NOTE
+========================================================= */
 
 .ranger-note {
+  margin-top: 15px;
+
+  padding: 14px 16px;
+
   background: #fff3e0;
+
   border-left: 4px solid #ff9800;
-  padding: 0.8rem 1rem;
+
   border-radius: 8px;
-  margin-top: 0.8rem;
+
+  box-sizing: border-box;
 }
 
 .ranger-note strong {
-  color: #e65100;
   display: block;
-  margin-bottom: 0.3rem;
+
+  margin-bottom: 7px;
+
+  color: #e65100;
+
+  font-size: 14px;
 }
 
 .ranger-note p {
-  font-size: 0.9rem !important;
+  margin: 0;
+
   color: #555 !important;
+
+  font-size: 14px !important;
+
+  line-height: 1.7 !important;
 }
 
-/* ========================================== */
-/* Note Box */
-/* ========================================== */
+
+/* =========================================================
+   FULL WIDTH NOTE SECTION
+========================================================= */
+
+.ranger-full-section {
+  width: calc(100% - 48px);
+  max-width: 1168px;
+
+  margin: 0 auto;
+
+  box-sizing: border-box;
+}
 
 .ranger-note-box {
-  background: #f8fafc;
+  width: 100%;
+
+  padding: 26px;
+
+  background: #f7f9fb;
+
   border-left: 4px solid #ff9800;
-  padding: 1.5rem;
-  border-radius: 12px;
+
+  border-radius: 10px;
+
+  box-sizing: border-box;
 }
 
-.note-title {
+.ranger-note-title {
+  margin: 0 0 18px;
+
   color: #e65100;
-  font-size: 1.1rem;
+
+  font-size: 17px;
   font-weight: 700;
-  margin-bottom: 1rem;
+
+  line-height: 1.5;
 }
 
 .ranger-point {
-  margin-bottom: 1.2rem;
+  margin: 0;
 }
 
-.ranger-point:last-child {
-  margin-bottom: 0;
-}
+.ranger-point-text {
+  margin: 0;
 
-.point-text {
-  color: var(--text-mid);
+  padding-left: 5px;
+
+  color: var(--text-mid, #405579);
+
+  font-size: 15px;
+
   line-height: 1.8;
-  font-size: 0.95rem;
-  padding-left: 0.5rem;
 }
 
-/* ========================================== */
-/* Advancement Scheme */
-/* ========================================== */
+
+/* =========================================================
+   ADVANCEMENT SECTION
+========================================================= */
 
 .ranger-advancement {
+  width: calc(100% - 48px);
+  max-width: 1168px;
+
+  margin: 0 auto;
+
+  padding: 38px 28px;
+
   text-align: center;
-  padding: 1.5rem;
-  background: linear-gradient(135deg, #fce4ec, #f8bbd0);
-  border-radius: 12px;
-  border: 2px solid #b71c1c;
+
+  background: #ffffff;
+
+  border: 1px solid #dfcfaa;
+
+  border-radius: 14px;
+
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.06);
+
+  box-sizing: border-box;
 }
 
-.ranger-advancement h3 {
-  color: #b71c1c;
-  font-size: 1.3rem;
+.ranger-advancement h2 {
+  margin: 0 0 12px;
+
+  color: #17365f;
+
+  font-size: 28px;
   font-weight: 700;
-  margin-bottom: 0.8rem;
+
+  line-height: 1.3;
 }
 
-.more-details-btn {
-  display: inline-block;
-  padding: 0.7rem 2rem;
-  background: linear-gradient(135deg, #b71c1c, #d32f2f);
-  color: white;
-  border: none;
-  border-radius: 30px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 14px rgba(183, 28, 28, 0.4);
+.ranger-advancement p {
+  max-width: 720px;
+
+  margin: 0 auto;
+
+  color: #405579;
+
+  font-size: 15px;
+
+  line-height: 1.75;
 }
 
-.more-details-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(183, 28, 28, 0.5);
-}
 
-/* ========================================== */
-/* Image Side - Full Image Show */
-/* ========================================== */
+/* =========================================================
+   MORE DETAILS BUTTON
+========================================================= */
 
-.ranger-section-image {
-  display: flex;
-  align-items: center;
+.ranger-details-btn {
+  min-width: 175px;
+  min-height: 45px;
+
+  margin-top: 24px;
+  padding: 11px 22px;
+
+  display: inline-flex;
+
   justify-content: center;
-  width: 100%;
+  align-items: center;
+
+  gap: 10px;
+
+  color: #ffffff;
+
+  background: #b71c1c;
+
+  border-radius: 8px;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  line-height: 1;
+
+  box-sizing: border-box;
+
+  transition: background 0.2s ease;
 }
 
-.ranger-section-image img {
-  width: 100%;
-  height: auto;
-  max-height: 350px;
-  object-fit: contain;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  background: #f5f7fa;
+.ranger-arrow {
+  font-size: 18px;
+
+  line-height: 1;
 }
 
-.ranger-section-image img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+.ranger-details-btn:hover {
+  background: #8e1414;
 }
 
-/* ========================================== */
-/* Responsive */
-/* ========================================== */
 
-@media (max-width: 1024px) {
-  .ranger-section {
-    padding: 1.5rem;
-    gap: 2rem;
-  }
+/* =========================================================
+   TABLET
+========================================================= */
 
-  .ranger-section-image img {
-    max-height: 280px;
-  }
-}
-
-@media (max-width: 768px) {
-  .ranger-page {
-    padding: 1.5rem 0.8rem;
-  }
+@media (max-width: 900px) {
 
   .ranger-hero {
-    padding: 2rem 1.5rem;
+    padding: 45px 24px;
   }
 
-  .ranger-hero h2 {
-    font-size: 2rem;
+  .ranger-hero h1 {
+    font-size: 38px;
   }
 
-  .ranger-hero p {
-    font-size: 1rem;
-  }
 
   .ranger-section {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 1.2rem;
+
+    gap: 28px;
+
+    padding: 24px;
+
+    align-items: center;
   }
 
-  .ranger-section.no-image {
-    padding: 1.2rem;
-  }
 
-  .ranger-section-text h3 {
-    font-size: 1.1rem;
-  }
-
-  .ranger-section-text p,
-  .ranger-section-text ol li {
-    font-size: 0.9rem;
-  }
-
-  .ranger-section-image img {
-    max-height: 250px;
+  .ranger-image {
     width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto;
   }
 
-  .ranger-note-box {
-    padding: 1rem;
+  .ranger-image img {
+    width: 100%;
+
+    max-width: 520px;
+
+    height: auto;
+
+    margin: 0 auto;
   }
 
-  .point-text {
-    font-size: 0.9rem;
+
+  .ranger-full-section {
+    width: calc(100% - 48px);
   }
 
-  .ranger-sub-section h3 {
-    font-size: 1rem;
-  }
 
-  .ranger-sub-section p,
-  .ranger-sub-section ol li {
-    font-size: 0.9rem;
-  }
-
-  .ranger-advancement h3 {
-    font-size: 1.1rem;
-  }
-
-  .more-details-btn {
-    padding: 0.6rem 1.5rem;
-    font-size: 0.9rem;
+  .ranger-advancement {
+    width: calc(100% - 48px);
   }
 }
 
-@media (max-width: 480px) {
-  .ranger-page {
-    padding: 1rem 0.5rem;
-  }
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
 
   .ranger-hero {
-    padding: 1.5rem 1rem;
-    border-radius: 12px;
+    padding: 36px 18px;
   }
 
-  .ranger-hero h2 {
-    font-size: 1.5rem;
+  .ranger-hero h1 {
+    font-size: 32px;
   }
 
   .ranger-hero p {
-    font-size: 0.9rem;
+    font-size: 14px;
+    line-height: 1.65;
   }
+
+
+  .ranger-content {
+    gap: 20px;
+
+    padding-top: 20px;
+  }
+
 
   .ranger-section {
-    padding: 1rem;
+    width: calc(100% - 20px);
+
+    padding: 15px;
+
+    gap: 20px;
+
+    grid-template-columns: 1fr;
+
     border-radius: 12px;
-    gap: 1rem;
   }
 
-  .ranger-section.no-image {
-    padding: 1rem;
-  }
 
   .ranger-section-text h3 {
-    font-size: 0.95rem;
+    font-size: 18px;
+  }
+
+  .ranger-section-text h4 {
+    font-size: 15px;
   }
 
   .ranger-section-text p,
   .ranger-section-text ol li {
-    font-size: 0.85rem;
-    line-height: 1.6;
+    font-size: 14px;
+
+    line-height: 1.7;
   }
 
-  .ranger-section-image img {
-    max-height: 200px;
+
+  .ranger-section-text ol {
+    padding-left: 22px;
+  }
+
+  .ranger-section-text ol ol {
+    padding-left: 22px;
+  }
+
+
+  /* IMAGES */
+
+  .ranger-image,
+  .ranger-second-image {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .ranger-image img,
+  .ranger-second-image img {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+
+    height: auto;
+
+    margin: 0 auto;
+
+    border-radius: 13px;
+  }
+
+
+  /* SUB SECTIONS */
+
+  .ranger-sub-section {
+    margin-bottom: 20px;
+
+    padding-bottom: 17px;
+  }
+
+
+  .ranger-sub-section h3 {
+    font-size: 16px;
+  }
+
+
+  .ranger-note {
+    padding: 12px 13px;
+  }
+
+  .ranger-note p {
+    font-size: 13px !important;
+  }
+
+
+  /* NOTE */
+
+  .ranger-full-section {
+    width: calc(100% - 20px);
   }
 
   .ranger-note-box {
-    padding: 0.8rem;
+    padding: 20px 17px;
+
+    border-left-width: 3px;
   }
 
-  .point-text {
-    font-size: 0.85rem;
+  .ranger-note-title {
+    font-size: 15px;
   }
 
-  .ranger-sub-section h3 {
-    font-size: 0.9rem;
+  .ranger-point-text {
+    font-size: 14px;
+
+    line-height: 1.7;
   }
 
-  .ranger-sub-section p,
-  .ranger-sub-section ol li {
-    font-size: 0.85rem;
+
+  /* ADVANCEMENT */
+
+  .ranger-advancement {
+    width: calc(100% - 20px);
+
+    padding: 28px 17px;
+
+    border-radius: 12px;
   }
 
-  .ranger-advancement h3 {
-    font-size: 0.95rem;
+  .ranger-advancement h2 {
+    font-size: 22px;
   }
 
-  .more-details-btn {
-    padding: 0.5rem 1.2rem;
-    font-size: 0.85rem;
+  .ranger-advancement p {
+    font-size: 14px;
+
+    line-height: 1.7;
+  }
+
+  .ranger-details-btn {
+    width: 100%;
+
+    max-width: 220px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .ranger-hero {
+    padding: 30px 15px;
+  }
+
+  .ranger-hero h1 {
+    font-size: 28px;
+  }
+
+
+  .ranger-section {
+    width: calc(100% - 14px);
+
+    padding: 11px;
+
+    gap: 17px;
+  }
+
+
+  .ranger-image img,
+  .ranger-second-image img {
+    width: 100%;
+
+    max-width: 100%;
+  }
+
+
+  .ranger-full-section {
+    width: calc(100% - 14px);
+  }
+
+  .ranger-note-box {
+    padding: 17px 14px;
+  }
+
+
+  .ranger-advancement {
+    width: calc(100% - 14px);
+
+    padding: 24px 14px;
+  }
+
+  .ranger-advancement h2 {
+    font-size: 20px;
   }
 }

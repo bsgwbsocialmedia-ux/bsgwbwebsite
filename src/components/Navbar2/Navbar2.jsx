@@ -35,11 +35,11 @@ const TABS = [
         ],
       },
       {
-        label: 'Annual Plan',
-        items: [
-          { id: 'youthannualplan', label: 'Youth Annual Plan', path: '/programme/annual-plan/youth' },
-          { id: 'adultannualplan', label: 'Adult Annual Plan', path: '/programme/annual-plan/adult' },
-        ],
+        // label: 'Annual Plan',
+        // items: [
+        //   { id: 'youthannualplan', label: 'Youth Annual Plan', path: '/programme/annual-plan/youth' },
+        //   { id: 'adultannualplan', label: 'Adult Annual Plan', path: '/programme/annual-plan/adult' },
+        // ],
       },
     ],
   },
@@ -60,13 +60,13 @@ const TABS = [
               { id: 'shqstaff', label: 'ShqStaff', path: '/organization/shqstaff' },
             ],
           },
-          { id: 'districtassociation', label: 'District Association', path: '/organization/districtassociation' },
+          // { id: 'districtassociation', label: 'District Association', path: '/organization/districtassociation' },
         ],
       },
       {
         label: 'WB Rules',
         children: [
-          { id: 'byelaws', label: 'Bye Laws', path: '/organization/byelaws' },
+          // { id: 'byelaws', label: 'Bye Laws', path: '/organization/byelaws' },
           { id: 'financialpolicy', label: 'Financial Policy', path: '/organization/financialpolicy' },
         ],
       },

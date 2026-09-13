@@ -36,8 +36,8 @@ import Beginning from "./pages/Beginning/Beginning";
 import PresentLeadership from "./pages/Organization/PresentLeadership/PresentLeadership";
 import ShqOfficers from "./pages/Organization/ShqOfficers/ShqOfficers";
 import ShqStaff from "./pages/Organization/ShqStaff/ShqStaff";
-import DistrictAssociation from "./pages/Organization/DistrictAssociation/DistrictAssociation";
-import ByeLaws from "./pages/Organization/ByeLaws/ByeLaws";
+// import DistrictAssociation from "./pages/Organization/DistrictAssociation/DistrictAssociation";
+// import ByeLaws from "./pages/Organization/ByeLaws/ByeLaws";
 import FinancialPolicy from "./pages/Organization/FinancialPolicy/FinancialPolicy";
 import TypeOfMembership from "./pages/Organization/Membership/TypeOfMembership";
 
@@ -53,8 +53,8 @@ import UnitLeaders from "./pages/Programme/AdultProgramme/UnitLeaders/UnitLeader
 import AdultLeaders from "./pages/Programme/AdultProgramme/AdultLeaders/AdultLeaders";
 import LeadersOfAdult from "./pages/Programme/AdultProgramme/LeadersAdult/LeadersAdult";
 
-import YouthAnnualPlan from "./pages/Programme/AnnualPlan/YouthAnnualPlan/YouthAnnualPlan";
-import AdultAnnualPlan from "./pages/Programme/AnnualPlan/AdultAnnualPlan/AdultAnnualPlan";
+// import YouthAnnualPlan from "./pages/Programme/AnnualPlan/YouthAnnualPlan/YouthAnnualPlan";
+// import AdultAnnualPlan from "./pages/Programme/AnnualPlan/AdultAnnualPlan/AdultAnnualPlan";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -114,14 +114,14 @@ function App() {
         <Route path="/programme/adult-programme/adultleaders" element={<AdultLeaders />} />
         <Route path="/programme/adult-programme/leadersofadult" element={<LeadersOfAdult />} />
 
-        <Route path="/programme/annual-plan/youth" element={<YouthAnnualPlan />} />
-        <Route path="/programme/annual-plan/adult" element={<AdultAnnualPlan />} />
+        {/* <Route path="/programme/annual-plan/youth" element={<YouthAnnualPlan />} />
+        <Route path="/programme/annual-plan/adult" element={<AdultAnnualPlan />} /> */}
 
         <Route path="/organization/presentleadership" element={<PresentLeadership />} />
         <Route path="/organization/shqofficers" element={<ShqOfficers />} /> 
         <Route path="/organization/shqstaff" element={<ShqStaff/>} />
-        <Route path="/organization/districtassociation" element={<DistrictAssociation />} />
-        <Route path="/organization/byelaws" element={<ByeLaws />} />
+        {/* <Route path="/organization/districtassociation" element={<DistrictAssociation />} /> */}
+        {/* <Route path="/organization/byelaws" element={<ByeLaws />} /> */}
         <Route path="/organization/financialpolicy" element={<FinancialPolicy />} />
         <Route path="/organization/membership/typeofmembership" element={<TypeOfMembership />} />
 

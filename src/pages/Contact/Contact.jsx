@@ -28,17 +28,17 @@ export default function Contact() {
 
             <div className="contact-item">
               <span>📍</span>
-              <p>Kolkata, West Bengal, India</p>
+              <p>5, Government Place, North Kolkata - 700001,(Near Lok Bhawan North Gate), West Bengal, India</p>
             </div>
 
             <div className="contact-item">
               <span>📞</span>
-              <p>+91 03322621599</p>
+              <p>+91 03322621599/ +91 8100161817 (For Equipment Department)</p>
             </div>
 
             <div className="contact-item">
               <span>✉️</span>
-              <p>bsgwbsocialmedia@gmail.com</p>
+              <p>bsgwbshq@gmail.com / bsgwb.equipment@gmail.com</p>
             </div>
 
             <div className="contact-item">
@@ -53,8 +53,8 @@ export default function Contact() {
             <p className="partner-text-title">🤝 Become a Partner</p>
             <p className="partner-text-desc">
               Interested in partnering with us? Reach out to us at{' '}
-              <a href="mailto:bsgwbsocialmedia@gmail.com">bsgwbsocialmedia@gmail.com</a> or call{' '}
-              <a href="tel:+919051238821">+91 9051238821</a>
+              <a href="mailto:bsgwbshq@gmail.com">bsgwbshq@gmail.com</a> or call{' '}
+              <a href="tel:+919051238821">+91 9330321982</a>
             </p>
           </div>
 

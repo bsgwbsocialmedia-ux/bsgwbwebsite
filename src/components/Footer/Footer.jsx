@@ -76,7 +76,7 @@ export default function Footer() {
             <li><Link to="/programme/youth-programme/guide">Guide</Link></li>
             <li><Link to="/programme/youth-programme/rover">Rover</Link></li>
             <li><Link to="/programme/youth-programme/ranger">Ranger</Link></li>
-            <li><Link to="/programme/annual-plan/youth">Youth Annual Plan</Link></li>
+            {/* <li><Link to="/programme/annual-plan/youth">Youth Annual Plan</Link></li> */}
           </ul>
         </div>
 
@@ -86,17 +86,18 @@ export default function Footer() {
           <ul>
             <li>
               <FaMapMarkerAlt />
-              5, Government Place,<br />
-              State Headquarters,<br />
-              Kolkata-700062, West Bengal
+              5, Government Place, North Kolkata<br />
+              Near Lok Bhawan North Gate<br />
+              BSG WB State Headquarters,<br />
+              Kolkata-700001, West Bengal
             </li>
             <li>
               <FaPhoneAlt />
-              +91 9051238821
+              +91 9330321982 / +91 8100161817
             </li>
             <li>
               <FaEnvelope />
-              bsgwbsocialmedia@gmail.com
+              bsgwbshq@gmail.com
             </li>
           </ul>
 

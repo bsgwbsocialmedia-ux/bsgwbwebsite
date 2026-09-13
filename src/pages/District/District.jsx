@@ -12,13 +12,13 @@ const districts = [
       name: 'GOURANGO SARKAR',
       designation: 'District Secretary',
       phone: '+919830590622',
-      // email: 'example@email.com'
+      email: 'bsgwbkolkata@gmail.com'
     },
     {
       name: 'ABHISHEK MUKHERJEE',
       designation: 'District Organising Commissioner',
       phone: '+918017376862',
-      // email: 'example@email.com'
+      email: 'bsgwbkolkata@gmail.com'
     }
   ],
 
@@ -26,126 +26,226 @@ const districts = [
 
     {
       id: 'kolkata-la-1',
-      name: 'NORTH KOLKATA LOCAL ASSOCIATION',
+      name: '1st Calcutta Local Association',
       description: 'Local Association under Kolkata District Association',
       contacts: [
         {
-          name: 'LA Member Name',
-          designation: 'Secretary',
-          phone: '+91XXXXXXXXXX',
-          email: 'example@email.com'
+          name: 'MD. SAFI SAMCI',
+          phone: '+919831065824',
         }
       ]
     },
 
     {
       id: 'kolkata-la-2',
-      name: 'SOUTH KOLKATA LOCAL ASSOCIATION',
+      name: '2nd Calcutta Local Association',
       description: 'Local Association under Kolkata District Association',
       contacts: [
         {
-          name: 'LA Member Name',
-          designation: 'Secretary',
-          phone: '+91XXXXXXXXXX',
-          email: 'example@email.com'
+          name: 'Sandipan Chowdhury',
+          phone: '9830325407',
         }
       ]
     },
 
     {
       id: 'kolkata-la-3',
-      name: 'LA Name 3',
+      name: 'East Calcutta Local Association',
       description: 'Local Association under Kolkata District Association',
-      contacts: []
+      contacts: [
+        {
+          name: 'Shamvu Das',
+          phone: '7003390187',
+        }
+      ]
     },
 
     {
       id: 'kolkata-la-4',
-      name: 'LA Name 4',
+      name: 'South Calcutta Local Association',
       description: 'Local Association under Kolkata District Association',
-      contacts: []
+      contacts: [
+        {
+          name: 'Shivsankar Banerjee',
+          phone: '9331180003',
+        }
+      ]
     },
-
-    {
-      id: 'kolkata-la-5',
-      name: 'LA Name 5',
-      description: 'Local Association under Kolkata District Association',
-      contacts: []
-    }
-
   ]
 },
   {
     id: 'howrah',
     name: 'Howrah',
-    description: 'District Association of Kolkata Bharat Scouts and Guides West Bengal',
-    contacts: [],
-    localAssociations: []
+    description: 'District Association of Howrah Bharat Scouts and Guides West Bengal',
+    contacts: [
+      {
+      name: 'Shameek Basu',
+      designation: 'District Orgainising Commisioner',
+      phone: '+919051568001',
+       email: 'bsghowrah@gmail.com'
+    },
+    {
+      name: 'Tapan Kumar Chatterjee',
+      designation: 'District Secretary',
+      phone: '+919836287337',
+       email: 'bsghowrah@gmail.com'
+    },
+    ],
+    localAssociations: [
+      {
+      id: 'ulberia',
+      name: 'Uluberia Local Association',
+      description: 'Local Association under Howrah District Association',
+      contacts: [
+        {
+          name: 'Shrabani Bhattacharya',
+          phone: '+919433390588',
+          email: 'uluberiabsgda1@gmail.com'
+        }
+      ]
+    },
+    ]
   },
   {
     id: 'hooghly',
     name: 'Hooghly',
-    description: 'District Association of Kolkata Bharat Scouts and Guides West Bengal',
-    contacts: [],
+    description: 'District Association of Hooghly Bharat Scouts and Guides West Bengal',
+    contacts: [
+      {
+      name: 'Rahul Raungta',
+      designation: 'District Secretary',
+      phone: '+91 9038699965',
+      // email: 'bsgwbkolkata@gmail.com'
+    },
+    ],
     localAssociations: []
   },
   {
     id: 'north-24-parganas',
     name: 'North 24 Parganas',
-    description: 'District Association of Kolkata Bharat Scouts and Guides West Bengal',
-    contacts: [],
+    description: 'District Association of North 24 PARGANAS Bharat Scouts and Guides West Bengal',
+    contacts: [
+      {
+      name: 'ABHIJIT NANDY',
+      designation: 'District Organising Commisioner',
+      phone: '+919433349788',
+       email: 'bsgwbn24pgs@gmail.com'
+    },
+      
+      {
+      name: 'SUDIP PAUL',
+      designation: 'District Secretary',
+      phone: '+919830506455',
+       email: 'bsgwbn24pgs@gmail.com'
+    },],
     localAssociations: []
   },
   {
     id: 'south-24-parganas',
     name: 'South 24 Parganas',
-    description: 'District Association of Kolkata Bharat Scouts and Guides West Bengal',
-    contacts: [],
+    description: 'District Association of South 24 Parganas Bharat Scouts and Guides West Bengal',
+    contacts: [
+      {
+      name: 'Hrishikesh Bhattacharya',
+      designation: 'District Secretary',
+      phone: '+917980087387',
+      //  email: 'bsgwbn24pgs@gmail.com'
+    },
+    ],
     localAssociations: []
   },
   {
     id: 'purba-bardhaman',
     name: 'Purba Bardhaman',
-    description: 'District Association of Kolkata Bharat Scouts and Guides West Bengal',
-    contacts: [],
+    description: 'District Association of Purba Bardhaman Bharat Scouts and Guides West Bengal',
+    contacts: [
+      {
+      name: 'Sukanto',
+      designation: 'District Secretary',
+      phone: '+919333706133',
+      //  email: 'bsgwbn24pgs@gmail.com'
+    },
+    ],
     localAssociations: []
   },
   {
     id: 'paschim-bardhaman',
     name: 'Paschim Bardhaman',
-    description: 'District Association of Kolkata Bharat Scouts and Guides West Bengal',
-    contacts: [],
+    description: 'District Association of Paschim Bardhaman Bharat Scouts and Guides West Bengal',
+    contacts: [
+      {
+      name: 'Antu Bhattacharya',
+      designation: 'District Secretary',
+      phone: '+918250503723',
+      //  email: 'bsgwbn24pgs@gmail.com'
+    },
+    ],
     localAssociations: []
   },
   {
     id: 'maldah',
     name: 'Maldah',
-    description: 'District Association of Kolkata Bharat Scouts and Guides West Bengal',
-    contacts: [],
+    description: 'District Association of Maldah Bharat Scouts and Guides West Bengal',
+    contacts: [
+      {
+      name: 'Md Kamal Hossain',
+      designation: 'District Organising Commisioner',
+      phone: '+917432824796',
+      email: 'bsgwbmaldah@gmail.com'
+    },
+    {
+      name: 'Md Aquib Zabed',
+      designation: 'District Secretary',
+      phone: '+917001027830',
+      email: 'bsgwbmaldah@gmail.com'
+    },
+    ],
     localAssociations: []
   },
   {
     id: 'jalpaiguri',
     name: 'Jalpaiguri',
-    description: 'District Association of Kolkata Bharat Scouts and Guides West Bengal',
-    contacts: [],
+    description: 'District Association of Jalpaiguri Bharat Scouts and Guides West Bengal',
+    contacts: [
+      {
+      name: 'Ranjit Thakur',
+      designation: 'District Secretary',
+      phone: '+916296239953',
+      // email: 'bsgwbmaldah@gmail.com'
+    },
+    ],
     localAssociations: []
   },
   {
     id: 'darjeeling',
     name: 'Darjeeling',
-    description: 'District Association of Kolkata Bharat Scouts and Guides West Bengal',
-    contacts: [],
+    description: 'District Association of Darjeeling Bharat Scouts and Guides West Bengal',
+    contacts: [
+ {
+      name: 'Rajendra Agarwal',
+      designation: 'District Secretary',
+      phone: '+919434048627',
+      // email: 'bsgwbmaldah@gmail.com'
+    },
+    ],
     localAssociations: []
   },
   {
     id: 'alipurduar',
     name: 'Alipurduar',
     description: 'District Association of Kolkata Bharat Scouts and Guides West Bengal',
-    contacts: [],
+    contacts: [
+       {
+      name: 'Mr. Sambhunath Tiwari',
+      designation: 'District Secretary',
+      phone: '+919609769677',
+      // email: 'bsgwbmaldah@gmail.com'
+    },
+    ],
     localAssociations: []
   }
 ];
+
 
 const independentLocalAssociations = [
  {

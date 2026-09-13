@@ -1,347 +1,732 @@
-.scout-page {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
+/* =========================================================
+   GUIDE PAGE
+========================================================= */
 
-/* ========================================== */
-/* Hero */
-/* ========================================== */
-
-.scout-hero {
-  background: linear-gradient(135deg, #1a5c2e, #2d7a3a);
-  padding: 3rem 2rem;
-  border-radius: var(--radius);
-  margin-bottom: 2.5rem;
-  text-align: center;
-}
-
-.scout-hero h2 {
-  color: white;
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 0.7rem;
-}
-
-.scout-hero p {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 1.1rem;
-}
-
-/* ========================================== */
-/* Content Sections */
-/* ========================================== */
-
-.scout-content {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-/* Section with Image - Grid Layout */
-.scout-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
-  align-items: start;
-  background: var(--bg-card);
-  border-radius: var(--radius);
-  padding: 2rem;
-  border: 1px solid var(--border);
-  box-shadow: 0 5px 18px var(--shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.scout-section:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px var(--shadow-strong);
-}
-
-/* Section without Image - Full Width */
-.scout-section.no-image {
-  display: block;
-  padding: 2rem;
-}
-
-.scout-section-text.full-width {
+.guide-page {
   width: 100%;
+  min-height: 100vh;
+
+  margin: 0;
+  padding: 0 0 45px;
+
+  background: #f5f3ee;
+  color: #243b63;
+
+  box-sizing: border-box;
+
+  overflow-x: hidden;
 }
 
-/* ========================================== */
-/* Text Side */
-/* ========================================== */
 
-.scout-section-text {
+/* =========================================================
+   HERO
+========================================================= */
+
+.guide-hero {
+  width: 100%;
+
+  padding: 55px 24px;
+
+  background: linear-gradient(
+    135deg,
+    #1a5c2e,
+    #2d7a3a
+  );
+
+  text-align: center;
+
+  box-sizing: border-box;
+}
+
+.guide-hero-inner {
+  width: 100%;
+  max-width: 1168px;
+
+  margin: 0 auto;
+}
+
+.guide-hero h1 {
+  margin: 0 0 12px;
+
+  color: #ffffff;
+
+  font-size: 44px;
+  font-weight: 700;
+
+  line-height: 1.15;
+}
+
+.guide-hero p {
+  width: 100%;
+  max-width: 760px;
+
+  margin: 0 auto;
+
+  color: rgba(255, 255, 255, 0.92);
+
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.guide-content {
+  width: 100%;
+
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+
+  gap: 28px;
+
+  padding-top: 28px;
+
+  box-sizing: border-box;
 }
 
-.scout-section-text h3 {
+
+/* =========================================================
+   COMMON SECTION
+========================================================= */
+
+.guide-section {
+  width: calc(100% - 48px);
+  max-width: 1168px;
+
+  margin: 0 auto;
+
+  padding: 28px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.15fr)
+    minmax(280px, 0.85fr);
+
+  gap: 40px;
+
+  /*
+    This centers the image vertically
+    against the text content.
+  */
+  align-items: center;
+
+  background: #ffffff;
+
+  border: 1px solid #dfcfaa;
+
+  border-radius: 14px;
+
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.06);
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.guide-section-text {
+  width: 100%;
+  min-width: 0;
+
+  box-sizing: border-box;
+}
+
+.guide-section-text h3 {
+  width: fit-content;
+
+  margin: 0 0 12px;
+
+  padding-bottom: 5px;
+
   color: #1a5c2e;
-  font-size: 1.2rem;
+
+  font-size: 20px;
   font-weight: 700;
-  margin-top: 0.8rem;
-  padding-bottom: 0.3rem;
+
+  line-height: 1.4;
+
   border-bottom: 2px solid #ff9800;
-  display: inline-block;
 }
 
-.scout-section-text h3:first-child {
-  margin-top: 0;
+.guide-section-text h3:not(:first-child) {
+  margin-top: 22px;
 }
 
-.scout-section-text h4 {
+.guide-section-text h4 {
+  margin: 18px 0 8px;
+
   color: #1a5c2e;
-  font-size: 1.05rem;
-  font-weight: 600;
-  margin-top: 0.5rem;
-}
 
-.scout-section-text ol {
-  padding-left: 1.5rem;
-  margin: 0.5rem 0;
-}
-
-.scout-section-text ol li {
-  color: var(--text-mid);
-  line-height: 1.8;
-  font-size: 0.95rem;
-  margin-bottom: 0.3rem;
-}
-
-.scout-section-text p {
-  color: var(--text-mid);
-  line-height: 1.8;
-  font-size: 0.95rem;
-}
-
-/* ========================================== */
-/* Note Box */
-/* ========================================== */
-
-.scout-note-box {
-  background: #f8fafc;
-  border-left: 4px solid #ff9800;
-  padding: 1.5rem;
-  border-radius: 12px;
-}
-
-.note-title {
-  color: #e65100;
-  font-size: 1.1rem;
+  font-size: 16px;
   font-weight: 700;
-  margin-bottom: 1rem;
+
+  line-height: 1.5;
 }
 
-.scout-point {
-  margin-bottom: 1.2rem;
+.guide-section-text ol {
+  margin: 5px 0 14px;
+
+  padding-left: 25px;
 }
 
-.scout-point:last-child {
+.guide-section-text ol li {
+  margin-bottom: 6px;
+
+  color: var(--text-mid, #405579);
+
+  font-size: 15px;
+
+  line-height: 1.75;
+}
+
+.guide-section-text p {
+  margin: 0 0 14px;
+
+  color: var(--text-mid, #405579);
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   FIRST IMAGE
+========================================================= */
+
+.guide-image {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  align-self: center;
+
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+.guide-image img {
+  display: block;
+
+  width: 100%;
+  max-width: 440px;
+
+  height: auto;
+
+  margin: 0 auto;
+
+  object-fit: contain;
+
+  border-radius: 16px;
+
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SECOND SECTION
+========================================================= */
+
+.guide-note-section {
+  align-items: center;
+}
+
+
+/* =========================================================
+   NOTE BOX
+========================================================= */
+
+.guide-note-box {
+  width: 100%;
+
+  padding: 26px;
+
+  background: #f7f9fb;
+
+  border-left: 4px solid #ff9800;
+
+  border-radius: 10px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   NOTE
+========================================================= */
+
+.guide-note-title {
+  margin: 0 0 18px;
+
+  color: #e65100;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   POINTS
+========================================================= */
+
+.guide-point {
+  margin: 0 0 22px;
+}
+
+.guide-point:last-child {
   margin-bottom: 0;
 }
 
-.point-title {
+.guide-point-title {
+  margin: 0 0 9px;
+
   color: #1a5c2e;
-  font-size: 0.95rem;
+
+  font-size: 15px;
   font-weight: 700;
-  margin-bottom: 0.3rem;
+
+  line-height: 1.5;
 }
 
-.point-text {
-  color: var(--text-mid);
+.guide-point-text {
+  margin: 0;
+
+  padding-left: 5px;
+
+  color: var(--text-mid, #405579);
+
+  font-size: 15px;
+
   line-height: 1.8;
-  font-size: 0.95rem;
-  padding-left: 0.5rem;
 }
 
-.point-note {
+.guide-point-note {
+  margin: 6px 0 0;
+
+  padding-left: 5px;
+
   color: #666;
-  font-size: 0.85rem;
+
+  font-size: 13px;
+
   font-style: italic;
-  padding-left: 0.5rem;
-  margin-top: 0.3rem;
+
+  line-height: 1.6;
 }
 
-.scout-law-list {
-  padding-left: 1.5rem;
-  margin: 0.3rem 0;
+
+/* =========================================================
+   GUIDE LAW
+========================================================= */
+
+.guide-law-list {
+  margin: 5px 0;
+
+  padding-left: 28px;
 }
 
-.scout-law-list li {
-  color: var(--text-mid);
-  line-height: 1.8;
-  font-size: 0.95rem;
+.guide-law-list li {
+  margin-bottom: 4px;
+
+  color: var(--text-mid, #405579);
+
+  font-size: 15px;
+
+  line-height: 1.75;
 }
 
-/* ========================================== */
-/* Image Side - Full Image Show */
-/* ========================================== */
 
-.scout-section-image {
+/* =========================================================
+   SECOND IMAGE
+========================================================= */
+
+.guide-second-image {
+  width: 100%;
+
   display: flex;
-  align-items: center;
+
   justify-content: center;
-  width: 100%;
+  align-items: center;
+
+  align-self: center;
+
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
 }
 
-.scout-section-image img {
+.guide-second-image img {
+  display: block;
+
   width: 100%;
+  max-width: 440px;
+
   height: auto;
-  max-height: 350px;
+
+  margin: 0 auto;
+
   object-fit: contain;
+
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  background: #f5f7fa;
+
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
 }
 
-.scout-section-image img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+
+/* =========================================================
+   ADVANCEMENT
+========================================================= */
+
+.guide-advancement {
+  width: calc(100% - 48px);
+  max-width: 1168px;
+
+  margin: 0 auto;
+
+  padding: 38px 28px;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border: 1px solid #dfcfaa;
+
+  border-radius: 14px;
+
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.06);
+
+  box-sizing: border-box;
 }
 
-/* ========================================== */
-/* Responsive */
-/* ========================================== */
+.guide-advancement h2 {
+  margin: 0 0 12px;
 
-@media (max-width: 1024px) {
-  .scout-section {
-    padding: 1.5rem;
-    gap: 2rem;
-  }
+  color: #17365f;
 
-  .scout-section-image img {
-    max-height: 280px;
-  }
+  font-size: 28px;
+  font-weight: 700;
+
+  line-height: 1.3;
 }
 
-@media (max-width: 768px) {
-  .scout-page {
-    padding: 1.5rem 0.8rem;
+.guide-advancement p {
+  max-width: 720px;
+
+  margin: 0 auto;
+
+  color: #405579;
+
+  font-size: 15px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.guide-details-btn {
+  min-width: 175px;
+  min-height: 45px;
+
+  margin-top: 24px;
+  padding: 11px 22px;
+
+  display: inline-flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+
+  color: #ffffff;
+
+  background: #1a5c2e;
+
+  border-radius: 8px;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  line-height: 1;
+
+  box-sizing: border-box;
+
+  transition: background 0.2s ease;
+}
+
+.guide-details-btn span {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.guide-details-btn:hover {
+  background: #12451f;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .guide-hero {
+    padding: 45px 24px;
   }
 
-  .scout-hero {
-    padding: 2rem 1.5rem;
+  .guide-hero h1 {
+    font-size: 38px;
   }
 
-  .scout-hero h2 {
-    font-size: 2rem;
-  }
 
-  .scout-hero p {
-    font-size: 1rem;
-  }
-
-  .scout-section {
+  .guide-section {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 1.2rem;
+
+    gap: 25px;
+
+    padding: 24px;
+
+    align-items: center;
   }
 
-  .scout-section.no-image {
-    padding: 1.2rem;
-  }
 
-  .scout-section-text h3 {
-    font-size: 1.1rem;
-  }
+  /* IMAGE BELOW CONTENT */
 
-  .scout-section-text h4 {
-    font-size: 0.95rem;
-  }
-
-  .scout-section-text ol li,
-  .scout-section-text p {
-    font-size: 0.9rem;
-  }
-
-  .scout-section-image img {
-    max-height: 250px;
+  .guide-image,
+  .guide-second-image {
     width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto;
+    padding: 0;
+
+    align-self: center;
   }
 
-  .scout-note-box {
-    padding: 1rem;
-  }
 
-  .point-title {
-    font-size: 0.9rem;
-  }
+  .guide-image img,
+  .guide-second-image img {
+    width: 100%;
+    max-width: 520px;
 
-  .point-text {
-    font-size: 0.9rem;
-  }
+    height: auto;
 
-  .scout-law-list li {
-    font-size: 0.9rem;
+    margin: 0 auto;
   }
 }
 
-@media (max-width: 480px) {
-  .scout-page {
-    padding: 1rem 0.5rem;
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .guide-hero {
+    padding: 36px 18px;
   }
 
-  .scout-hero {
-    padding: 1.5rem 1rem;
+  .guide-hero h1 {
+    font-size: 32px;
+  }
+
+  .guide-hero p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+
+  .guide-content {
+    gap: 20px;
+    padding-top: 20px;
+  }
+
+
+  .guide-section {
+    width: calc(100% - 20px);
+
+    padding: 15px;
+
+    gap: 20px;
+
+    grid-template-columns: 1fr;
+
     border-radius: 12px;
   }
 
-  .scout-hero h2 {
-    font-size: 1.5rem;
+
+  .guide-section-text h3 {
+    font-size: 18px;
   }
 
-  .scout-hero p {
-    font-size: 0.9rem;
+  .guide-section-text h4 {
+    font-size: 15px;
   }
 
-  .scout-section {
-    padding: 1rem;
+  .guide-section-text ol li,
+  .guide-section-text p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+
+  /* NOTE BOX */
+
+  .guide-note-box {
+    padding: 20px 17px;
+
+    border-left-width: 3px;
+  }
+
+  .guide-note-title {
+    font-size: 15px;
+  }
+
+  .guide-point-title {
+    font-size: 14px;
+  }
+
+  .guide-point-text {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .guide-point-note {
+    font-size: 12px;
+  }
+
+
+  /* LAW */
+
+  .guide-law-list {
+    padding-left: 23px;
+  }
+
+  .guide-law-list li {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+
+  /* IMAGES */
+
+  .guide-image,
+  .guide-second-image {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  .guide-image img,
+  .guide-second-image img {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+
+    height: auto;
+
+    margin: 0 auto;
+
+    border-radius: 13px;
+  }
+
+
+  /* ADVANCEMENT */
+
+  .guide-advancement {
+    width: calc(100% - 20px);
+
+    padding: 28px 17px;
+
     border-radius: 12px;
-    gap: 1rem;
   }
 
-  .scout-section.no-image {
-    padding: 1rem;
+  .guide-advancement h2 {
+    font-size: 22px;
   }
 
-  .scout-section-text h3 {
-    font-size: 0.95rem;
+  .guide-advancement p {
+    font-size: 14px;
+    line-height: 1.7;
   }
 
-  .scout-section-text h4 {
-    font-size: 0.85rem;
+
+  .guide-details-btn {
+    width: 100%;
+    max-width: 220px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .guide-hero {
+    padding: 30px 15px;
   }
 
-  .scout-section-text ol li,
-  .scout-section-text p {
-    font-size: 0.85rem;
-    line-height: 1.6;
+  .guide-hero h1 {
+    font-size: 28px;
   }
 
-  .scout-section-image img {
-    max-height: 200px;
+
+  .guide-section {
+    width: calc(100% - 14px);
+
+    padding: 11px;
+
+    gap: 17px;
   }
 
-  .scout-note-box {
-    padding: 0.8rem;
+
+  .guide-note-box {
+    padding: 17px 14px;
   }
 
-  .point-title {
-    font-size: 0.85rem;
+
+  .guide-image img,
+  .guide-second-image img {
+    width: 100%;
+    max-width: 100%;
   }
 
-  .point-text {
-    font-size: 0.85rem;
-  }
 
-  .point-note {
-    font-size: 0.8rem;
-  }
+  .guide-advancement {
+    width: calc(100% - 14px);
 
-  .scout-law-list li {
-    font-size: 0.85rem;
+    padding: 24px 14px;
   }
 }

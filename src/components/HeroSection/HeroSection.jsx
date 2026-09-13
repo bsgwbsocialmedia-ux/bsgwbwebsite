@@ -4,7 +4,15 @@ import './HeroSection.css';
 
 // ── Dummy banner slides ──
 const DUMMY_SLIDES = [
-    {
+      {
+    id: 6,
+    imageUrl: '/4.jpeg',
+    altText: '76th Ordinary General Meeting ',
+    caption: '76th Ordinary General Meeting',
+    sub: 'The State Council of Bharat Scouts and Guides West Bengal on 26th Aug 2026. ',
+    bg: 'linear-gradient(135deg, #0d2440 0%, #a07008 100%)',
+  },
+  {
     id: 1,
     imageUrl: '/2.png',
     altText: 'LOK BHAWAN 2026',
@@ -44,24 +52,25 @@ const DUMMY_SLIDES = [
     sub: 'Building character, one adventure at a time — Scouts & Guides lead the way.',
     bg: 'linear-gradient(135deg, #2d3561 0%, #1a3a5c 100%)',
   },
+
 ];
 
 // ── Dummy leaders ──
 const DUMMY_LEADERS = [
   {
   id: 1,
-  role: 'Chief Patron & President',
+  role: 'President & Chief Patron',
   name: 'R.N. Ravi',
   designation: 'Governor of West Bengal',
   imageUrl: governorImage,
 },
   {
-    id: 2,
-    role: 'State Chief Commissioner',
-    name: 'Debaditya Chakrabarti',
-    designation: 'I.A.S. (Retd.)\nState Chief Commissioner, WB',
-    imageUrl: null,
-  },
+  id: 2,
+  role: "State Chief Commissioner",
+  name: "SHYAMAL KUMAR BISWAS",
+  designation: "State Chief Commissioner, WB",
+  imageUrl: "/SCCPHOTO.jpeg",
+}
 ];
 
 const ScoutFleurSVG = () => (

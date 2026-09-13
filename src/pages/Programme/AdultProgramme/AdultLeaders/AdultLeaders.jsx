@@ -31,7 +31,7 @@ export default function AdultLeaders() {
           </div>
         </div>
 
-        {/* Section 2: LIST OF ADULT LEADERS - No Image */}
+        {/* Section 2: LIST OF ADULT LEADERS - No Image
         <div className="adultleaders-section no-image">
           <div className="adultleaders-section-text full-width">
             <h3>LIST OF ADULT LEADERS</h3>
@@ -111,7 +111,7 @@ export default function AdultLeaders() {
             </div>
 
           </div>
-        </div>
+        </div> */}
 
         {/* Section 3: Advancement of Trainers - No Image */}
         <div className="adultleaders-section no-image">

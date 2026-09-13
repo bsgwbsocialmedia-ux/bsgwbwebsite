@@ -1,249 +1,546 @@
+/* =========================================================
+   UNIT LEADERS PAGE
+========================================================= */
+
 .unitleaders-page {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 32px 20px 60px;
+  box-sizing: border-box;
 }
 
-/* ========================================== */
-/* Hero */
-/* ========================================== */
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .unitleaders-hero {
-  background: linear-gradient(135deg, #0d47a1, #42a5f5);
-  padding: 3rem 2rem;
-  border-radius: var(--radius);
-  margin-bottom: 2.5rem;
+  width: 100%;
+  padding: 55px 30px;
+  margin-bottom: 28px;
+
   text-align: center;
+
+  background: linear-gradient(
+    135deg,
+    #0d47a1,
+    #1976d2
+  );
+
+  border-radius: 16px;
+
+  box-sizing: border-box;
 }
 
 .unitleaders-hero h2 {
-  color: white;
-  font-size: 2.5rem;
+  margin: 0 0 10px;
+
+  color: #ffffff;
+
+  font-size: 42px;
   font-weight: 700;
-  margin-bottom: 0.7rem;
+  line-height: 1.2;
 }
 
 .unitleaders-hero p {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 1.1rem;
+  max-width: 760px;
+
+  margin: 0 auto;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  font-size: 17px;
+  line-height: 1.7;
 }
 
-/* ========================================== */
-/* Content Sections */
-/* ========================================== */
+
+/* =========================================================
+   CONTENT
+========================================================= */
 
 .unitleaders-content {
+  width: 100%;
+
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+
+  gap: 24px;
 }
 
-/* Section with Image - Grid Layout */
+
+/* =========================================================
+   MAIN SECTION
+========================================================= */
+
 .unitleaders-section {
+  width: 100%;
+
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
-  align-items: start;
-  background: var(--bg-card);
-  border-radius: var(--radius);
-  padding: 2rem;
-  border: 1px solid var(--border);
-  box-shadow: 0 5px 18px var(--shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  grid-template-columns:
+    minmax(0, 1.35fr)
+    minmax(300px, 0.65fr);
+
+  gap: 35px;
+
+  align-items: center;
+
+  padding: 32px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e6ec;
+  border-radius: 16px;
+
+  box-shadow:
+    0 8px 30px rgba(15, 23, 42, 0.07);
+
+  box-sizing: border-box;
 }
 
-.unitleaders-section:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px var(--shadow-strong);
-}
 
-/* ========================================== */
-/* Text Side */
-/* ========================================== */
+/* =========================================================
+   TEXT CONTENT
+========================================================= */
 
 .unitleaders-section-text {
+  width: 100%;
+  min-width: 0;
+
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+
+  gap: 8px;
 }
 
 .unitleaders-section-text p {
-  color: var(--text-mid);
+  margin: 0 0 8px;
+
+  color: #334155;
+
+  font-size: 15px;
   line-height: 1.8;
-  font-size: 0.95rem;
 }
 
 .unitleaders-section-text h3 {
+  width: fit-content;
+
+  margin: 18px 0 6px;
+
   color: #0d47a1;
-  font-size: 1.05rem;
+
+  font-size: 18px;
   font-weight: 700;
-  margin-top: 0.8rem;
-  padding-bottom: 0.3rem;
+
+  line-height: 1.4;
+
+  padding-bottom: 5px;
+
   border-bottom: 2px solid #ff9800;
-  display: inline-block;
 }
 
 .unitleaders-section-text h3:first-child {
   margin-top: 0;
 }
 
+
+/* =========================================================
+   LIST
+========================================================= */
+
 .unitleaders-section-text ul {
-  padding-left: 1.5rem;
-  margin: 0.3rem 0;
+  margin: 0 0 6px;
+
+  padding-left: 22px;
 }
 
 .unitleaders-section-text ul li {
-  color: var(--text-mid);
-  line-height: 1.8;
-  font-size: 0.95rem;
-  margin-bottom: 0.2rem;
+  margin-bottom: 5px;
+
+  color: #334155;
+
+  font-size: 15px;
+  line-height: 1.7;
 }
+
+
+/* =========================================================
+   SPECIALIZED COURSES
+========================================================= */
 
 .specialized-courses {
   display: grid;
+
   grid-template-columns: 1fr 1fr;
-  gap: 0.3rem 1.5rem;
-  padding-left: 1.5rem !important;
-  margin: 0.3rem 0 !important;
+
+  column-gap: 30px;
+  row-gap: 2px;
+
+  margin: 0 !important;
+
+  padding-left: 22px !important;
 }
 
 .specialized-courses li {
-  color: var(--text-mid);
-  line-height: 1.8;
-  font-size: 0.92rem;
-  margin-bottom: 0.1rem;
+  margin-bottom: 3px;
+
+  color: #334155;
+
+  font-size: 14px;
+
+  line-height: 1.7;
 }
+
+
+/* =========================================================
+   COURSE NOTE
+========================================================= */
 
 .course-note {
+  margin-top: 8px !important;
+
+  color: #64748b !important;
+
+  font-size: 14px !important;
+
   font-style: italic;
-  color: #666 !important;
-  font-size: 0.9rem !important;
-  margin-top: 0.5rem;
 }
 
-/* ========================================== */
-/* Image Side - Full Image Show */
-/* ========================================== */
+
+/* =========================================================
+   IMAGE COLUMN
+   ALWAYS CENTERED ON RIGHT
+========================================================= */
 
 .unitleaders-section-image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 100%;
+  height: 100%;
+
+  min-height: 0;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  align-self: stretch;
+
+  box-sizing: border-box;
 }
 
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
 .unitleaders-section-image img {
-  width: 100%;
+  display: block;
+
+  width: auto;
+
+  max-width: 100%;
+  max-height: 390px;
+
   height: auto;
-  max-height: 450px;
+
+  margin: auto;
+
   object-fit: contain;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  background: #f5f7fa;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 12px 30px rgba(15, 23, 42, 0.13);
+
+  background: #f8fafc;
+
+  box-sizing: border-box;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .unitleaders-section-image img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+  transform: scale(1.015);
+
+  box-shadow:
+    0 16px 35px rgba(15, 23, 42, 0.17);
 }
 
-/* ========================================== */
-/* Responsive */
-/* ========================================== */
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
 
 @media (max-width: 1024px) {
+
+  .unitleaders-page {
+    padding: 25px 18px 50px;
+  }
+
   .unitleaders-section {
-    padding: 1.5rem;
-    gap: 2rem;
+    grid-template-columns:
+      minmax(0, 1.2fr)
+      minmax(270px, 0.8fr);
+
+    gap: 25px;
+
+    padding: 26px;
   }
 
   .unitleaders-section-image img {
-    max-height: 350px;
-  }
-}
-
-@media (max-width: 768px) {
-  .unitleaders-page {
-    padding: 1.5rem 0.8rem;
-  }
-
-  .unitleaders-hero {
-    padding: 2rem 1.5rem;
-  }
-
-  .unitleaders-hero h2 {
-    font-size: 2rem;
-  }
-
-  .unitleaders-hero p {
-    font-size: 1rem;
-  }
-
-  .unitleaders-section {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 1.2rem;
+    max-height: 330px;
   }
 
   .unitleaders-section-text h3 {
-    font-size: 0.95rem;
+    font-size: 17px;
+  }
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .unitleaders-page {
+    padding: 20px 14px 45px;
+  }
+
+
+  /* HERO */
+
+  .unitleaders-hero {
+    padding: 38px 22px;
+
+    margin-bottom: 20px;
+
+    border-radius: 14px;
+  }
+
+  .unitleaders-hero h2 {
+    font-size: 32px;
+  }
+
+  .unitleaders-hero p {
+    font-size: 15px;
+  }
+
+
+  /* SECTION */
+
+  .unitleaders-section {
+    grid-template-columns: 1fr;
+
+    gap: 24px;
+
+    padding: 22px;
+
+    border-radius: 14px;
+  }
+
+
+  /* TEXT */
+
+  .unitleaders-section-text {
+    width: 100%;
   }
 
   .unitleaders-section-text p,
   .unitleaders-section-text ul li {
-    font-size: 0.9rem;
+    font-size: 14px;
   }
+
+  .unitleaders-section-text h3 {
+    font-size: 17px;
+  }
+
+
+  /* IMAGE */
+
+  .unitleaders-section-image {
+    width: 100%;
+
+    height: auto;
+
+    min-height: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto;
+  }
+
+  .unitleaders-section-image img {
+    width: auto;
+
+    max-width: 90%;
+
+    max-height: 300px;
+
+    height: auto;
+
+    margin: 0 auto;
+  }
+
+
+  /* COURSES */
 
   .specialized-courses {
     grid-template-columns: 1fr;
   }
-
-  .unitleaders-section-image img {
-    max-height: 250px;
-    width: 100%;
-  }
 }
 
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
 @media (max-width: 480px) {
+
   .unitleaders-page {
-    padding: 1rem 0.5rem;
+    padding: 14px 10px 35px;
   }
 
+
+  /* HERO */
+
   .unitleaders-hero {
-    padding: 1.5rem 1rem;
+    padding: 30px 16px;
+
     border-radius: 12px;
   }
 
   .unitleaders-hero h2 {
-    font-size: 1.5rem;
+    font-size: 26px;
+
+    margin-bottom: 8px;
   }
 
   .unitleaders-hero p {
-    font-size: 0.9rem;
-  }
+    font-size: 14px;
 
-  .unitleaders-section {
-    padding: 1rem;
-    border-radius: 12px;
-    gap: 1rem;
-  }
-
-  .unitleaders-section-text h3 {
-    font-size: 0.85rem;
-  }
-
-  .unitleaders-section-text p,
-  .unitleaders-section-text ul li {
-    font-size: 0.85rem;
     line-height: 1.6;
   }
 
-  .specialized-courses li {
-    font-size: 0.82rem;
+
+  /* SECTION */
+
+  .unitleaders-section {
+    padding: 18px 16px;
+
+    gap: 20px;
+
+    border-radius: 12px;
+  }
+
+
+  /* TEXT */
+
+  .unitleaders-section-text p {
+    font-size: 14px;
+
+    line-height: 1.7;
+  }
+
+  .unitleaders-section-text h3 {
+    font-size: 15px;
+
+    line-height: 1.4;
+
+    margin-top: 16px;
+  }
+
+  .unitleaders-section-text ul {
+    padding-left: 20px;
+  }
+
+  .unitleaders-section-text ul li {
+    font-size: 13.5px;
+
+    line-height: 1.65;
+  }
+
+
+  /* IMAGE */
+
+  .unitleaders-section-image {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto;
   }
 
   .unitleaders-section-image img {
-    max-height: 200px;
+    width: auto;
+
+    max-width: 100%;
+
+    max-height: 240px;
+
+    height: auto;
+
+    margin: 0 auto;
+
+    border-radius: 12px;
+  }
+
+
+  /* COURSE LIST */
+
+  .specialized-courses {
+    padding-left: 20px !important;
+
+    grid-template-columns: 1fr;
+  }
+
+  .specialized-courses li {
+    font-size: 13px;
+
+    line-height: 1.6;
+  }
+
+  .course-note {
+    font-size: 13px !important;
+
+    line-height: 1.6 !important;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .unitleaders-page {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .unitleaders-hero {
+    padding: 26px 13px;
+  }
+
+  .unitleaders-hero h2 {
+    font-size: 23px;
+  }
+
+  .unitleaders-section {
+    padding: 15px 13px;
+  }
+
+  .unitleaders-section-image img {
+    max-height: 210px;
   }
 }

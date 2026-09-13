@@ -1,138 +1,234 @@
+/* =========================================================
+   MAIN PAGE
+========================================================= */
+
 .scout-page {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 40px;
+  background: #f5f3ee;
+  color: #243b63;
+  box-sizing: border-box;
 }
 
-/* ========================================== */
-/* Hero */
-/* ========================================== */
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .scout-hero {
-  background: linear-gradient(135deg, #1a5c2e, #2d7a3a);
-  padding: 3rem 2rem;
-  border-radius: var(--radius);
-  margin-bottom: 2.5rem;
-  text-align: center;
+  width: 100%;
+  padding: 55px 24px;
+  background: #ffffff;
+  border-bottom: 1px solid #e1d5bd;
+  box-sizing: border-box;
 }
 
 .scout-hero h2 {
-  color: white;
-  font-size: 2.5rem;
+  width: 100%;
+  max-width: 1168px;
+  margin: 0 auto 12px;
+
+  color: #17365f;
+  font-size: 44px;
   font-weight: 700;
-  margin-bottom: 0.7rem;
+  line-height: 1.15;
 }
 
 .scout-hero p {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 1.1rem;
+  width: 100%;
+  max-width: 1168px;
+  margin: 0 auto;
+
+  color: #405579;
+  font-size: 16px;
+  line-height: 1.7;
 }
 
-/* ========================================== */
-/* Content Sections */
-/* ========================================== */
+
+/* =========================================================
+   CONTENT
+========================================================= */
 
 .scout-content {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-/* Section with Image - Grid Layout */
-.scout-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
-  align-items: start;
-  background: var(--bg-card);
-  border-radius: var(--radius);
-  padding: 2rem;
-  border: 1px solid var(--border);
-  box-shadow: 0 5px 18px var(--shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.scout-section:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px var(--shadow-strong);
-}
-
-/* Section without Image - Full Width */
-.scout-section.no-image {
-  display: block;
-  padding: 2rem;
-}
-
-.scout-section-text.full-width {
   width: 100%;
+  box-sizing: border-box;
 }
 
-/* ========================================== */
-/* Text Side */
-/* ========================================== */
+
+/* =========================================================
+   MAIN SECTION
+========================================================= */
+
+.scout-section {
+  width: calc(100% - 48px);
+  max-width: 1168px;
+
+  margin: 28px auto 0;
+  padding: 28px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.15fr)
+    minmax(280px, 0.85fr);
+
+  gap: 38px;
+
+  /*
+    IMPORTANT:
+    Center the image vertically against
+    the complete text section.
+  */
+  align-items: center;
+
+  background: #ffffff;
+
+  border: 1px solid #dfcfaa;
+  border-radius: 14px;
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SECTION TEXT
+========================================================= */
 
 .scout-section-text {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
-.scout-section-text h3 {
-  color: #1a5c2e;
-  font-size: 1.2rem;
+
+/* =========================================================
+   TEXT CARD
+========================================================= */
+
+.scout-content-card {
+  width: 100%;
+  padding: 26px;
+
+  background: #f7f9fb;
+
+  border-left: 4px solid #f28c00;
+  border-radius: 10px;
+
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.scout-content-card h2 {
+  margin: 0 0 20px;
+
+  color: #17365f;
+  font-size: 25px;
   font-weight: 700;
-  margin-top: 0.8rem;
-  padding-bottom: 0.3rem;
-  border-bottom: 2px solid #ff9800;
-  display: inline-block;
+  line-height: 1.3;
 }
 
-.scout-section-text h3:first-child {
+.scout-content-card h3 {
+  margin: 20px 0 8px;
+
+  color: #075c3d;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.scout-content-card h3:first-child {
   margin-top: 0;
 }
 
-.scout-section-text p {
-  color: var(--text-mid);
-  line-height: 1.8;
-  font-size: 0.95rem;
+.scout-content-card p {
+  margin: 0;
+
+  color: #405579;
+  font-size: 15px;
+  line-height: 1.75;
 }
 
-.scout-section-text ol {
-  padding-left: 1.5rem;
-  margin: 0.5rem 0;
+
+/* =========================================================
+   FIRST IMAGE
+========================================================= */
+
+.scout-section-image {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  align-self: center;
+
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
 }
 
-.scout-section-text ol li {
-  color: var(--text-mid);
-  line-height: 1.8;
-  font-size: 0.95rem;
-  margin-bottom: 0.3rem;
+.scout-section-image img {
+  display: block;
+
+  width: 100%;
+  max-width: 420px;
+
+  height: auto;
+
+  margin: 0 auto;
+
+  object-fit: contain;
+
+  border-radius: 16px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
-.scout-section-text ul {
-  padding-left: 1.5rem;
-  margin: 0.3rem 0;
+
+/* =========================================================
+   SECTION 2
+========================================================= */
+
+.scout-note-section {
+  /*
+    Same two-column layout.
+    Image remains in the right column.
+  */
+  grid-template-columns:
+    minmax(0, 1.15fr)
+    minmax(280px, 0.85fr);
+
+  align-items: center;
 }
 
-.scout-section-text ul li {
-  color: var(--text-mid);
-  line-height: 1.8;
-  font-size: 0.95rem;
-}
 
-/* ========================================== */
-/* Note Box */
-/* ========================================== */
+/* =========================================================
+   SECOND SECTION CONTENT
+========================================================= */
 
 .scout-note-box {
-  background: #f8fafc;
-  border-left: 4px solid #ff9800;
-  padding: 1.5rem;
-  border-radius: 12px;
+  width: 100%;
+  padding: 26px;
+
+  background: #f7f9fb;
+
+  border-left: 4px solid #f28c00;
+  border-radius: 10px;
+
+  box-sizing: border-box;
 }
 
+
+/* =========================================================
+   POINTS
+========================================================= */
+
 .scout-point {
-  margin-bottom: 1.2rem;
+  margin: 0 0 22px;
 }
 
 .scout-point:last-child {
@@ -140,244 +236,419 @@
 }
 
 .point-title {
-  color: #1a5c2e;
-  font-size: 0.95rem;
-  font-weight: 700;
-  margin-bottom: 0.3rem;
+  margin: 0 0 10px;
+
+  color: #075c3d;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  line-height: 1.5;
 }
 
 .point-text {
-  color: var(--text-mid);
+  margin: 0;
+
+  color: #405579;
+
+  font-size: 15px;
   line-height: 1.8;
-  font-size: 0.95rem;
-  padding-left: 0.5rem;
 }
 
+
+/* =========================================================
+   SCOUT LAW
+========================================================= */
+
 .scout-law-list {
-  padding-left: 1.5rem;
-  margin: 0.3rem 0;
+  margin: 0;
+
+  padding-left: 27px;
+
+  color: #405579;
+
+  font-size: 15px;
+  line-height: 1.7;
 }
 
 .scout-law-list li {
-  color: var(--text-mid);
-  line-height: 1.8;
-  font-size: 0.95rem;
+  margin-bottom: 4px;
+  padding-left: 4px;
 }
 
-/* ========================================== */
-/* Advancement Scheme */
-/* ========================================== */
+
+/* =========================================================
+   SECOND IMAGE
+   CENTER RIGHT
+========================================================= */
+
+.scout-note-image {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /*
+    This makes the image stay in the
+    middle of the right side.
+  */
+  align-self: center;
+
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+.scout-note-image img {
+  display: block;
+
+  width: 100%;
+  max-width: 440px;
+
+  height: auto;
+
+  margin: 0 auto;
+
+  object-fit: contain;
+
+  border-radius: 16px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   ADVANCEMENT
+========================================================= */
+
+.scout-advancement-section {
+  width: 100%;
+}
 
 .scout-advancement {
+  width: calc(100% - 48px);
+  max-width: 1168px;
+
+  margin: 28px auto 0;
+  padding: 35px 28px;
+
   text-align: center;
-  padding: 1.5rem;
-  background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
-  border-radius: 12px;
-  border: 2px solid #2d7a3a;
+
+  background: #ffffff;
+
+  border: 1px solid #dfcfaa;
+  border-radius: 14px;
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+
+  box-sizing: border-box;
 }
 
 .scout-advancement h3 {
-  color: #1a5c2e;
-  font-size: 1.3rem;
+  margin: 0 0 12px;
+
+  color: #17365f;
+
+  font-size: 28px;
   font-weight: 700;
-  margin-bottom: 0.8rem;
+
+  line-height: 1.3;
 }
 
+.scout-advancement p {
+  max-width: 700px;
+
+  margin: 0 auto;
+
+  color: #405579;
+
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
 .more-details-btn {
-  display: inline-block;
-  padding: 0.7rem 2rem;
-  background: linear-gradient(135deg, #2d7a3a, #1a5c2e);
-  color: white;
-  border: none;
-  border-radius: 30px;
-  font-size: 1rem;
-  font-weight: 600;
+  min-width: 175px;
+  min-height: 44px;
+
+  margin-top: 24px;
+  padding: 11px 22px;
+
+  display: inline-flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+
+  color: #ffffff;
+  background: #075c3d;
+
+  border-radius: 8px;
+
   text-decoration: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 14px rgba(45, 122, 58, 0.4);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  line-height: 1;
+
+  box-sizing: border-box;
+
+  transition: background 0.2s ease;
+}
+
+.more-details-btn span {
+  font-size: 18px;
+  line-height: 1;
 }
 
 .more-details-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(45, 122, 58, 0.5);
+  background: #064c32;
 }
 
-/* ========================================== */
-/* Image Side - Full Image Show */
-/* ========================================== */
 
-.scout-section-image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
+/* =========================================================
+   TABLET
+========================================================= */
 
-.scout-section-image img {
-  width: 100%;
-  height: auto;
-  max-height: 350px;
-  object-fit: contain;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  background: #f5f7fa;
-}
-
-.scout-section-image img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
-}
-
-/* ========================================== */
-/* Responsive */
-/* ========================================== */
-
-@media (max-width: 1024px) {
-  .scout-section {
-    padding: 1.5rem;
-    gap: 2rem;
-  }
-
-  .scout-section-image img {
-    max-height: 280px;
-  }
-}
-
-@media (max-width: 768px) {
-  .scout-page {
-    padding: 1.5rem 0.8rem;
-  }
+@media (max-width: 900px) {
 
   .scout-hero {
-    padding: 2rem 1.5rem;
+    padding: 45px 24px;
   }
 
   .scout-hero h2 {
-    font-size: 2rem;
+    font-size: 38px;
   }
 
-  .scout-hero p {
-    font-size: 1rem;
-  }
 
-  .scout-section {
+  .scout-section,
+  .scout-note-section {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 1.2rem;
+
+    gap: 25px;
+
+    padding: 24px;
+
+    align-items: center;
   }
 
-  .scout-section.no-image {
-    padding: 1.2rem;
-  }
 
-  .scout-section-text h3 {
-    font-size: 1.1rem;
-  }
+  /* IMAGE BELOW TEXT */
 
-  .scout-section-text p,
-  .scout-section-text ol li,
-  .scout-section-text ul li {
-    font-size: 0.9rem;
-  }
-
-  .scout-section-image img {
-    max-height: 250px;
+  .scout-section-image,
+  .scout-note-image {
     width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto;
+    padding: 0;
+
+    align-self: center;
   }
 
-  .scout-note-box {
-    padding: 1rem;
-  }
 
-  .point-title {
-    font-size: 0.9rem;
-  }
+  .scout-section-image img,
+  .scout-note-image img {
+    width: 100%;
+    max-width: 520px;
 
-  .point-text {
-    font-size: 0.9rem;
-  }
+    height: auto;
 
-  .scout-law-list li {
-    font-size: 0.9rem;
-  }
-
-  .scout-advancement h3 {
-    font-size: 1.1rem;
-  }
-
-  .more-details-btn {
-    padding: 0.6rem 1.5rem;
-    font-size: 0.9rem;
+    margin: 0 auto;
   }
 }
 
-@media (max-width: 480px) {
-  .scout-page {
-    padding: 1rem 0.5rem;
-  }
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
 
   .scout-hero {
-    padding: 1.5rem 1rem;
-    border-radius: 12px;
+    padding: 38px 20px;
   }
 
   .scout-hero h2 {
-    font-size: 1.5rem;
+    font-size: 32px;
   }
 
   .scout-hero p {
-    font-size: 0.9rem;
+    font-size: 15px;
+    line-height: 1.65;
   }
 
-  .scout-section {
-    padding: 1rem;
+
+  /* SECTION */
+
+  .scout-section,
+  .scout-note-section {
+    width: calc(100% - 20px);
+
+    margin-top: 18px;
+
+    padding: 14px;
+
+    gap: 20px;
+
     border-radius: 12px;
-    gap: 1rem;
+
+    grid-template-columns: 1fr;
   }
 
-  .scout-section.no-image {
-    padding: 1rem;
-  }
 
-  .scout-section-text h3 {
-    font-size: 0.95rem;
-  }
+  /* TEXT BOX */
 
-  .scout-section-text p,
-  .scout-section-text ol li,
-  .scout-section-text ul li {
-    font-size: 0.85rem;
-    line-height: 1.6;
-  }
-
-  .scout-section-image img {
-    max-height: 200px;
-  }
-
+  .scout-content-card,
   .scout-note-box {
-    padding: 0.8rem;
+    padding: 20px 17px;
+
+    border-left-width: 3px;
+
+    border-radius: 9px;
   }
 
+
+  .scout-content-card h2 {
+    font-size: 21px;
+  }
+
+  .scout-content-card h3,
   .point-title {
-    font-size: 0.85rem;
+    font-size: 15px;
   }
 
+  .scout-content-card p,
   .point-text {
-    font-size: 0.85rem;
+    font-size: 14px;
+    line-height: 1.75;
   }
 
-  .scout-law-list li {
-    font-size: 0.85rem;
+
+  /* LAW */
+
+  .scout-law-list {
+    padding-left: 23px;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+  }
+
+
+  /* IMAGES */
+
+  .scout-section-image,
+  .scout-note-image {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+  }
+
+
+  .scout-section-image img,
+  .scout-note-image img {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+
+    height: auto;
+
+    margin: 0 auto;
+
+    border-radius: 13px;
+  }
+
+
+  /* ADVANCEMENT */
+
+  .scout-advancement {
+    width: calc(100% - 20px);
+
+    margin-top: 18px;
+
+    padding: 27px 17px;
+
+    border-radius: 12px;
   }
 
   .scout-advancement h3 {
-    font-size: 0.95rem;
+    font-size: 22px;
   }
 
+  .scout-advancement p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+
   .more-details-btn {
-    padding: 0.5rem 1.2rem;
-    font-size: 0.85rem;
+    width: 100%;
+    max-width: 220px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .scout-hero {
+    padding: 32px 17px;
+  }
+
+  .scout-hero h2 {
+    font-size: 29px;
+  }
+
+
+  .scout-section,
+  .scout-note-section {
+    width: calc(100% - 14px);
+
+    padding: 11px;
+
+    gap: 17px;
+  }
+
+
+  .scout-content-card,
+  .scout-note-box {
+    padding: 17px 14px;
+  }
+
+
+  .scout-section-image img,
+  .scout-note-image img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+
+  .scout-advancement {
+    width: calc(100% - 14px);
+
+    padding: 24px 14px;
   }
 }

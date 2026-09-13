@@ -3,95 +3,103 @@ import './PresentLeadership.css';
 const leadershipData = [
   {
     id: 1,
-    title: 'CHIEF PATRON AND VICE PRESIDENT',
-    name: 'SHRI R.N.RAVI',
+    title: 'PRESIDENT AND CHIEF PATRON',
+    name: 'DR. R.N.RAVI',
     designation: 'GOVERNOR OF WEST BENGAL',
     imageUrl: '/images/president.jpg'
   },
   {
     id: 2,
-    title: 'ACTING PRESIDENT',
+    title: 'VICE-PRESIDENT',
     name: 'MRS. ARATI MITRA',
-    designation: 'ACTING PRESIDENT',
+    designation: 'VICE-PRESIDENT',
     imageUrl: '/images/secretary-general.jpg'
   },
   {
     id: 3,
     title: 'VICE-PRESIDENT',
-    name: 'DR. ARCHANA MUKHERJEE',
-    designation: 'IPS(Retd.)',
+    name: 'MISS KHORSHED PESI AVARI',
+    designation: 'VICE-PRESIDENT',
     imageUrl: '/images/vice-president-1.jpg'
   },
   {
-    id: 4,
+   id: 4,
     title: 'VICE-PRESIDENT',
-    name: 'MR. MUKUL ROY',
-    designation: 'Vice-President',
-    imageUrl: '/images/vice-president-2.jpg'
+    name: 'DR. ARCHANA MAJUMDAR',
+    designation: 'VICE-PRESIDENT',
+    imageUrl: '/images/vice-president-1.jpg'
   },
   {
     id: 5,
     title: 'VICE-PRESIDENT',
-    name: 'MR. ATINDRA NARAYAN CHOWDHURY',
-    designation: 'Vice-President',
+    name: 'MRS. PRIYANKA MUKHERJEE',
+    designation: 'VICE-PRESIDENT',
     imageUrl: '/images/vice-president-3.jpg'
   },
   {
     id: 6,
     title: 'VICE-PRESIDENT',
-    name: 'MR. JEEWAN PRAKESH GURUNG',
-    designation: 'Vice-President',
+    name: 'MR. AMAL CHATTERJEE',
+    designation: 'VICE-PRESIDENT',
     imageUrl: '/images/vice-president-4.jpg'
   },
   {
     id: 7,
     title: 'VICE-PRESIDENT',
-    name: 'MR. AMAL CHATTERJEE',
-    designation: 'Vice-President',
+    name: 'MR. KUNDAN LAL TAMTA',
+    designation: 'I.P.S(Retd)',
     imageUrl: '/images/vice-president-5.jpg'
   },
   {
     id: 8,
     title: 'VICE-PRESIDENT',
-    name: 'MISS. GANGOTRI DUTTA',
-    designation: 'Vice-President',
+    name: 'MR. SANDHI MUKHERJEE',
+    designation: 'I.P.S(Retd)',
     imageUrl: '/images/chief-national-commissioner.jpg'
   },
   {
     id: 9,
     title: 'VICE-PRESIDENT',
-    name: 'MRS. SUNITA ARORA',
-    designation: 'Vice-President',
+    name: 'MR. HARSH VARDHAN SHRINGLA',
+    designation: 'M.P(RAJYA SHABA',
     imageUrl: '/images/addl-chief-national-commissioner.jpg'
   },
   {
     id: 10,
     title: 'VICE-PRESIDENT',
-    name: 'MRS. MITRA SINGHA ROY',
-    designation: 'Vice-President',
+    name: 'MR. DEBADITYA CHAKRABARTI',
+    designation: 'IAS (Retd.)',
     imageUrl: '/images/chief-commissioner-scouts.jpg'
   },
   {
     id: 11,
-    title: 'STATE CHIEF COMMISSIONER',
-    name: 'MR. DEBADITYA CHAKRABARTI',
-    designation: 'IAS(Retd.)',
-    imageUrl: '/images/chief-commissioner-guides.jpg'
-  },
-   {
-    id: 11,
-    title: 'STATE COMMISSIONER(S)',
-    name: 'MR. SHYAMAL KUMAR BISWAS',
-    designation: 'STATE COMMISSIONER(S)',
-    imageUrl: '/images/chief-commissioner-guides.jpg'
+    title: 'VICE-PRESIDENT',
+    name: 'MR. KRISHNENDU MUKHERJEE',
+    designation: 'M.L.A',
+    imageUrl: '/images/chief-commissioner-scouts.jpg'
   },
   {
-    id: 11,
-    title: 'STATE COMMISSIONER(G)',
-    name: 'DR. SIKHA BANERJEE',
-    designation: 'STATE COMMISSIONER(G)',
-    imageUrl: '/images/chief-commissioner-guides.jpg'
+    id: 12,
+    title: 'VICE-PRESIDENT',
+    name: 'MR. RATHIN GHOSH',
+    designation: 'M.L.A',
+    imageUrl: '/images/chief-commissioner-scouts.jpg'
   },
+  {
+    id: 12,
+    title: 'VICE-PRESIDENT',
+    name: 'MR. RAJ (SUPRATIM) BASU',
+    designation: 'VICE-PRESIDENT',
+    imageUrl: '/images/chief-commissioner-scouts.jpg'
+  },
+  {
+    id: 13,
+    title: 'STATE CHIEF COMMISSIONER',
+    name: 'MR. SHYAMAL KUMAR BISWAS',
+    designation: 'IAS(Retd.)',
+    imageUrl:  '/images/State-chief-commisioner.jpg'
+  },
+   
 ];
 
 export default function PresentLeadership() {
@@ -99,7 +107,7 @@ export default function PresentLeadership() {
     <div className="leadership-page">
 
       <div className="leadership-hero">
-        <h1>LEADERS(2021-2026)</h1>
+        <h1>LEADERS(2026-2031)</h1>
         <p>
           Meet the dedicated leaders guiding the Bharat Scouts and Guides, West Bengal.
         </p>

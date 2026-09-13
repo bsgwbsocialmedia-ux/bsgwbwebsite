@@ -1,51 +1,144 @@
 import './Shop.css';
 
 const shopDetails = {
-  address: 'YOUR SHOP ADDRESS',
-  phone: '+91 XXXXXXXXXX',
+  address:
+    '5,GOVERNMENT PLACE, NORTH KOLKATA - 700001 (NEAR LOK BHAVAN NORTH GATE)',
+
+  phone:
+    '+91 8100161817, PH: 03322621599',
+
   mapLink:
-    'https://www.google.com/maps/search/?api=1&query=YOUR+SHOP+ADDRESS'
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.2716401447733!2d88.3473534!3d22.5689415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277a1667b0d5b%3A0x176318a1bec86b62!2sBharat%20Scouts%20Guides!5e0!3m2!1sen!2sin!4v1784648025407!5m2!1sen!2sin',
+
+  googleMapsLink:
+    'https://www.google.com/maps/search/?api=1&query=Bharat+Scouts+Guides+5+Government+Place+Kolkata+700001'
 };
+
 
 const products = [
   {
-    name: 'Scout Uniform',
-    image: '/images/shop/scout-uniform.jpg'
+    name: 'Beret Cap',
+    image: '/SHOP/beretcap.jpg'
   },
   {
-    name: 'Scout Belt',
-    image: '/images/shop/scout-belt.jpg'
+    name: 'Cap Badge',
+    image: '/SHOP/capbadge.webp'
   },
   {
-    name: 'Scout Cap',
-    image: '/images/shop/scout-cap.jpg'
+    name: 'Uniform Belt Cub / Scout',
+    image: '/SHOP/unifrombelt.webp'
   },
   {
-    name: 'Scout Badge',
-    image: '/images/shop/scout-badge.jpg'
+    name: 'Cub Uniform Cap',
+    image: '/SHOP/cubcap.jpg'
   },
   {
-    name: 'Scout Scarf',
-    image: '/images/shop/scout-scarf.jpg'
+    name: 'Sash - Guide Uniform',
+    image: '/SHOP/sashguideuniform.jpg'
   },
   {
-    name: 'Camping Tent',
-    image: '/images/shop/camping-tent.jpg'
-  }
+    name: 'Guide Uniform Saree',
+    image: '/SHOP/guideuniformsaree.jpg'
+  },
+  {
+    name: 'Dupatta',
+    image: '/SHOP/dupattaranger.jpg'
+  },{
+    name: 'Bulbul Uniform Stitched Overall',
+    image: '/SHOP/bulbuluniform.jpg'
+  },{
+    name: 'Pravesh Badge S/G New Round Embroidery',
+    image: '/SHOP/pravesh badge.webp'
+  },{
+    name: 'Right Shoulder Badge Bharat / India',
+    image: '/SHOP/rightshoulderbadge.webp'
+  },{
+    name: 'World Scout Badge New Round Embroidery',
+    image: '/SHOP/worldscoutbadge.webp'
+  },{
+    name: 'World Guide Badge New Round Embroidery',
+    image: '/SHOP/worldguidebadge.webp'
+  },{
+    name: 'Pravesh Badge R/R New Round Embroidery',
+    image: '/SHOP/roverpraveshbadge.webp'
+  },{
+    name: 'Sopan Badge Tritiya Emb',
+    image: '/SHOP/tritiyasopanbadge.webp'
+  },{
+    name: 'Pratham Sopan Badges',
+    image: '/SHOP/prathansopanbadge.jpg'
+  },{
+    name: 'Pravesh Badge C/B New Round Embroidery',
+    image: '/SHOP/praveshcubbadge.webp'
+  },{
+    name: 'Rank Badge S.M. (Emb)',
+    image: '/SHOP/smrankbadge.jpg'
+  },{
+    name: 'Rank Badge Commisioners',
+    image: '/SHOP/commsionerrankbadge.jpg'
+  },{
+    name: 'Rank Badge R.S.L.',
+    image: '/SHOP/rslrankbadge.jpg'
+  },{
+    name: 'Rank Badge C.M.',
+    image: '/SHOP/cubrankbadge.webp'
+  },{
+    name: 'Assistant Troop Leader Badge',
+    image: '/SHOP/atlbadge.webp'
+  },{
+    name: 'Troop Leader Badge',
+    image: '/SHOP/troopleaderbadge.jpg'
+  },{
+    name: 'Rank Badge A.C.M.',
+    image: '/SHOP/acmrankbadge.webp'
+  },{
+    name: 'Rank Badge A.R.S.L.',
+    image: '/SHOP/arslrankbadge.webp'
+  },{
+    name: 'Rank Badge A.S.M.',
+    image: '/SHOP/asmrankbadge.webp'
+  },{
+    name: 'Knotting Rope',
+    image: '/SHOP/knotting rope.webp'
+  },{
+    name: 'Unit Flag',
+    image: '/SHOP/unitflag.webp'
+  },{
+    name: 'Association Flag',
+    image: '/SHOP/associationflag.webp'
+  },{
+    name: 'Scout Shirt',
+    image: '/SHOP/scoutshirt.jpg'
+  },{
+    name: 'Woggle Plastic Round',
+    image: '/SHOP/woogle.webp'
+  },{
+    name: 'Scout Pant',
+    image: '/SHOP/scoutpant.webp'
+  },{
+    name: 'National Scarf',
+    image: '/SHOP/scarfs.jpg'
+  },{
+    name: 'Guide/Ranger Belt',
+    image: '/SHOP/guide belt.webp'
+  },
 ];
+
 
 export default function Shop() {
   return (
     <div className="shop-page">
 
-      {/* HERO */}
+      {/* =====================================================
+          HERO
+      ===================================================== */}
 
       <section className="shop-hero">
 
         <div className="shop-hero-content">
 
           <span className="shop-eyebrow">
-            BHARAT SCOUTS & GUIDES • WEST BENGAL
+            BHARAT SCOUTS &amp; GUIDES • WEST BENGAL
           </span>
 
           <h1>
@@ -61,7 +154,9 @@ export default function Shop() {
       </section>
 
 
-      {/* INTRO */}
+      {/* =====================================================
+          INTRO
+      ===================================================== */}
 
       <section className="shop-intro">
 
@@ -81,7 +176,9 @@ export default function Shop() {
       </section>
 
 
-      {/* PRODUCTS */}
+      {/* =====================================================
+          PRODUCTS
+      ===================================================== */}
 
       <section className="shop-grid">
 
@@ -121,7 +218,9 @@ export default function Shop() {
       </section>
 
 
-      {/* STORE INFORMATION */}
+      {/* =====================================================
+          STORE CONTACT
+      ===================================================== */}
 
       <section className="shop-contact">
 
@@ -141,24 +240,21 @@ export default function Shop() {
           </p>
 
 
-          {/* STORE DETAILS */}
+          {/* =================================================
+              STORE DETAILS
+          ================================================= */}
 
           <div className="shop-details">
 
-            {/* GOOGLE MAP ADDRESS */}
+            {/* ADDRESS */}
 
-            <a
-              href={shopDetails.mapLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="shop-detail shop-address-link"
-            >
+            <div className="shop-detail">
 
               <div className="shop-detail-icon">
                 📍
               </div>
 
-              <div>
+              <div className="shop-detail-info">
 
                 <span>
                   Store Address
@@ -170,7 +266,7 @@ export default function Shop() {
 
               </div>
 
-            </a>
+            </div>
 
 
             {/* PHONE */}
@@ -184,7 +280,7 @@ export default function Shop() {
                 ☎
               </div>
 
-              <div>
+              <div className="shop-detail-info">
 
                 <span>
                   Contact
@@ -201,7 +297,54 @@ export default function Shop() {
           </div>
 
 
-          {/* CALL BUTTON */}
+          {/* =================================================
+              MAP
+          ================================================= */}
+
+          <div className="shop-location">
+
+            <div className="shop-location-heading">
+
+              <span>
+                STORE LOCATION
+              </span>
+
+              <h3>
+                Find Us
+              </h3>
+
+            </div>
+
+
+            <div className="shop-map">
+
+              <iframe
+                src={shopDetails.mapLink}
+                title="Bharat Scouts & Guides West Bengal Store Location"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+
+            </div>
+
+
+            <a
+              href={shopDetails.googleMapsLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shop-map-btn"
+            >
+              Open in Google Maps
+              <span>→</span>
+            </a>
+
+          </div>
+
+
+          {/* =================================================
+              CALL BUTTON
+          ================================================= */}
 
           <a
             href={`tel:${shopDetails.phone.replace(/\s/g, '')}`}
