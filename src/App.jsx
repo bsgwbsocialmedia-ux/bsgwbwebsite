@@ -12,6 +12,7 @@ import FundamentalsPreview from "./components/FundamentalsPreview/FundamentalsPr
 import VisionMission from "./components/VisionMission/VisionMission";
 import PoliciesSection from "./components/PoliciesSection/PoliciesSection";
 import Ourcampsite from "./components/Ourcampsite/Ourcampsite";
+import SocialSidebar from "./components/SocialSidebar/SocialSidebar";
 
 
 import About from "./pages/About/About";
@@ -72,6 +73,7 @@ function App() {
       <Navbar />
       <Navbar2 />
       <MarqueeBar />
+      <SocialSidebar/>
 
       <Routes>
         <Route

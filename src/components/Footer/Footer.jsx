@@ -6,13 +6,33 @@ import {
   FaYoutube,
   FaMapMarkerAlt,
   FaPhoneAlt,
-  FaEnvelope,
-  FaUsers
+  FaEnvelope
 } from 'react-icons/fa';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 export default function Footer() {
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Smooth scroll to section on home page
+  const scrollToSection = (sectionId) => {
+    if (location.pathname === '/') {
+      const el = document.getElementById(sectionId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else {
+      navigate('/');
+      setTimeout(() => {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 300);
+    }
+  };
 
   return (
     <footer className="footer">
@@ -50,7 +70,7 @@ export default function Footer() {
               <FaYoutube />
             </a>
           </div>
-        </div> 
+        </div>
 
         {/* Quick Links */}
         <div className="footer-col">
@@ -58,11 +78,34 @@ export default function Footer() {
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/aboutus">About Us</Link></li>
-            <li><a href="#circulars">Circulars</a></li>
+            <li>
+              <button
+                type="button"
+                className="footer-link-btn"
+                onClick={() => scrollToSection('circulars')}
+              >
+                Circulars
+              </button>
+            </li>
             <li><Link to="/organization/presentleadership">Present Leadership</Link></li>
-            <li><Link to="#partners">Partners</Link></li>
-            <li><Link to="#policies">Policies</Link></li>
-            <li><Link to="#vision">Vision & Mission</Link></li>
+            <li>
+              <button
+                type="button"
+                className="footer-link-btn"
+                onClick={() => scrollToSection('policies')}
+              >
+                Policies
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                className="footer-link-btn"
+                onClick={() => scrollToSection('vision')}
+              >
+                Vision & Mission
+              </button>
+            </li>
           </ul>
         </div>
 
@@ -76,7 +119,6 @@ export default function Footer() {
             <li><Link to="/programme/youth-programme/guide">Guide</Link></li>
             <li><Link to="/programme/youth-programme/rover">Rover</Link></li>
             <li><Link to="/programme/youth-programme/ranger">Ranger</Link></li>
-            {/* <li><Link to="/programme/annual-plan/youth">Youth Annual Plan</Link></li> */}
           </ul>
         </div>
 
@@ -115,7 +157,7 @@ export default function Footer() {
 
       <div className="footer-bottom">
         <span>
-          © {new Date().getFullYear()} Bharat Scouts And Guides, West Bengal. 
+          © {new Date().getFullYear()} Bharat Scouts And Guides, West Bengal.
           All rights reserved.
         </span>
         <span>Developed by MAJORA DIGITAL</span>
