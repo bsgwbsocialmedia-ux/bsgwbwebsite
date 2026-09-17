@@ -2,27 +2,36 @@ import { useEffect, useState } from 'react';
 import { NEWS_URL, apiFetch } from '../../services/api';
 import './News.css';
 
+const CATEGORIES = [
+  { key: 'district', label: 'District' },
+  { key: 'state', label: 'State' },
+  { key: 'national', label: 'National' },
+  { key: 'international', label: 'International' }
+];
+
 export default function News() {
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [activeTab, setActiveTab] = useState('district');
 
   useEffect(() => {
     fetchNews();
   }, []);
 
   const fetchNews = async () => {
+    setLoading(true);
     try {
       const response = await apiFetch(NEWS_URL);
       console.log('News API Response:', response);
-      
+
       let newsData = [];
       if (response?.data) {
         newsData = response.data;
       } else if (Array.isArray(response)) {
         newsData = response;
       }
-      
+
       setNews(newsData);
       setError(null);
     } catch (error) {
@@ -32,6 +41,9 @@ export default function News() {
       setLoading(false);
     }
   };
+
+  // Filter news by active tab
+  const filteredNews = news.filter(item => item.category === activeTab);
 
   const formatDate = (date) => {
     if (!date) return 'Date not available';
@@ -90,20 +102,34 @@ export default function News() {
         <p>Stay updated with the latest news and events</p>
       </div>
 
-      {news.length === 0 ? (
+      {/* Tabs */}
+      <div className="news-tabs">
+        {CATEGORIES.map(cat => (
+          <button
+            key={cat.key}
+            type="button"
+            className={`news-tab ${activeTab === cat.key ? 'news-tab-active' : ''}`}
+            onClick={() => setActiveTab(cat.key)}
+          >
+            {cat.label}
+          </button>
+        ))}
+      </div>
+
+      {filteredNews.length === 0 ? (
         <div className="news-empty">
-          <p>No news available at the moment.</p>
+          <p>No {activeTab} news available at the moment.</p>
           <p>Please check back later for updates.</p>
         </div>
       ) : (
         <div className="news-list">
-          {news.map((item, index) => (
+          {filteredNews.map((item, index) => (
             <div className="news-card" key={item._id || index}>
-              {item.imageUrl && (
+              {item.image && (
                 <div className="news-image-wrapper">
-                  <img 
-                    src={getImageUrl(item.imageUrl)} 
-                    alt={item.title || 'News image'} 
+                  <img
+                    src={getImageUrl(item.image)}
+                    alt={item.title || 'News image'}
                     className="news-image"
                     onError={(e) => {
                       e.target.style.display = 'none';
@@ -118,17 +144,19 @@ export default function News() {
                     }}
                     loading="lazy"
                   />
-                  <span className="news-badge">NEWS</span>
+                  <span className="news-badge">
+                    {CATEGORIES.find(c => c.key === item.category)?.label || 'NEWS'}
+                  </span>
                 </div>
               )}
-              
+
               <div className="news-content">
                 <h3 className="news-title">{item.title || 'Untitled'}</h3>
-                
+
                 <div className="news-meta">
                   <span className="news-date">
                     <span className="meta-icon">📅</span>
-                    {formatDate(item.date || item.createdAt)}
+                    {formatDate(item.createdAt)}
                   </span>
                   {item.location && (
                     <span className="news-location">
@@ -137,20 +165,10 @@ export default function News() {
                     </span>
                   )}
                 </div>
-                
+
                 <p className="news-description">
                   {item.description || 'No description available'}
                 </p>
-                
-                {item.tags && (
-                  <div className="news-tags">
-                    {item.tags.split(',').map((tag, idx) => (
-                      <span key={idx} className="news-tag-item">
-                        #{tag.trim()}
-                      </span>
-                    ))}
-                  </div>
-                )}
               </div>
             </div>
           ))}
