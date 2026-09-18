@@ -96,7 +96,7 @@ const leadershipData = [
     id: 13,
     title: 'STATE CHIEF COMMISSIONER',
     name: 'MR. SHYAMAL KUMAR BISWAS',
-    designation: 'IAS(Retd.)',
+    designation: 'STATE CHIEF COMMISSIONER',
     imageUrl:  '/images/State-chief-commisioner.jpg'
   },
    
