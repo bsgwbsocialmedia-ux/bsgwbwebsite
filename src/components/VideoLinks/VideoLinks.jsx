@@ -39,7 +39,7 @@ const VideoLinks = () => {
           title: 'BSG West Bengal Instagram',
         },
       ];
-//ADD
+
       setLinks(mockLinks);
       setLoading(false);
     };
