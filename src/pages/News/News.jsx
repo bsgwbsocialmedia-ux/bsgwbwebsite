@@ -32,6 +32,7 @@ export default function News() {
         newsData = response;
       }
 
+      console.log('Parsed News Data:', newsData);
       setNews(newsData);
       setError(null);
     } catch (error) {
@@ -42,7 +43,6 @@ export default function News() {
     }
   };
 
-  // Filter news by active tab
   const filteredNews = news.filter(item => item.category === activeTab);
 
   const formatDate = (date) => {
@@ -61,8 +61,7 @@ export default function News() {
   const getImageUrl = (imagePath) => {
     if (!imagePath) return null;
     if (imagePath.startsWith('http')) return imagePath;
-    const baseUrl = 'http://localhost:5000';
-    return `${baseUrl}${imagePath}`;
+    return `https://bsgwb-backend.onrender.com${imagePath}`;
   };
 
   if (loading) {
@@ -102,7 +101,6 @@ export default function News() {
         <p>Stay updated with the latest news and events</p>
       </div>
 
-      {/* Tabs */}
       <div className="news-tabs">
         {CATEGORIES.map(cat => (
           <button
