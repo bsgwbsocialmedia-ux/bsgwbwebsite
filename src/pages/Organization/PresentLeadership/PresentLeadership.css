@@ -1,9 +1,14 @@
+/* ========================================== */
+/* Leadership Page */
+/* ========================================== */
+
 .leadership-page {
   max-width: 1400px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
   background: #f8fafc;
   min-height: 100vh;
+  box-sizing: border-box;
 }
 
 /* ========================================== */
@@ -16,18 +21,22 @@
   border-radius: 16px;
   margin-bottom: 2.5rem;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .leadership-hero h1 {
-  color: white;
+  color: #ffffff;
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin: 0 0 0.5rem;
+  line-height: 1.2;
 }
 
 .leadership-hero p {
   color: rgba(255, 255, 255, 0.8);
   font-size: 1.1rem;
+  margin: 0;
+  line-height: 1.5;
 }
 
 /* ========================================== */
@@ -38,6 +47,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
+  align-items: stretch;
 }
 
 /* ========================================== */
@@ -45,13 +55,18 @@
 /* ========================================== */
 
 .leader-card {
-  background: white;
+  background: #ffffff;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
   border: 1px solid #e8ecf1;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .leader-card:hover {
@@ -60,7 +75,7 @@
 }
 
 /* ========================================== */
-/* Image */
+/* Image Wrapper */
 /* ========================================== */
 
 .leader-image-wrapper {
@@ -68,28 +83,69 @@
   width: 100%;
   height: 280px;
   overflow: hidden;
-  background: #1a3a5c;
+
+  /* Light background makes portrait images look clean */
+  background: #f4f6f8;
+
+  /* Center image horizontally + vertically */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
 }
+
+/* ========================================== */
+/* Leader Image */
+/* ========================================== */
 
 .leader-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
+
+  /*
+    IMPORTANT:
+    contain prevents the original photograph
+    from being cropped.
+  */
+  object-fit: contain;
+  object-position: center center;
+
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+
+  transition: none;
 }
 
+/*
+  Do not zoom the image on hover.
+  Zooming can crop the portrait.
+*/
 .leader-card:hover .leader-image {
-  transform: scale(1.05);
+  transform: none;
 }
+
+/* ========================================== */
+/* Placeholder */
+/* ========================================== */
 
 .leader-placeholder {
   width: 100%;
   height: 100%;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #1a3a5c, #2d5a7a);
+
+  background: linear-gradient(
+    135deg,
+    #1a3a5c,
+    #2d5a7a
+  );
+
+  box-sizing: border-box;
 }
 
 .placeholder-icon {
@@ -105,55 +161,115 @@
 }
 
 /* ========================================== */
-/* Details */
+/* Leader Details */
 /* ========================================== */
 
 .leader-details {
   padding: 1.5rem 1.2rem 1.8rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+  flex: 1;
 }
 
 .leader-title {
-  display: inline-block;
-  background: linear-gradient(135deg, #ff9800, #f57c00);
-  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    135deg,
+    #ff9800,
+    #f57c00
+  );
+
+  color: #ffffff;
+
   font-size: 0.65rem;
   font-weight: 700;
+
   text-transform: uppercase;
   letter-spacing: 0.08em;
+
   padding: 0.25rem 0.8rem;
   border-radius: 20px;
+
   margin-bottom: 0.8rem;
+
+  line-height: 1.2;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .leader-name {
   font-size: 1.1rem;
   font-weight: 700;
   color: #1a3a5c;
-  margin: 0 0 0.3rem 0;
+
+  margin: 0 0 0.3rem;
+
   line-height: 1.3;
+
+  text-align: center;
+
+  overflow-wrap: anywhere;
 }
 
 .leader-designation {
   font-size: 0.85rem;
-  color: #666;
+  color: #666666;
+
   margin: 0;
+
   line-height: 1.4;
+
+  text-align: center;
+
+  overflow-wrap: anywhere;
 }
 
 /* ========================================== */
-/* Responsive */
+/* Large Tablet */
 /* ========================================== */
 
 @media (max-width: 1024px) {
+  .leadership-page {
+    padding: 2rem 1.25rem;
+  }
+
   .leadership-grid {
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(240px, 1fr)
+    );
+
     gap: 1.5rem;
   }
 
   .leader-image-wrapper {
-    height: 240px;
+    height: 260px;
+  }
+
+  .leader-details {
+    padding: 1.3rem 1rem 1.5rem;
+  }
+
+  .leader-name {
+    font-size: 1rem;
+  }
+
+  .leader-designation {
+    font-size: 0.82rem;
   }
 }
+
+/* ========================================== */
+/* Tablet */
+/* ========================================== */
 
 @media (max-width: 768px) {
   .leadership-page {
@@ -162,6 +278,8 @@
 
   .leadership-hero {
     padding: 2rem 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 14px;
   }
 
   .leadership-hero h1 {
@@ -173,12 +291,29 @@
   }
 
   .leadership-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(200px, 1fr)
+    );
+
     gap: 1.2rem;
   }
 
+  .leader-card {
+    border-radius: 14px;
+  }
+
   .leader-image-wrapper {
-    height: 200px;
+    height: 230px;
+  }
+
+  .leader-details {
+    padding: 1rem 0.8rem 1.2rem;
+  }
+
+  .leader-title {
+    font-size: 0.6rem;
+    padding: 0.25rem 0.7rem;
   }
 
   .leader-name {
@@ -188,11 +323,11 @@
   .leader-designation {
     font-size: 0.8rem;
   }
-
-  .leader-details {
-    padding: 1rem 0.8rem 1.2rem;
-  }
 }
+
+/* ========================================== */
+/* Mobile */
+/* ========================================== */
 
 @media (max-width: 480px) {
   .leadership-page {
@@ -202,6 +337,7 @@
   .leadership-hero {
     padding: 1.5rem 1rem;
     border-radius: 12px;
+    margin-bottom: 1.5rem;
   }
 
   .leadership-hero h1 {
@@ -217,21 +353,33 @@
     gap: 0.8rem;
   }
 
+  .leader-card {
+    border-radius: 12px;
+  }
+
+  /*
+    Keep enough height for portrait images
+    while maintaining the 2-column mobile layout.
+  */
   .leader-image-wrapper {
-    height: 160px;
+    height: 190px;
   }
 
   .leader-title {
     font-size: 0.5rem;
     padding: 0.15rem 0.6rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.6rem;
   }
 
   .leader-name {
     font-size: 0.8rem;
+    line-height: 1.25;
   }
 
   .leader-designation {
     font-size: 0.7rem;
+    line-height: 1.3;
   }
 
   .leader-details {
@@ -239,13 +387,51 @@
   }
 }
 
+/* ========================================== */
+/* Very Small Mobile */
+/* ========================================== */
+
 @media (max-width: 360px) {
+  .leadership-page {
+    padding: 1rem 0.6rem;
+  }
+
   .leadership-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
 
   .leader-image-wrapper {
-    height: 200px;
+    height: 240px;
+  }
+
+  .leader-title {
+    font-size: 0.58rem;
+  }
+
+  .leader-name {
+    font-size: 0.9rem;
+  }
+
+  .leader-designation {
+    font-size: 0.75rem;
+  }
+}
+
+/* ========================================== */
+/* Accessibility / Reduced Motion */
+/* ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .leader-card {
+    transition: none;
+  }
+
+  .leader-card:hover {
+    transform: none;
+  }
+
+  .leader-image {
+    transition: none;
   }
 }

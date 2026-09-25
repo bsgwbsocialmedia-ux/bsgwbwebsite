@@ -97,9 +97,43 @@ const leadershipData = [
     title: 'STATE CHIEF COMMISSIONER',
     name: 'MR. SHYAMAL KUMAR BISWAS',
     designation: 'STATE CHIEF COMMISSIONER',
-    imageUrl:  '/images/State-chief-commisioner.jpg'
+    imageUrl:  '/SCCPHOTO.jpeg'
   },
-   
+  {
+    id: 14,
+    title: 'ADDITIONAL STATE CHIEF COMMISSIONER',
+    name: 'MR. JOGENDRA PRASAD',
+    designation: 'ADDITIONAL STATE CHIEF COMMISSIONER',
+    imageUrl:  '/images/chief-commissioner-scouts.jpg'
+  },
+    {
+  id: 14,
+    title: 'STATE COMMISSIONER (S)',
+    name: 'MR. PROBODH RANJAN BISWAS',
+    designation: 'STATE COMMISSIONER (S)',
+    imageUrl:  '/images/chief-commissioner-scouts.jpg'
+  },
+   {
+  id: 15,
+    title: 'STATE COMMISSIONER (G)',
+    name: 'DR. SHIKHA BANERJEE ',
+    designation: 'STATE COMMISSIONER (G)',
+    imageUrl:  '/images/chief-commissioner-scouts.jpg'
+  },
+  {
+  id: 16,
+    title: 'STATE COMMISSIONER ADULT RESOURSE (S)',
+    name: 'MR. SUMIT MUKHOPADHYAY',
+    designation: 'STATE COMMISSIONER ADULT RESOURSE (S)',
+    imageUrl:  '/images/chief-commissioner-scouts.jpg'
+  },
+  {
+  id: 17,
+    title: 'STATE COMMISSIONER ADULT RESOURSE (G)',
+    name: 'Ms. Bhaswati Roy',
+    designation: 'STATE COMMISSIONER ADULT RESOURSE (G)',
+    imageUrl:  '/images/chief-commissioner-scouts.jpg'
+  },
 ];
 
 export default function PresentLeadership() {
