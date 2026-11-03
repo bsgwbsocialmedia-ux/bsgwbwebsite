@@ -72,7 +72,7 @@ export default function VisionMission() {
               </p>
               {/* FIX: Changed from <p> to <div> to avoid <p> inside <p> */}
               <div className="vm-quote">
-                ⚜️ "Creating Better Citizens for a Better Tomorrow." ⚜️
+                ⚜️ "Ready For Life." ⚜️
               </div>
             </div>
           </div>

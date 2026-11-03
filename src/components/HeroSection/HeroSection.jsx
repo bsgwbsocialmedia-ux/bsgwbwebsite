@@ -39,8 +39,8 @@ const DUMMY_SLIDES = [
   {
     id: 4,
     imageUrl: '/backround1.jpeg',
-    altText: 'SCOUT SPIRIT',
-    caption: 'SCOUT SPIRIT',
+    altText: 'SCOUT & GUIDE SPIRIT',
+    caption: 'SCOUT & GUIDE SPIRIT',
     sub: 'Where young hearts learn courage, kindness, and service to the nation.',
     bg: 'linear-gradient(135deg, #2d3561 0%, #1a3a5c 100%)',
   },

@@ -91,7 +91,8 @@ export default function About() {
         <div className="about-card">
           <h3>📍 State Headquarters</h3>
           <p>
-            5, Government Place (North), Kolkata - 700001, West Bengal.
+           Scout Office:  5, Government Place (North), Kolkata - 700001, West Bengal. </p>
+          <p> Guide Office: Guide Annex 1, Palace Court, 1,Kyd Street ,near Park Street, Kolkata - 700016.
           </p>
         </div>
       </div>

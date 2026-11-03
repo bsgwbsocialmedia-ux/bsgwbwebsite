@@ -7,7 +7,7 @@ export default function LeadersAdult() {
       <div className="leadersadult-hero">
         <h2>Leaders Of Adult</h2>
         <p>
-          Training programmes for adult leaders in scouting.
+          Training programmes for adult leaders in Scouting & Guiding.
         </p>
       </div>
 

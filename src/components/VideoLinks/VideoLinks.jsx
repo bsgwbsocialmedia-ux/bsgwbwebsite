@@ -16,9 +16,9 @@ const VideoLinks = () => {
       const mockLinks = [
         {
           id: 1,
-          platform: 'youtube',
-          url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-          title: 'Scout National Song',
+          platform: 'instagram',
+          url: 'https://www.instagram.com/bsg.westbengal?stkn=N2hlMXdobGp3eHd0&utm_source=qr',
+          title: 'BSG West Bengal Instagram',
         },
         {
           id: 2,
@@ -32,12 +32,6 @@ const VideoLinks = () => {
           url: 'https://www.facebook.com/watch/?v=101532234567890',
           title: 'Bharat Scouts Day',
         },
-        {
-          id: 4,
-          platform: 'instagram',
-          url: 'https://www.instagram.com/bsg.westbengal?stkn=N2hlMXdobGp3eHd0&utm_source=qr',
-          title: 'BSG West Bengal Instagram',
-        },
       ];
 
       setLinks(mockLinks);
@@ -49,9 +43,6 @@ const VideoLinks = () => {
 
   const getIcon = (platform) => {
     switch (platform) {
-      case 'youtube':
-        return '▶️ YouTube';
-
       case 'instagram':
         return '📸 Instagram';
 

@@ -4,12 +4,17 @@
   top: 50%;
   transform: translateY(-50%);
   z-index: 999;
+
   display: flex;
   flex-direction: column;
   gap: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+
   opacity: 1;
   pointer-events: auto;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
 .social-sidebar-visible {
@@ -25,17 +30,25 @@
 }
 
 .social-sidebar-link {
+  width: 44px;
+  height: 44px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+
   background: #1a1a1a;
   color: #ffffff;
+
   font-size: 18px;
   text-decoration: none;
-  transition: all 0.3s ease;
+
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition:
+    background 0.3s ease,
+    width 0.3s ease,
+    color 0.3s ease;
 }
 
 .social-sidebar-link:last-child {
@@ -47,6 +60,11 @@
   width: 52px;
   color: #ffffff;
 }
+
+
+/* =========================
+   TABLET / MOBILE
+========================= */
 
 @media (max-width: 768px) {
   .social-sidebar {
@@ -74,10 +92,19 @@
   }
 }
 
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
 @media (max-width: 480px) {
   .social-sidebar-link {
     width: 36px;
     height: 36px;
     font-size: 15px;
+  }
+
+  .social-sidebar-link:hover {
+    width: 40px;
   }
 }

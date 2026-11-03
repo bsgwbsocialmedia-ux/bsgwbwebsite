@@ -67,12 +67,12 @@ export default function Gallery() {
       <div className="gallery-hero">
 
         <h2>
-          Scout Gallery
+          Scouts & Guides Gallery
         </h2>
 
         <p>
           Memories from camps,
-          rallies and scouting events.
+          rallies and scouting & Guiding events.
         </p>
 
       </div>

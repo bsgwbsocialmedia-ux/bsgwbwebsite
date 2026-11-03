@@ -28,7 +28,8 @@ export default function Contact() {
 
             <div className="contact-item">
               <span>📍</span>
-              <p>5, Government Place, North Kolkata - 700001,(Near Lok Bhawan North Gate), West Bengal, India</p>
+              <p>Scout Office: 5, Government Place, North Kolkata - 700001,(Near Lok Bhawan North Gate), West Bengal, India</p>
+               <p>Guide Office: Guide Annex 1, Palace Court, 1,Kyd Street ,near Park Street, Kolkata - 700016.</p>
             </div>
 
             <div className="contact-item">

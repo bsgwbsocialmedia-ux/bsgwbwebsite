@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
 import {
   FaFacebookF,
-  FaTwitter,
-  FaWhatsapp,
-  FaYoutube
+  FaInstagram,
+  FaWhatsapp
 } from 'react-icons/fa';
 
 import './SocialSidebar.css';
@@ -21,6 +20,7 @@ export default function SocialSidebar() {
     };
 
     window.addEventListener('scroll', handleScroll);
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -32,36 +32,37 @@ export default function SocialSidebar() {
       color: '#1877f2'
     },
     {
-      name: 'Twitter',
-      icon: <FaTwitter />,
-      url: 'https://twitter.com',
-      color: '#000000'
+      name: 'Instagram',
+      icon: <FaInstagram />,
+      url: 'https://www.instagram.com/bsg.westbengal?stkn=N2hlMXdobGp3eHd0&utm_source=qr',
+      color: '#e4405f'
     },
     {
       name: 'WhatsApp',
       icon: <FaWhatsapp />,
       url: 'https://wa.me/919330321982',
       color: '#25d366'
-    },
-    {
-      name: 'YouTube',
-      icon: <FaYoutube />,
-      url: 'https://youtube.com/@bsgindia?si=QY49AXXDxM1wPXAs',
-      color: '#ff0000'
     }
   ];
 
   return (
-    <div className={`social-sidebar ${visible ? 'social-sidebar-visible' : 'social-sidebar-hidden'}`}>
+    <div
+      className={`social-sidebar ${
+        visible
+          ? 'social-sidebar-visible'
+          : 'social-sidebar-hidden'
+      }`}
+    >
       {socials.map((social, index) => (
         <a
           key={index}
           href={social.url}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           className="social-sidebar-link"
           style={{ '--hover-color': social.color }}
           aria-label={social.name}
+          title={social.name}
         >
           {social.icon}
         </a>

@@ -142,11 +142,11 @@ export default function Shop() {
           </span>
 
           <h1>
-            Scouting Accessories Store
+            Scouting & Guiding Accessories Store
           </h1>
 
           <p>
-            Official scouting materials, uniforms and accessories.
+            Official Scouting & Guiding materials, uniforms and accessories.
           </p>
 
         </div>
@@ -165,11 +165,11 @@ export default function Shop() {
         </span>
 
         <h2>
-          Scouting Essentials
+          Scouting & Guides Essentials
         </h2>
 
         <p>
-          Browse our range of official scouting products.
+          Browse our range of official scouting & Guiding products.
           For prices and purchases, please visit our physical store.
         </p>
 
